@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import Html from "@public/assets/skills/html.png";
-import Css from "@public/assets/skills/css.png";
-import Javascript from "@public/assets/skills/javascript.png";
-import ReactImg from "@public/assets/skills/react.png";
-import Tailwind from "@public/assets/skills/tailwind.png";
-import Github from "@public/assets/skills/github1.png";
-import NextJS from "@public/assets/skills/nextjs.png";
-import nextauth from "@public/assets/skills/nextauth.png";
+import Html from "@public/assets/Skills/html.png";
+import Css from "@public/assets/Skills/css.png";
+import Javascript from "@public/assets/Skills/javascript.png";
+import ReactImg from "@public/assets/Skills/react.png";
+import Tailwind from "@public/assets/Skills/tailwind.png";
+import Github from "@public/assets/Skills/github1.png";
+import NextJS from "@public/assets/Skills/nextjs.png";
+import nextauth from "@public/assets/Skills/nextauth.png";
 
 const Skills = () => {
   return (
