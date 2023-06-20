@@ -12,7 +12,7 @@ const ProjectCardList = [
       "PromptVerse is a completely responsive fullstack open-source AI prompting tool complete with next-auth for modern world to discover, create and share creative prompts",
     projectLink:
       "https://prompt-verse-project-g9bookrjm-abdullahsaeed1211.vercel.app/",
-    projectLinkGithub: "",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/PromptVerse",
   },
   {
     title: "Weather App",
@@ -22,7 +22,7 @@ const ProjectCardList = [
     description:
       "Website that displays weather information for the city entered by the user. Was made to revise my concepts of Bootstrap 5, Js, jQuery,HTML, CSS, and learn how to handle and manage API Request",
     projectLink: "https://abdullahsaeed1211.github.io/Weather-App/",
-    projectLinkGithub: "",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Weather-App",
   },
   ,
   {
@@ -33,7 +33,7 @@ const ProjectCardList = [
     description:
       "Simon game made using jQuery, Bootstrap 5, JavaScript, jQuery,HTML, CSS ",
     projectLink: "https://abdullahsaeed1211.github.io/Simon-Game/",
-    projectLinkGithub: "",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Simon-Game",
   },
   {
     title: '"Drum Kit Site',
@@ -42,7 +42,7 @@ const ProjectCardList = [
       "/assets/images/Drumkit.svg",
     description: "Drum kit website made using DOM manipulation, user can use their keyboard to play sounds corresponding to the instrument on screen",
     projectLink: "https://abdullahsaeed1211.github.io/Drum-Kit-Site/",
-    projectLinkGithub: "",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Drum-Kit-Site",
   },
 ];
 

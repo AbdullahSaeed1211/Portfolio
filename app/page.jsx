@@ -35,6 +35,7 @@ const Home = ({}) => {
         <hr />
       </section>
       <About />
+      <br />
       <Project />
       <br />
       <Skills />
