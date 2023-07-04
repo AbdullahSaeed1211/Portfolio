@@ -55,7 +55,7 @@ const Navbar = () => {
           <Link href="/#Projects" className="nav_text">
             Projects
           </Link>
-          <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" className="nav_text">
+          <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" className="nav_text" target="_blank">
             Resume
           </Link>
 
@@ -135,7 +135,7 @@ const Navbar = () => {
                       Projects
                     </li>
                   </Link>
-                  <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view">
+                  <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" target="_blank">
                     <li onClick={() => setNav(false)} className="py-4 text-sm">
                       Resume
                     </li>
