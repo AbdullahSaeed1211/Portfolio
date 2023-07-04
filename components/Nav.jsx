@@ -55,7 +55,7 @@ const Navbar = () => {
           <Link href="/#Projects" className="nav_text">
             Projects
           </Link>
-          <Link href="/Resume" className="nav_text">
+          <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" className="nav_text">
             Resume
           </Link>
 
@@ -135,7 +135,7 @@ const Navbar = () => {
                       Projects
                     </li>
                   </Link>
-                  <Link href="https://docs.google.com/document/d/1RNI19yg1uEc7Nmn9l1UREAIF2jwmsLnIsAyWsYRgCVs/edit?usp=sharing">
+                  <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view">
                     <li onClick={() => setNav(false)} className="py-4 text-sm">
                       Resume
                     </li>
@@ -174,7 +174,7 @@ const Navbar = () => {
                         <AiOutlineMail />
                       </div>
                     </Link>
-                    <Link href="https://docs.google.com/document/d/1RNI19yg1uEc7Nmn9l1UREAIF2jwmsLnIsAyWsYRgCVs/edit?usp=sharing">
+                    <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view">
                       <div
                         onClick={() => setNav(!nav)}
                         className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
