@@ -15,6 +15,16 @@ const ProjectCardList = [
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/PromptVerse",
   },
   {
+    title: "Crypto Pedia",
+    imgSrc:
+      "https://github.com/AbdullahSaeed1211/CryptoPedia/assets/85762594/97acc208-4365-4440-9694-925b06f8a4c2",
+    description:
+      "A responsive website that uses Next js 13’s new SearchParams function to allow the user to view and search among the current top 50 cryptocurrencies  from the coinranking API from rapidAPI ",
+    projectLink:
+      "https://crypto-pedia-puce.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/CryptoPedia",
+  },
+  {
     title: "Weather App",
     imgSrc:
       // <a href="https://storyset.com/music">Music illustrations by Storyset</a>
@@ -102,45 +112,6 @@ const Project = () => {
         ))}
       </div>
 
-      {/* 
-         <ProjectCard
-        title={"Prompt Verse"}
-        imgSrc={
-          "https://user-images.githubusercontent.com/85762594/246801794-e92dc490-f446-4abf-88d2-9396f209c42d.png"
-        }
-        description={
-          "PromptVerse is a completely responsive fullstack open-source AI prompting tool complete with next-auth for modern world to discover, create and share creative prompts"
-        }
-        projectLink={
-          "https://prompt-verse-project-g9bookrjm-abdullahsaeed1211.vercel.app/"
-        }
-      />
-      <ProjectCard
-        title={"Weather App"}
-        imgSrc={
-          "https://github.com/AbdullahSaeed1211/Weather-App/assets/85762594/b297bd45-77c8-4ad9-8814-1cc8853fa915"
-        }
-        description={
-          "Website that displays weather information for the city entered by the user. Was made to revise my concepts of Bootstrap 5, Js, jQuery,HTML, CSS, and learn how to handle and manage API Request ."
-        }
-        projectLink={"https://abdullahsaeed1211.github.io/Weather-App/"}
-      />
-      <ProjectCard
-        title={"Simon Game"}
-        imgSrc={
-          "https://github.com/AbdullahSaeed1211/Weather-App/assets/85762594/f5db93ad-fac6-459b-b001-de7ec30efb1d"
-        }
-        description={"Simon game made using jQuery ."}
-        projectLink={"https://abdullahsaeed1211.github.io/Simon-Game/"}
-      />
-      <ProjectCard
-        title={"Drum Kit Site"}
-        imgSrc={
-          "https://github.com/AbdullahSaeed1211/Drum-Kit-Site/assets/85762594/73907976-22ef-412c-905b-f3216ab9ccaa"
-        }
-        description={"Drum kit website made using DOM."}
-        projectLink={"https://abdullahsaeed1211.github.io/Drum-Kit-Site/"}
-      /> */}
     </>
   );
 };
