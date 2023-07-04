@@ -135,7 +135,7 @@ const Navbar = () => {
                       Projects
                     </li>
                   </Link>
-                  <Link href="/resume">
+                  <Link href="https://docs.google.com/document/d/1RNI19yg1uEc7Nmn9l1UREAIF2jwmsLnIsAyWsYRgCVs/edit?usp=sharing">
                     <li onClick={() => setNav(false)} className="py-4 text-sm">
                       Resume
                     </li>
@@ -174,7 +174,7 @@ const Navbar = () => {
                         <AiOutlineMail />
                       </div>
                     </Link>
-                    <Link href="/resume">
+                    <Link href="https://docs.google.com/document/d/1RNI19yg1uEc7Nmn9l1UREAIF2jwmsLnIsAyWsYRgCVs/edit?usp=sharing">
                       <div
                         onClick={() => setNav(!nav)}
                         className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
