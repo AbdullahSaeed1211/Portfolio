@@ -15,7 +15,7 @@ Completely Responsive modern Portfolio
 
 
 
-## Tech Stack
+## Tech Stack used
 
 - [Next.js](https://nextjs.org/) – framework
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – language
