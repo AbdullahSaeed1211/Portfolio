@@ -11,12 +11,11 @@ const Skills = () => {
     const scrollContainer = document.getElementById("skills-container");
 
     const scroll = () => {
-      scrollContainer.scrollLeft += 2.25; // Adjust scroll speed 
+      scrollContainer.scrollLeft += 2.25; // Adjust scroll speed
     };
 
     const interval = setInterval(scroll, 50); // Adjust scroll interval
 
-    // Cleanup on unmount
     return () => {
       clearInterval(interval);
     };
@@ -24,7 +23,7 @@ const Skills = () => {
 
   return (
     <section id="Skills" className="w-full flex-col flex-center items-center">
-      <div className="max-w-7xl px-2 lg:px-8">
+      <div className="max-w-7xl">
         <h3 className="head_text text-align text-center">
           <span className="green_gradient">My Skills</span>
         </h3>
@@ -32,12 +31,15 @@ const Skills = () => {
 
       <div
         id="skills-container"
-        className="overflow-x-scroll mt-5 whitespace-nowrap">
+        className="overflow-x-scroll mt-5 whitespace-nowrap"
+        style={{ maxWidth: "100%" }} // Add this style
+      >
         {repeatedSkillsData.map((skill, index) => (
           <div
             key={index}
-            className="p-3 shadow-md rounded-md ease-in inline-block">
-            <div className="grid grid-cols-3 gap-2 justify-center items-center">
+            className="p-3 shadow-md rounded-md ease-in inline-block"
+          >
+            <div className="grid grid-cols-2 gap-1 justify-center items-center">
               <div className=" items-center">
                 <Image
                   src={skill.imgSrc}
