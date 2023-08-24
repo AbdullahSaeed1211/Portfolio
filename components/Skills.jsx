@@ -11,10 +11,10 @@ const Skills = () => {
     const scrollContainer = document.getElementById("skills-container");
 
     const scroll = () => {
-      scrollContainer.scrollLeft += 2; // Adjust scroll speed as needed
+      scrollContainer.scrollLeft += 2.25; // Adjust scroll speed 
     };
 
-    const interval = setInterval(scroll, 50); // Adjust scroll interval as needed
+    const interval = setInterval(scroll, 50); // Adjust scroll interval
 
     // Cleanup on unmount
     return () => {
@@ -36,8 +36,8 @@ const Skills = () => {
         {repeatedSkillsData.map((skill, index) => (
           <div
             key={index}
-            className="p-3 shadow-md rounded-xl ease-in duration-300 inline-block">
-            <div className="grid grid-cols-2 gap-2 justify-center items-center">
+            className="p-3 shadow-md rounded-md ease-in inline-block">
+            <div className="grid grid-cols-3 gap-2 justify-center items-center">
               <div className=" items-center">
                 <Image
                   src={skill.imgSrc}
