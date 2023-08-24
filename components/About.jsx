@@ -3,7 +3,9 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="About" className="w-full flex-center flex-col  md:flex-left md:flex-row mt-10">
+    <section
+      id="About"
+      className="w-full flex-center flex-col  md:flex-left md:flex-row mt-10">
       <h2 className="head_text text-center md:hidden mb-5 md:text-right">
         <span className="red_gradient">About Me</span>
       </h2>
@@ -21,15 +23,17 @@ const About = () => {
         <h2 className="head_text text-center hidden md:block md:text-right">
           <span className="red_gradient">About Me</span>
         </h2>
-        <p className="desc text-justify md:text-right">
-          I am a Software Developer who specializes in Web Development, I offer
-          dynamic and responsive front-end development using React and NextJs to
-          deliver industry-level projects and UI/UX mockups using Figma. I am
-          actively expanding my skillset by learning MERN stack development and
-          working on my Data Structures and Algorithms skills to offer more
-          comprehensive solutions. In my free time, I am an avid reader and
-          fitness enthusiast, striving to improve myself both professionally and
-          personally.
+        <p className="desc text-justify md:text-justified">
+          Hey there! 👋 I'm a Computer Science and Engineering student with a deep passion for coding and web development. My goal? To become a Software Development Engineer (SDE) and master algorithms, data structures, and problem-solving.
+          <br />
+          Using Next.js, Tailwind CSS, MongoDB, React.js, Prisma, and Supabase,
+          I create captivating web experiences that merge technical prowess with creative flair.
+          <br />
+          I'm eager to contribute to software development teams, turning ideas
+          into reality through code. Beyond programming, I'm a constant learner
+          and advocate for clear documentation.
+          <br />
+          Outside tech, I believe in holistic growth. Excelling in coding and fitness go hand in hand for me. Let's connect at the crossroads of technology, creativity, and personal growth!
         </p>
       </div>
       <hr />

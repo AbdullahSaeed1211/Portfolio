@@ -1,49 +1,28 @@
-"use client";
+import React from "react";
+import { footerLinks } from "@app/constants";
 import Link from "next/link";
-import { AiOutlineClose, AiOutlineMail } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <section id="Footer" className="pt-30">
-        <hr />
-      <br />
-      <p className="tracking-widest text-[#5651e5] purple_gradient px-10 py-10">
-        Abdullah Saeed @ 2023, All Rights Reserved
-      </p>
-      <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-        <a
-          href="https://www.linkedin.com/in/abdullah-saeed1211/"
-          target="_blank"
-          rel="noreferrer">
-          <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-            <FaLinkedinIn />
+    <section id="Footer" className="w-full">
+      <footer className=" mb-16 flex flex-grow justify-between ">
+        <div className="mt-6 desc">
+          <span className="font-medium">Abdullah Saeed @ 2023</span>
+          <p className=" leading-7 font-montserrat mt-2">
+            Let's collaborate
+          </p>
+        </div>
+        <div className="flex flex-col mt-6 items-end desc">
+          <p>Connect with me</p>
+          <div className="flex flex-row gap-10 mt-4">
+            {footerLinks.map((link, index) => (
+              <Link href={link.href} key={index} className="footer-icon">
+                {link.icon}
+              </Link>
+            ))}
           </div>
-        </a>
-        <a
-          href="https://github.com/AbdullahSaeed1211"
-          target="_blank"
-          rel="noreferrer">
-          <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-            <FaGithub />
-          </div>
-        </a>
-        <Link href="/#Footer">
-          <div
-            onClick={() => setNav(!nav)}
-            className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-            <AiOutlineMail />
-          </div>
-        </Link>
-        <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" target="_blank">
-          <div
-            onClick={() => setNav(!nav)}
-            className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-            <BsFillPersonLinesFill />
-          </div>
-        </Link>
-      </div>
+        </div>
+      </footer>
     </section>
   );
 };

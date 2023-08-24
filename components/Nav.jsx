@@ -1,11 +1,11 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-// import { useRouter } from 'next/router';
+import { navLinks } from "@app/constants";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -27,10 +27,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex-between w-full mb-10 pt-3 z-10" >
+    <nav className="flex-between w-full mb-10 pt-3 z-10">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
-          src="/assets/icons/HeroRocket.svg" 
+          src="/assets/icons/HeroRocket.svg"
           alt="logo"
           width={30}
           height={30}
@@ -42,28 +42,20 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
         <div className="flex gap-3 md:gap-5">
-          <Link href="/" className="nav_text">
-            Home
-          </Link>
-          <Link href="#About" className="nav_text">
-            About
-          </Link>
-          <Link href="#Skills" className="nav_text">
-            Skills
-          </Link>
-
-          <Link href="/#Projects" className="nav_text">
-            Projects
-          </Link>
-          <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" className="nav_text" target="_blank">
-            Resume
-          </Link>
-
-          <Link href="/#Footer" className="nav_text">
-            Contact
-          </Link>
+          {navLinks.map((link, index) => (
+            <Link href={link.href} key={index} className="nav_text">
+              {link.text}
+            </Link>
+          ))}
         </div>
       </div>
+
+      {/* Hamburger Icon */}
+      <div className="sm:hidden flex relative flex-center">
+        <div className="flex" onClick={handleNav}>
+          {/* ... rest of the code ... */}
+        </div>
+        </div>
 
       {/* Hamburger Icon */}
       <div className="sm:hidden flex relative flex-center">
@@ -109,43 +101,23 @@ const Navbar = () => {
                 </div>
                 <div className="border-b border-gray-300 my-4">
                   <p className="w-[85%] md:w-[90%] py-4">
-                    Let&#39;s build something legendary together
+                    Let&#39;s Collaborate
                   </p>
                 </div>
               </div>
               <div className="py-4 flex flex-col">
-                <ul className="uppercase">
-                  <Link href="/">
-                    <li onClick={() => setNav(false)} className="py-4 text-sm">
-                      Home
+              <ul className="uppercase">
+                {navLinks.map((link, index) => (
+                  <Link href={link.href} key={index}>
+                    <li
+                      onClick={() => setNav(false)}
+                      className="py-4 text-sm"
+                    >
+                      {link.text}
                     </li>
                   </Link>
-                  <Link href="/#About">
-                    <li onClick={() => setNav(false)} className="py-4 text-sm">
-                      About
-                    </li>
-                  </Link>
-                  <Link href="/#Skills">
-                    <li onClick={() => setNav(false)} className="py-4 text-sm">
-                      Skills
-                    </li>
-                  </Link>
-                  <Link href="/#Projects">
-                    <li onClick={() => setNav(false)} className="py-4 text-sm">
-                      Projects
-                    </li>
-                  </Link>
-                  <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" target="_blank">
-                    <li onClick={() => setNav(false)} className="py-4 text-sm">
-                      Resume
-                    </li>
-                  </Link>
-                  <Link href="/#Footer">
-                    <li onClick={() => setNav(false)} className="py-4 text-sm">
-                      Contact
-                    </li>
-                  </Link>
-                </ul>
+                ))}
+              </ul>
                 <div className="pt-35">
                   <p className="uppercase tracking-widest text-[#5651e5]">
                     Let&#39;s Connect
