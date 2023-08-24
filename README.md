@@ -15,7 +15,7 @@ Completely Responsive modern Portfolio
 
 
 
-## Tech Stack
+## Tech Stack used
 
 - [Next.js](https://nextjs.org/) – framework
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – language
@@ -25,7 +25,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, run the development server
 
 ```bash
 npm run dev
