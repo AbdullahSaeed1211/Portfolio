@@ -43,8 +43,8 @@ const Skills = () => {
               <div className=" items-center">
                 <Image
                   src={skill.imgSrc}
-                  width={50}
-                  height={50}
+                  width={55}
+                  height={55}
                   alt={skill.alt}
                 />
               </div>
