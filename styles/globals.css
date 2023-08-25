@@ -9,6 +9,9 @@
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
 
+body {
+  scroll-behavior: smooth;
+}
 
 .main {
   width: 100vw;
@@ -46,7 +49,7 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-0.5 px-3 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-white bg-white p-3 text-black transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
 .outline_btn {
@@ -103,13 +106,7 @@
 .prompt_layout {
   @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
 }
-.description {
-  display: none;
-}
 
-.relative:hover .description {
-  display: block;
-}
 /* Feed Component */
 .feed {
   @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;

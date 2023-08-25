@@ -11,12 +11,9 @@ const Rootlayout = ({ children }) => {
   return (
     <html lang="en" className="scroll-smooth">
       <body>
-        <div className="main">
-          <div className="gradient" />
-        </div>
         <main className="app">
-          {/* <Nav /> */}
           <Navbar />
+
           {children}
         </main>
       </body>

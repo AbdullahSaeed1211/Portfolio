@@ -27,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex-between w-full mb-10 pt-3 z-10">
+    <nav className="flex-between  w-full mb-10 pt-3 z-10">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
           src="/assets/icons/HeroRocket.svg"

@@ -13,6 +13,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 
+
 // Skills
 export const skillsData = [
   {
@@ -76,7 +77,7 @@ export const ProjectCardList = [
   {
     title: "Prompt Verse",
     imgSrc:
-      "https://user-images.githubusercontent.com/85762594/246801794-e92dc490-f446-4abf-88d2-9396f209c42d.png",
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/53aaedc2-258d-45a0-b673-e4e72f3cc1a8",
     description:
       "PromptVerse is a completely responsive fullstack open-source AI prompting tool complete with next-auth for modern world to discover, create and share creative prompts",
     projectLink:

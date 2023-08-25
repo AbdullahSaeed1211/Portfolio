@@ -1,11 +1,29 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import { ProjectCardList } from "@app/constants";
+import { FaGithub } from "react-icons/fa";
+import { AiOutlineLink } from "react-icons/ai";
+
 const Project = () => {
+  const projectsPerPage = 3;
+  const totalProjects = ProjectCardList.length;
+  const totalPages = Math.ceil(totalProjects / projectsPerPage);
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const startIndex = (currentPage - 1) * projectsPerPage;
+  const endIndex = Math.min(startIndex + projectsPerPage, totalProjects);
+  const visibleProjects = ProjectCardList.slice(startIndex, endIndex);
+
   return (
     <>
-      <section id="Projects" className="w-full flex-center flex-col  md:flex-left md:flex-row">
-        <div className="flex-col md:flex-auto ">
+      <section id="Projects" className=" flex-center w-full flex-col ">
+        <div className="flex-col md:flex-auto">
           <h2 className="head_text text-center md:text-left">
             <br className="max-lg:hidden" />
             <span className="gray_gradient">Personal Projects</span>
@@ -13,52 +31,72 @@ const Project = () => {
         </div>
         <br className="hidden md:block" />
         <hr />
-      </section>
 
-      <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-2">
-  {ProjectCardList.map((project) => (
-    <div className="relative aspect-[16/9]  w-auto rounded-md md:aspect-auto md:h-[400px] hover:opacity-80 hover:cursor-pointer">
-      <img
-        src={project.imgSrc}
-        alt={project.title}
-        className="z-5 h-full w-full rounded-md object-cover md:object-contain"
-      />
+        <div className="mx-auto w-full py-6">
+          {visibleProjects.map((project, index) => (
+            <div
+              key={index}
+              className="w-full md:flex space-y-4 md:space-y-2 relative rounded-xl md:h-fit hover:opacity-90 hover:cursor-pointer shadow-md mb-4 border-2">
+              <div className="w-full md:w-1/2">
+                <img
+                  src={project.imgSrc}
+                  alt={project.title}
+                  className="z-5 h-full w-full object-fit sm:object-fit"
+                />
+              </div>
 
-      <div className="absolute inset-0 rounded-md bg-gradient-to-t from-gray-500 to-transparent"></div>
-      <div className="absolute bottom-4 left-4 text-left">
-        <h1 className="text-lg font-semibold text-white">
-          {project.title}
-        </h1>
-        <p className="mt-2 text-sm text-gray-300 hidden description">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap">
-          <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white flex-auto">
-            <Link
-              href={project.projectLink}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="outline_btn">
-              Visit Now &rarr;
-            </Link>
-          </button>
-          <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
-            <Link
-              href={project.projectLinkGithub}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="outline_btn">
-              View on Github &rarr;
-            </Link>
-          </button>
+              <div className="w-full md:w-1/2 p-4 md:border-l md:border-gray-900/10 flex flex-col justify-between">
+                <div>
+                  <h1 className="text-2xl font-semibold text-black">
+                    {project.title}
+                  </h1>
+                  <p className="my-2  text-gray-600 text-sm md:text-md lg:text-xl">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="mt-auto flex flex-between justify-between">
+                  <Link
+                    href={project.projectLink}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="black_btn">
+                    <div className="mr-2">
+                      <AiOutlineLink />
+                    </div>
+                    Visit Now
+                  </Link>
+                  <Link
+                    href={project.projectLinkGithub}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="black_btn">
+                    <div className="mr-2">
+                      <FaGithub />
+                    </div>
+                    View on Github
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <div className="flex justify-center mt-4">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                className={`mx-2 px-3 py-2 rounded-md ${
+                  currentPage === index + 1
+                    ? "bg-red-600 text-white"
+                    : "bg-white text-primary-orange-dark hover:bg-primary-orange-dark"
+                }`}
+                onClick={() => handlePageChange(index + 1)}>
+                {index + 1}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-
+      </section>
     </>
   );
 };
