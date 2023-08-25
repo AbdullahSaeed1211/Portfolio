@@ -109,7 +109,7 @@ const Navbar = () => {
                   </p>
                 </div>
               </div>
-              <div className="py-4 flex flex-col">
+              <div className="py-2 flex flex-col">
                 <ul className="uppercase">
                   {navLinks.map((link, index) => (
                     <Link
@@ -119,7 +119,7 @@ const Navbar = () => {
                       target={link.target}>
                       <li
                         onClick={() => setNav(false)}
-                        className="py-4 text-sm">
+                        className="py-4 text-sm hover:opacity-80">
                         {link.text}
                       </li>
                     </Link>
@@ -127,7 +127,7 @@ const Navbar = () => {
                 </ul>
                 <div className="pt-35">
                   <p className="uppercase tracking-widest text-[#5651e5]">
-                    Let's Connect
+                    Connect with me at
                   </p>
                   <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                     {mobileNavIcons.map((item, index) => (
@@ -136,7 +136,7 @@ const Navbar = () => {
                         target="_blank"
                         rel="noreferrer"
                         key={index}>
-                        <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                        <div className="rounded-full shadow-md p-3 hover:opacity-80 cursor-pointer hover:scale-105 ease-in duration-300">
                           {item.icon}
                         </div>
                       </Link>

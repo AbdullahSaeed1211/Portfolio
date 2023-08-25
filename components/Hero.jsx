@@ -13,7 +13,7 @@ const Hero = () => {
           </p>
         </div>
         <div className=" sm:mt-5">
-          <div className="relative w-[270px] h-[270px] sm:h-[300px] sm:w-[300px] lg:h-[600px] lg:w-[600px] -z-10 animate-fade-in-right">
+          <div className="relative items-center w-[375px] h-[375px] sm:h-[300px] sm:w-[300px] lg:h-[600px] lg:w-[600px] -z-10 animate-fade-in-right">
             {/* <a href="https://storyset.com/rocket">Rocket illustrations by Storyset</a> */}
             <Image
               className="mt-5 object-cover"

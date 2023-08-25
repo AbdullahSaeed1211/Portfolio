@@ -10,9 +10,9 @@ const About = () => {
         <span className="red_gradient">About Me</span>
       </h2>
       <div className=" sm:mt-5 md:flex-auto">
-        <div className="relative w-[200px] h-[200px] sm:h-[250px] sm:w-[250px] lg:h-[450px] lg:w-[450px] -z-10">
+        <div className="relative w-[350px] h-[350px]  lg:h-[450px] lg:w-[450px] -z-10">
           <Image
-            className="mb-5 object-cover"
+            className="mb-5 object-fit"
             src={"/assets/images/AboutMe.png"}
             alt={"about pic"}
             fill
