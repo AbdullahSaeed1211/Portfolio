@@ -2,10 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AiOutlineClose, AiOutlineMail } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { navLinks } from "@app/constants";
+import { AiOutlineClose } from "react-icons/ai";
+
+import { navLinks, mobileNavIcons } from "@app/constants";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -43,7 +42,12 @@ const Navbar = () => {
       <div className="sm:flex hidden">
         <div className="flex gap-3 md:gap-5">
           {navLinks.map((link, index) => (
-            <Link href={link.href} key={index} className="nav_text">
+            <Link
+              href={link.href}
+              key={index}
+              rel={link.rel}
+              target={link.target}
+              className="nav_text">
               {link.text}
             </Link>
           ))}
@@ -55,7 +59,7 @@ const Navbar = () => {
         <div className="flex" onClick={handleNav}>
           {/* ... rest of the code ... */}
         </div>
-        </div>
+      </div>
 
       {/* Hamburger Icon */}
       <div className="sm:hidden flex relative flex-center">
@@ -106,53 +110,37 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="py-4 flex flex-col">
-              <ul className="uppercase">
-                {navLinks.map((link, index) => (
-                  <Link href={link.href} key={index}>
-                    <li
-                      onClick={() => setNav(false)}
-                      className="py-4 text-sm"
-                    >
-                      {link.text}
-                    </li>
-                  </Link>
-                ))}
-              </ul>
+                <ul className="uppercase">
+                  {navLinks.map((link, index) => (
+                    <Link
+                      href={link.href}
+                      key={index}
+                      rel={link.rel}
+                      target={link.target}>
+                      <li
+                        onClick={() => setNav(false)}
+                        className="py-4 text-sm">
+                        {link.text}
+                      </li>
+                    </Link>
+                  ))}
+                </ul>
                 <div className="pt-35">
                   <p className="uppercase tracking-widest text-[#5651e5]">
-                    Let&#39;s Connect
+                    Let's Connect
                   </p>
                   <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                    <a
-                      href="https://www.linkedin.com/in/abdullah-saeed1211/"
-                      target="_blank"
-                      rel="noreferrer">
-                      <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <FaLinkedinIn />
-                      </div>
-                    </a>
-                    <a
-                      href="https://github.com/AbdullahSaeed1211"
-                      target="_blank"
-                      rel="noreferrer">
-                      <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <FaGithub />
-                      </div>
-                    </a>
-                    <Link href="/#Footer">
-                      <div
-                        onClick={() => setNav(!nav)}
-                        className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <AiOutlineMail />
-                      </div>
-                    </Link>
-                    <Link href="https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view" target="_blank">
-                      <div
-                        onClick={() => setNav(!nav)}
-                        className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                        <BsFillPersonLinesFill />
-                      </div>
-                    </Link>
+                    {mobileNavIcons.map((item, index) => (
+                      <Link
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        key={index}>
+                        <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                          {item.icon}
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>

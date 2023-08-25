@@ -22,7 +22,7 @@ const Project = () => {
 
   return (
     <>
-      <section id="Projects" className=" flex-center w-full flex-col ">
+      <section id="Projects" className=" flex-center w-full flex-col">
         <div className="flex-col md:flex-auto">
           <h2 className="head_text text-center md:text-left">
             <br className="max-lg:hidden" />
@@ -36,7 +36,9 @@ const Project = () => {
           {visibleProjects.map((project, index) => (
             <div
               key={index}
-              className="w-full md:flex space-y-4 md:space-y-2 relative rounded-xl md:h-fit hover:opacity-90 hover:cursor-pointer shadow-md mb-4 border-2">
+              className={`w-full md:flex ${
+                index % 2 === 0 ? "" : "md:flex-row-reverse"
+              } space-y-4 md:space-y-2 relative rounded-xl md:h-fit hover:opacity-90 hover:cursor-pointer shadow-md mb-4 border-2 animate-fade-in-up`}>
               <div className="w-full md:w-1/2">
                 <img
                   src={project.imgSrc}

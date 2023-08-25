@@ -131,28 +131,60 @@ export const navLinks = [
   {
     href: "/",
     text: "Home",
+    rel :"",
+    target :""
   },
   {
     href: "#About",
     text: "About",
-  },
-  {
-    href: "#Skills",
-    text: "Skills",
+    rel :"",
+    target :""
   },
   {
     href: "#Projects",
     text: "Projects",
+    rel :"",
+    target :""
   },
+  {
+    href: "#Skills",
+    text: "Skills",
+    rel :"",
+    target :""
+  },
+  
   {
     href: "https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view",
     text: "Resume",
+    rel :"noopener noreferrer",
+    target :"_blank"
   },
   {
     href: "#Footer",
     text: "Contact",
+    rel :"",
+    target :""
   },
 ];
+
+export const mobileNavIcons = [
+  {
+    href: "https://www.linkedin.com/in/abdullah-saeed1211/",
+    icon: <FaLinkedinIn />,
+  },
+  {
+    href: "https://github.com/AbdullahSaeed1211",
+    icon: <FaGithub />,
+  },
+  {
+    href: "/#Footer",
+    icon: <AiOutlineMail />,
+  },
+  {
+    href: "https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view",
+    icon: <BsFillPersonLinesFill />,
+  },
+]
 
 // Footer
 export const footerLinks = [

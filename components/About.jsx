@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       id="About"
-      className="w-full flex-center min-h-screen items-center flex-col  md:flex-left md:flex-row mt-10">
+      className="w-full flex-center min-h-screen items-center flex-col  md:flex-left md:flex-row mt-10  animate-fade-in-up">
       <h2 className="head_text text-center md:hidden mb-5 md:text-right">
         <span className="red_gradient">About Me</span>
       </h2>

@@ -13,7 +13,6 @@ const Rootlayout = ({ children }) => {
       <body>
         <main className="app">
           <Navbar />
-
           {children}
         </main>
       </body>
