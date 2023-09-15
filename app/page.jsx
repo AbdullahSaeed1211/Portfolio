@@ -6,7 +6,7 @@ import Skills from "@components/Skills";
 import Footer from "@components/Footer";
 import Hero from "@components/Hero";
 import Divider from "@components/Divider";
-
+import Contact from "@components/Contact";
 const Home = ({}) => {
   return (
     <>
@@ -17,6 +17,7 @@ const Home = ({}) => {
       <br />
       <Project />
       <Skills />
+      {/* <Contact/> */}
       <br />
       <Divider />
       <Footer />
