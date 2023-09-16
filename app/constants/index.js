@@ -154,7 +154,7 @@ export const navLinks = [
   },
   
   {
-    href: "https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view",
+    href: "https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view",
     text: "Resume",
     rel :"noopener noreferrer",
     target :"_blank"
@@ -181,7 +181,7 @@ export const mobileNavIcons = [
     icon: <AiOutlineMail />,
   },
   {
-    href: "https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view",
+    href: "https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view",
     icon: <BsFillPersonLinesFill />,
   },
 ]
@@ -201,7 +201,7 @@ export const footerLinks = [
     icon: <AiOutlineMail />,
   },
   {
-    href: "https://drive.google.com/file/d/1YKbeOPYqVLUXztEPcH7FFq8MQn_jitSP/view",
+    href: "https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view",
     icon: <BsFillPersonLinesFill />,
   },
 ];
