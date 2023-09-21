@@ -12,7 +12,6 @@
 body {
   scroll-behavior: smooth;
 }
-
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -21,13 +20,12 @@ body {
   justify-content: center;
   padding: 120px 24px 160px 24px;
   pointer-events: none;
-  
-  
-}
+  z-index: 0;}
+
 .main:after {
   content: "";
-  background-image: url('/assets/images/herobg.png');
-  z-index: 1;
+  background-image: url("/public/assets/images/herobg.png");
+  z-index: 10;
   position: absolute;
   width: 100%;
   height: 100%;

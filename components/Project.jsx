@@ -1,28 +1,61 @@
-"use client";
-import React, { useState } from "react";
+'use client'
+import React, { useEffect,useRef } from "react";
 import Link from "next/link";
 import { ProjectCardList } from "@app/constants";
 import { FaGithub } from "react-icons/fa";
 import { AiOutlineLink } from "react-icons/ai";
+import { motion, useInView, useAnimation } from "framer-motion";
+
+// const staggerVariants = {
+//   hidden: { opacity: 0, y: 20 },
+//   visible: (custom) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.5,
+//       delay: custom * 0.2, // Adjust the delay timing as needed
+//     },
+//   }),
+// };
 
 const Project = () => {
-  const projectsPerPage = 3;
-  const totalProjects = ProjectCardList.length;
-  const totalPages = Math.ceil(totalProjects / projectsPerPage);
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const fadeInAnimationsVariants = {
+    initial: { opacity: 0, y: 100 },
+    animate: (index) => ({
+      opacity: 1,
+      y: 0,
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
+      transition: {
+        delay: 0.05 * index,
+        duration: 0.5,
+        type: "spring",
+        bounce: 0.25,
+      },
+    }),
   };
 
-  const startIndex = (currentPage - 1) * projectsPerPage;
-  const endIndex = Math.min(startIndex + projectsPerPage, totalProjects);
-  const visibleProjects = ProjectCardList.slice(startIndex, endIndex);
+  const fadeInAnimationsVariantsX = {
+    initial: { opacity: 0, x: 0 },
+    animate: (index) => ({
+      opacity: 1,
+      x: 1,
+
+      transition: {
+        delay: 0.05 * index,
+        duration: 0.75,
+        type: "spring",
+        bounce: 0.25,
+      },
+    }),
+  };
 
   return (
     <>
-      <section id="Projects" className=" flex-center w-full flex-col">
+      <section id="Projects" className="flex-center w-full flex-col">
         <div className="flex-col md:flex-auto">
           <h2 className="head_text text-center md:text-left">
             <br className="max-lg:hidden" />
@@ -33,12 +66,20 @@ const Project = () => {
         <hr />
 
         <div className="mx-auto w-full py-6">
-          {visibleProjects.map((project, index) => (
-            <div
+          {ProjectCardList.map((project, index) => (
+            <motion.div
               key={index}
+              variants={fadeInAnimationsVariants}
+                initial="initial"
+                whileInView="animate"
+                ref={ref}
+                animate={controls}
+                viewport={{ once: true }}
+                custom={index}
               className={`w-full md:flex ${
                 index % 2 === 0 ? "" : "md:flex-row-reverse"
-              } space-y-4 md:space-y-2 relative rounded-xl md:h-fit hover:opacity-90 hover:cursor-pointer shadow-md mb-4 border-2 animate-fade-in-up hover:scale-105`}>
+              } space-y-4 md:space-y-2 relative rounded-xl md:h-fit hover:opacity-90 hover:cursor-pointer shadow-md mb-4 border-2`}
+            >
               <div className="w-full md:w-1/2">
                 <img
                   src={project.imgSrc}
@@ -62,7 +103,8 @@ const Project = () => {
                     href={project.projectLink}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="black_btn">
+                    className="black_btn"
+                  >
                     <div className="mr-2">
                       <AiOutlineLink />
                     </div>
@@ -72,7 +114,8 @@ const Project = () => {
                     href={project.projectLinkGithub}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="black_btn">
+                    className="black_btn"
+                  >
                     <div className="mr-2">
                       <FaGithub />
                     </div>
@@ -80,23 +123,8 @@ const Project = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-
-          <div className="flex justify-center mt-4">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index}
-                className={`mx-2 px-3 py-2 rounded-md ${
-                  currentPage === index + 1
-                    ? "bg-red-600 text-white"
-                    : "bg-white text-primary-orange-dark hover:bg-primary-orange-dark"
-                }`}
-                onClick={() => handlePageChange(index + 1)}>
-                {index + 1}
-              </button>
-            ))}
-          </div>
         </div>
       </section>
     </>

@@ -72,7 +72,7 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="bg-white red_gradient text-lg hover:bg-gradient-to-r from-red-700 to-red-600 text-transparent hover:text-red-700 font-medium py-3 px-6 rounded-lg w-full transition duration-300 ease-in-out transform hover:scale-105 border border-red-800 hover:border-red-600 shadow-md">
+            className="bg-white red_gradient text-lg hover:bg-gradient-to-r from-red-700 to-red-600 text-transparent hover:text-red-700 font-medium py-3 px-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 border border-red-800 hover:border-red-600 shadow-md">
             Send Message
           </button>
         </form>
