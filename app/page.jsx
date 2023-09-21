@@ -10,7 +10,6 @@ import Contact from "@components/Contact";
 const Home = ({}) => {
   return (
     <>
-      <main>
         <ScrollToTop />
         <Hero />
         <br />
@@ -22,7 +21,6 @@ const Home = ({}) => {
         <br />
         <Divider />
         <Footer />
-      </main>
     </>
   );
 };

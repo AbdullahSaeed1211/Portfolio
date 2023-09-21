@@ -12,6 +12,7 @@
 body {
   scroll-behavior: smooth;
 }
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -20,12 +21,13 @@ body {
   justify-content: center;
   padding: 120px 24px 160px 24px;
   pointer-events: none;
-  z-index: 0;}
-
+  
+  
+}
 .main:after {
   content: "";
-  background-image: url("/public/assets/images/herobg.png");
-  z-index: 10;
+  background-image: url('/assets/images/herobg.png');
+  z-index: 1;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -47,10 +49,7 @@ body {
 }
 
 .black_btn {
-  @apply rounded-full border border-white bg-white p-3 text-black transition-all hover:bg-gray-400  hover:text-black text-center text-sm font-inter flex items-center justify-center;
-}
-.red_btn {
-  @apply rounded-full border border-red-700 bg-white p-3 text-black transition-all hover:bg-red-500  hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-white bg-white p-3 text-black transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
 .outline_btn {
@@ -66,29 +65,26 @@ body {
 }
 
 .green_gradient {
-  @apply bg-gradient-to-r from-green-500  to-green-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent;
 }
 
 .blue_gradient {
   @apply bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text text-transparent;
 }
 .pink_gradient {
-  @apply bg-gradient-to-r from-pink-500 via-red-400 to-orange-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-pink-500 to-orange-600 bg-clip-text text-transparent;
 }
 .cyan_gradient {
   @apply bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent;
 }
 .purple_gradient {
-  @apply bg-gradient-to-r from-violet-900 to-red-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-purple-700 to-purple-500 bg-clip-text text-transparent;
 }
 .red_gradient {
   @apply bg-gradient-to-r from-red-700 to-red-600 bg-clip-text text-transparent;
 }
 .gray_gradient {
   @apply bg-gradient-to-r from-gray-700 to-gray-500 bg-clip-text text-transparent;
-}
-.yellow_gradient {
-  @apply bg-gradient-to-r from-amber-200 to-yellow-500 bg-clip-text text-transparent;
 }
 
 .desc {
@@ -200,6 +196,5 @@ body {
 #skills-container::-webkit-scrollbar-track {
   background-color: transparent; /* Color of the track */
 }
-
 
 
