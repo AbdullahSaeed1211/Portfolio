@@ -12,6 +12,7 @@ const About = () => {
       controls.start("visible");
     }
   }, [isInView]);
+
   return (
     <section
     ref={ref}
@@ -27,7 +28,7 @@ const About = () => {
         }}
         initial="hidden"
         animate={controls}
-        transition={{duration: 0.55, delay: 0.15}}
+        transition={{duration: 0.45, delay: 0.25}}
         className=" sm:mt-5 md:flex-auto">
         <div className="relative w-[350px] h-[350px]  lg:h-[450px] lg:w-[450px] -z-10">
           <Image
@@ -38,7 +39,6 @@ const About = () => {
           />
         </div>
       </motion.div>
-      {/* make using useInView */}
       <motion.div
       variants={{
         hidden: {opacity: 0, y: 75},
@@ -46,7 +46,7 @@ const About = () => {
       }}
       initial="hidden"
       animate={controls}
-      transition={{duration: 0.25, delay: 0.1}}
+      transition={{duration: 0.5, delay: 0.5}}
         className="flex-col">
         <h2 className="head_text text-center hidden md:block md:text-right">
           <span className="red_gradient">About Me</span>

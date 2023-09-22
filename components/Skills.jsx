@@ -1,20 +1,36 @@
 'use client'
-import React from "react";
+import React,{useEffect,useRef} from "react";
 import Image from "next/image";
 import { skillsData } from "@app/constants";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 const repeatedSkillsData = [...skillsData, ...skillsData];
 
 const Skills = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref,{once: true});
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView]);
   return (
-    <section id="Skills" className="w-full flex-col flex-center mt-10 items-center">
+    <section ref={ref} id="Skills" className="w-full flex-col flex-center mt-10 items-center">
       <div className="max-w-7xl">
         <h3 className="head_text text-align text-center mb-8">
           <span className="green_gradient">My Skills</span>
         </h3>
       </div>
 
-      <div
+      <motion.div
+      variants={{
+        hidden: {opacity: 0, y: 75},
+        visible: {opacity: 1, y: 0},
+      }}
+      initial="hidden"
+      animate={controls}
+      transition={{duration: 0.25, delay: 0.1}}
         id="skills-container"
         className="overflow-x-scroll my-3 whitespace-nowrap rounded-md shadow-sm"
         style={{ maxWidth: "100%" }}
@@ -39,7 +55,7 @@ const Skills = () => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

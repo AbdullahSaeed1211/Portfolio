@@ -1,5 +1,5 @@
-'use client'
-import React, { useEffect,useRef } from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ProjectCardList } from "@app/constants";
 import { FaGithub } from "react-icons/fa";
@@ -22,6 +22,11 @@ const Project = () => {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView]);
 
   const fadeInAnimationsVariants = {
     initial: { opacity: 0, y: 100 },
@@ -38,30 +43,24 @@ const Project = () => {
     }),
   };
 
-  const fadeInAnimationsVariantsX = {
-    initial: { opacity: 0, x: 0 },
-    animate: (index) => ({
-      opacity: 1,
-      x: 1,
-
-      transition: {
-        delay: 0.05 * index,
-        duration: 0.75,
-        type: "spring",
-        bounce: 0.25,
-      },
-    }),
-  };
-
   return (
     <>
-      <section id="Projects" className="flex-center w-full flex-col">
-        <div className="flex-col md:flex-auto">
+      <section ref={ref} id="Projects" className="flex-center w-full flex-col">
+        <motion.div
+          variants={{
+            hidden: {opacity: 0, x: -100},
+            visible: {opacity: 1, x: 0},
+          }}
+          initial="hidden"
+          animate={controls}
+          transition={{duration: 0.45, delay: 0.25}}
+      
+          className="flex-col md:flex-auto">
           <h2 className="head_text text-center md:text-left">
             <br className="max-lg:hidden" />
-            <span className="gray_gradient">Personal Projects</span>
+            <span className="pink_gradient">Personal Projects</span>
           </h2>
-        </div>
+        </motion.div>
         <br className="hidden md:block" />
         <hr />
 
@@ -70,16 +69,15 @@ const Project = () => {
             <motion.div
               key={index}
               variants={fadeInAnimationsVariants}
-                initial="initial"
-                whileInView="animate"
-                ref={ref}
-                animate={controls}
-                viewport={{ once: true }}
-                custom={index}
+              initial="initial"
+              whileInView="animate"
+              ref={ref}
+              animate={controls}
+              viewport={{ once: true }}
+              custom={index}
               className={`w-full md:flex ${
                 index % 2 === 0 ? "" : "md:flex-row-reverse"
-              } space-y-4 md:space-y-2 relative rounded-xl md:h-fit hover:opacity-90 hover:cursor-pointer shadow-md mb-4 border-2`}
-            >
+              } space-y-4 md:space-y-2 relative rounded-xl md:h-fit hover:opacity-90 hover:cursor-pointer shadow-md mb-4 border-2`}>
               <div className="w-full md:w-1/2">
                 <img
                   src={project.imgSrc}
@@ -103,8 +101,7 @@ const Project = () => {
                     href={project.projectLink}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="black_btn"
-                  >
+                    className="black_btn">
                     <div className="mr-2">
                       <AiOutlineLink />
                     </div>
@@ -114,8 +111,7 @@ const Project = () => {
                     href={project.projectLinkGithub}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="black_btn"
-                  >
+                    className="black_btn">
                     <div className="mr-2">
                       <FaGithub />
                     </div>
