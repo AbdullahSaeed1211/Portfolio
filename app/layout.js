@@ -1,6 +1,6 @@
 import "@styles/globals.css";
 import Navbar from "@components/Nav";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: "Abdullah Saeed's Porfolio",
   description:
@@ -16,6 +16,7 @@ const Rootlayout = ({ children }) => {
           <Navbar />
           {children}
         </main>
+        <SpeedInsights />
       </body>
     </html>
   );
