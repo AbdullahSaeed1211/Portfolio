@@ -9,6 +9,7 @@ import Github from "@public/assets/Skills/github1.png";
 import NextJS from "@public/assets/Skills/nextjs.png";
 import nextauth from "@public/assets/Skills/nextauth.png";
 import python from "@public/assets/Skills/python.png"
+import astro from "@public/assets/Skills/astro.png"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -30,6 +31,11 @@ export const skillsData = [
     imgSrc: NextJS,
     alt: "Next",
     title: "Next",
+  },
+  {
+    imgSrc: astro,
+    alt: "Next",
+    // title: "Next",
   },
   {
     imgSrc: nextauth,
@@ -65,6 +71,15 @@ export const skillsData = [
 
 //   Projects
 export const ProjectCardList = [
+  {
+    title: "Aroma & Craft Co.",
+    imgSrc:
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/ef2f3b98-05df-4634-8eab-0a7ff1e69302",
+    description:
+    "Aroma & Craft Co. is a sophisticated and visually appealing e-commerce website that specializes in offering curated coffee products. Built using the Astro web framework and enhanced with Tailwind CSS for a sleek and modern user interface, the platform is designed to provide users with a seamless and enjoyable shopping experience.",
+    projectLink: "aromacraftco.vercel.app",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/AromaCraftCo",
+  },
   {
     title: "Skate Monkey",
     imgSrc:
