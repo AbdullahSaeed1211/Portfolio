@@ -40,12 +40,12 @@ const Skills = () => {
             key={index}
             className="p-3 shadow-md rounded-md ease-in inline-block"
           >
-            <div className="grid grid-cols-2 gap-1 justify-center items-center">
+            <div className="grid grid-cols-2 gap-2 place-items-center justify-center items-center">
               <div className="items-center">
                 <Image
                   src={skill.imgSrc}
                   width={100}
-                  height={100}
+                  height={90}
                   alt={skill.alt}
                 />
               </div>

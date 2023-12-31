@@ -33,11 +33,6 @@ export const skillsData = [
     title: "Next",
   },
   {
-    imgSrc: astro,
-    alt: "Next",
-    // title: "Next",
-  },
-  {
     imgSrc: nextauth,
     alt: "Next-Auth",
     title: "Next-Auth",
@@ -56,6 +51,11 @@ export const skillsData = [
     imgSrc: Javascript,
     alt: "JS",
     title: "JS",
+  },
+  {
+    imgSrc: astro,
+    alt: "astro",
+    title: "astro",
   },
   {
     imgSrc: ReactImg,
