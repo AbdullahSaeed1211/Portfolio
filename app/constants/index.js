@@ -8,14 +8,19 @@ import Tailwind from "@public/assets/Skills/tailwind.png";
 import Github from "@public/assets/Skills/github1.png";
 import NextJS from "@public/assets/Skills/nextjs.png";
 import nextauth from "@public/assets/Skills/nextauth.png";
-import python from "@public/assets/Skills/python.png"
-import astro from "@public/assets/Skills/astro.png"
+import python from "@public/assets/Skills/python.png";
+import astro from "@public/assets/Skills/astro.png";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { Home,Wrench,Contact, UserRound, PenLine, FileText } from 'lucide-react';
-
-
+import {
+  Home,
+  Wrench,
+  Contact,
+  UserRound,
+  PenLine,
+  FileText,
+} from "lucide-react";
 
 // Skills
 export const skillsData = [
@@ -76,34 +81,34 @@ export const ProjectCardList = [
   {
     title: "Aroma & Craft Co.",
     imgSrc:
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/ef2f3b98-05df-4634-8eab-0a7ff1e69302",
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/5f972ff7-fb6b-4265-b8e6-4ba9d286d7ce",
     description:
-    "Aroma & Craft Co. is a sophisticated and visually appealing e-commerce website that specializes in offering curated coffee products. Built using the Astro web framework and enhanced with Tailwind CSS for a sleek and modern user interface, the platform is designed to provide users with a seamless and enjoyable shopping experience.",
+      "Aroma & Craft Co. is a sophisticated and visually appealing e-commerce website that specializes in offering curated coffee products. Built using the Astro web framework and enhanced with Tailwind CSS for a sleek and modern user interface, the platform is designed to provide users with a seamless and enjoyable shopping experience.",
     projectLink: "https://aromacraftco.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/AromaCraftCo",
   },
   {
-    title: "Skate Monkey",
-    imgSrc:
-      "https://github.com/AbdullahSaeed1211/Skate-Monkey/assets/85762594/4f217db1-a88b-49cf-a258-6b2863adfc6f",
-    description:
-      "Skate Monkey is a modern e-commerce landing page developed, catering to skateboard enthusiasts. Built with React, Next.js, and Tailwind CSS, the platform offers a seamless, responsive landing page that showcases skateboards, accessories, and apparel. Users can explore a dynamic catalog, read reviews.",
-    projectLink: "https://skate-monkey.vercel.app/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Skate-Monkey",
-  },
-  {
     title: "Bento Dashboard",
     imgSrc:
-      "https://github.com/AbdullahSaeed1211/Bento-Dashboard/assets/85762594/3054ab39-3c32-4911-9175-dfc37b4ea8f4",
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/9376e261-2c5b-408c-9252-4f28bbc85c90",
     description:
       "Bento Dashboard is a modern, responsive, and visually appealing dashboard that provides users with a comprehensive overview of their graphical data in form of Pie, Line and Calendar Charts along with Tables. Built using React, Next.js, and Tailwind CSS, the platform offers a seamless user experience, showcasing spending, account balances, and financial goals.",
     projectLink: "https://bento-dashboard.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Bento-Dashboard",
   },
   {
+    title: "Skate Monkey",
+    imgSrc:
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/40db8982-d06b-4875-afce-252aadc16b19",
+    description:
+      "Skate Monkey is a modern e-commerce landing page developed, catering to skateboard enthusiasts. Built with React, Next.js, and Tailwind CSS, the platform offers a seamless, responsive landing page that showcases skateboards, accessories, and apparel. Users can explore a dynamic catalog, read reviews.",
+    projectLink: "https://skate-monkey.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Skate-Monkey",
+  },
+  {
     title: "Prompt Verse",
     imgSrc:
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/53aaedc2-258d-45a0-b673-e4e72f3cc1a8",
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/d66472ed-1f43-422e-9e8c-d7a3f13bad3b",
     description:
       "PromptVerse is a completely responsive fullstack open-source AI prompting tool complete with next-auth for modern world to discover, create and share creative prompts",
     projectLink:
@@ -113,11 +118,21 @@ export const ProjectCardList = [
   {
     title: "Crypto Pedia",
     imgSrc:
-      "https://github.com/AbdullahSaeed1211/CryptoPedia/assets/85762594/97acc208-4365-4440-9694-925b06f8a4c2",
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/464cb0fe-4541-4b78-845b-7a0fa3693377",
     description:
       "A responsive website that uses Next js 13’s new SearchParams function to allow the user to view and search among the current top 50 cryptocurrencies  from the coinranking API from rapidAPI ",
     projectLink: "https://crypto-pedia-puce.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/CryptoPedia",
+  },
+  {
+    title: "Simon Game",
+    imgSrc:
+      // <a href="https://storyset.com/music">Music illustrations by Storyset</a>
+      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/cec24b02-c056-4792-89c3-befd30ac6517",
+    description:
+      "Simon game made using jQuery, Bootstrap 5, JavaScript, jQuery,HTML, CSS ",
+    projectLink: "https://abdullahsaeed1211.github.io/Simon-Game/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Simon-Game",
   },
   {
     title: "Weather App",
@@ -130,16 +145,6 @@ export const ProjectCardList = [
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Weather-App",
   },
   ,
-  {
-    title: "Simon Game",
-    imgSrc:
-      // <a href="https://storyset.com/music">Music illustrations by Storyset</a>
-      "/assets/images/Simon.svg",
-    description:
-      "Simon game made using jQuery, Bootstrap 5, JavaScript, jQuery,HTML, CSS ",
-    projectLink: "https://abdullahsaeed1211.github.io/Simon-Game/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Simon-Game",
-  },
   {
     title: "Drum Kit Site",
     imgSrc:
@@ -157,45 +162,45 @@ export const navLinks = [
   {
     href: "/",
     text: "Home",
-    rel :"",
-    target :"",
-    icon: <Home/>,
+    rel: "",
+    target: "",
+    icon: <Home />,
   },
   {
     href: "#About",
     text: "About",
-    rel :"",
-    target :"",
-    icon: <UserRound />
+    rel: "",
+    target: "",
+    icon: <UserRound />,
   },
   {
     href: "#Projects",
     text: "Projects",
-    rel :"",
-    target :"",
-    icon: <Wrench/>
+    rel: "",
+    target: "",
+    icon: <Wrench />,
   },
   {
     href: "#Skills",
     text: "Skills",
-    rel :"",
-    target :"",
-    icon: <PenLine/>
+    rel: "",
+    target: "",
+    icon: <PenLine />,
   },
-  
+
   {
     href: "https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view",
     text: "Resume",
-    rel :"noopener noreferrer",
-    target :"_blank",
-    icon: <FileText />
+    rel: "noopener noreferrer",
+    target: "_blank",
+    icon: <FileText />,
   },
   {
     href: "mailto:abdullah.saeed1724@gmail.com",
     text: "Contact",
-    rel :"",
-    target :"",
-    icon: <Contact/>
+    rel: "",
+    target: "",
+    icon: <Contact />,
   },
 ];
 
@@ -216,7 +221,7 @@ export const mobileNavIcons = [
     href: "https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view",
     icon: <BsFillPersonLinesFill />,
   },
-]
+];
 
 // Footer
 export const footerLinks = [
