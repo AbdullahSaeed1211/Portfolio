@@ -58,7 +58,7 @@ const Project = () => {
           className="flex-col md:flex-auto">
           <h2 className="head_text text-center md:text-left">
             <br className="max-lg:hidden" />
-            <span className="pink_gradient">Personal Projects</span>
+            <span className="pink_gradient">Highlighted Projects</span>
           </h2>
         </motion.div>
         <br className="hidden md:block" />

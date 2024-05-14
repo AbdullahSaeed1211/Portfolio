@@ -10,17 +10,17 @@ import Contact from "@components/Contact";
 const Home = ({}) => {
   return (
     <>
-        <ScrollToTop />
-        <Hero />
-        <br />
-        <About />
-        <br />
-        <Project />
-        <Skills />
-        {/* <Contact/> */}
-        <br />
-        <Divider />
-        <Footer />
+      <ScrollToTop />
+      <Hero />
+      <br />
+      <About />
+      <br />
+      <Project />
+      <Skills />
+      {/* <Contact/> */}
+      <br />
+      <Divider />
+      <Footer />
     </>
   );
 };

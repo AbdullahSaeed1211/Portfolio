@@ -13,6 +13,8 @@ import astro from "@public/assets/Skills/astro.png"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { Home,Wrench,Contact, UserRound, PenLine, FileText } from 'lucide-react';
+
 
 
 // Skills
@@ -90,6 +92,15 @@ export const ProjectCardList = [
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Skate-Monkey",
   },
   {
+    title: "Bento Dashboard",
+    imgSrc:
+      "https://github.com/AbdullahSaeed1211/Bento-Dashboard/assets/85762594/3054ab39-3c32-4911-9175-dfc37b4ea8f4",
+    description:
+      "Bento Dashboard is a modern, responsive, and visually appealing dashboard that provides users with a comprehensive overview of their graphical data in form of Pie, Line and Calendar Charts along with Tables. Built using React, Next.js, and Tailwind CSS, the platform offers a seamless user experience, showcasing spending, account balances, and financial goals.",
+    projectLink: "https://bento-dashboard.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Bento-Dashboard",
+  },
+  {
     title: "Prompt Verse",
     imgSrc:
       "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/53aaedc2-258d-45a0-b673-e4e72f3cc1a8",
@@ -147,38 +158,44 @@ export const navLinks = [
     href: "/",
     text: "Home",
     rel :"",
-    target :""
+    target :"",
+    icon: <Home/>,
   },
   {
     href: "#About",
     text: "About",
     rel :"",
-    target :""
+    target :"",
+    icon: <UserRound />
   },
   {
     href: "#Projects",
     text: "Projects",
     rel :"",
-    target :""
+    target :"",
+    icon: <Wrench/>
   },
   {
     href: "#Skills",
     text: "Skills",
     rel :"",
-    target :""
+    target :"",
+    icon: <PenLine/>
   },
   
   {
     href: "https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view",
     text: "Resume",
     rel :"noopener noreferrer",
-    target :"_blank"
+    target :"_blank",
+    icon: <FileText />
   },
   {
-    href: "#Footer",
+    href: "mailto:abdullah.saeed1724@gmail.com",
     text: "Contact",
     rel :"",
-    target :""
+    target :"",
+    icon: <Contact/>
   },
 ];
 
@@ -192,7 +209,7 @@ export const mobileNavIcons = [
     icon: <FaGithub />,
   },
   {
-    href: "/#Footer",
+    href: "mailto:abdullah.saeed1724@gmail.com",
     icon: <AiOutlineMail />,
   },
   {
@@ -212,7 +229,7 @@ export const footerLinks = [
     icon: <FaLinkedinIn />,
   },
   {
-    href: "#Footer",
+    href: "mailto:abdullah.saeed1724@gmail.com",
     icon: <AiOutlineMail />,
   },
   {
