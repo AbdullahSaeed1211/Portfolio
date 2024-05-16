@@ -79,6 +79,14 @@ export const skillsData = [
 //   Projects
 export const ProjectCardList = [
   {
+    title: "Media Compass",
+    imgSrc:
+      "https://github.com/AbdullahSaeed1211/Media-Compass/assets/85762594/8a83bf61-721f-409d-bcb2-381821ff869b",
+    description: " Frontend Demo for a SaaS Page",
+    projectLink: "https://media-compass.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Media-Compass",
+  },
+  {
     title: "Aroma & Craft Co.",
     imgSrc:
       "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/5f972ff7-fb6b-4265-b8e6-4ba9d286d7ce",
