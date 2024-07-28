@@ -79,6 +79,17 @@ export const skillsData = [
 //   Projects
 export const ProjectCardList = [
   {
+    title: "StrikeMMA",
+    imgSrc:
+    "https://github.com/user-attachments/assets/81e21ea3-912d-4220-9f35-7888a7b67fbc",
+    description:
+      "We formed a last-minute 2-person hackathon team and built a product website to engage user responses. Our website features a modern landing page, an FAQ section, pricing cards, and features an AI chatbot, designed to gather user insights and interests for our future app/product.",
+    projectLink: "https://strike-mma.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/StrikeMMA-Demo",
+    // demoVideo: "https://youtu.be/wGn6Mg0i3aU",
+    // userForm: "https://tally.so/r/wL0eJp",
+  },
+  {
     title: "Media Compass",
     imgSrc:
       "https://github.com/AbdullahSaeed1211/Media-Compass/assets/85762594/8a83bf61-721f-409d-bcb2-381821ff869b",

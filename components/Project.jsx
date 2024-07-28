@@ -6,17 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { AiOutlineLink } from "react-icons/ai";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-// const staggerVariants = {
-//   hidden: { opacity: 0, y: 20 },
-//   visible: (custom) => ({
-//     opacity: 1,
-//     y: 0,
-//     transition: {
-//       duration: 0.5,
-//       delay: custom * 0.2, // Adjust the delay timing as needed
-//     },
-//   }),
-// };
+
 
 const Project = () => {
   const controls = useAnimation();
@@ -82,7 +72,7 @@ const Project = () => {
                 <img
                   src={project.imgSrc}
                   alt={project.title}
-                  className="z-5 h-full w-full object-fit sm:object-fit"
+                  className="z-5 h-full w-full object-fit sm:object-contain"
                 />
               </div>
 

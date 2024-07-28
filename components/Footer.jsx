@@ -77,9 +77,9 @@ const Footer = () => {
           </ul>
         </div>
         <div className="hidden md:block">
-          <span className="text-lg flex font-semibold mb-4">Projects</span>
+          <span className="text-lg flex font-semibold mb-4">Recent Projects</span>
           <ul>
-            {ProjectCardList.map((link, index) => (
+            {ProjectCardList.slice(0, 5).map((link, index) => (
               // <motion.li
               //   key={index}
               //   variants={fadeInAnimationsVariants}

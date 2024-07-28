@@ -4,8 +4,21 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: "Abdullah Saeed's Porfolio",
   description:
-    "Software Developer who specializes in Web Development using MERN Stack and popular frameworks just as Next.js",
+    "Software Developer who specializes in Web Development using Next.js and popular frameworks, Libraries and tools.",
 };
+import { Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100','200','300','400','500','600','700','800','900'],
+})
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 const Rootlayout = ({ children }) => {
   return (
