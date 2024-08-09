@@ -79,12 +79,12 @@ export const skillsData = [
 //   Projects
 export const ProjectCardList = [
   {
-    title: "Inventory Manager",
+    title: "Pantry Panic",
     imgSrc:
-    "https://github.com/user-attachments/assets/95d175ed-3530-4ef1-8c43-0be30128c053",
+    "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",
     description:
       "An inventory management application designed for efficient tracking and management of food items. The app allows users to add, remove, and update inventory items, with real-time synchronization to Firebase Firestore. It features a modern UI with a responsive layout, and handles item images, quantities, prices, and dates. Users can view the inventory in a table format for desktop or a streamlined card layout for mobile devices.",
-    projectLink: "https://inventory-ai-sigma.vercel.app/",
+    projectLink: "https://pantry-panic.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/inventory-ai/tree/main",
     
   },
