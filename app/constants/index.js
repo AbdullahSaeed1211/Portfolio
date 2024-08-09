@@ -89,6 +89,17 @@ export const ProjectCardList = [
     
   },
   {
+    title: "Speak Speare",
+    imgSrc:
+    "https://github.com/user-attachments/assets/a4dd54e4-9495-42e6-9f74-726ea368c4a0",
+    description:
+      "Advanced voice translation tool that enables users to interact with a range of language processing features. It converts spoken words into text using the Web Speech API, translates the text with Gemini 1.5 Flash, and plays back the translation using speech synthesis. Additionally, it reads and translates text from uploaded files, fetches, supports language selection, and ensures a seamless experience across different devices with its responsive design, and uses a Writing and Speaking Prompt generator based on the category chosen by the user.",
+    projectLink: "https://speak-speare.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/SpeakSpeare",
+    
+  },
+
+  {
     title: "StrikeMMA",
     imgSrc:
     "https://github.com/user-attachments/assets/81e21ea3-912d-4220-9f35-7888a7b67fbc",
