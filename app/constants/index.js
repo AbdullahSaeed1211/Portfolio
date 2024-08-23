@@ -79,6 +79,16 @@ export const skillsData = [
 //   Projects
 export const ProjectCardList = [
   {
+    title: "Blog Squirrel",
+    imgSrc:
+    "https://github.com/user-attachments/assets/5793ad0c-527a-4e8a-ab8c-0a8c3092b2fa",
+    description:
+      "a SaaS platform designed to make blogging quick and easy. With it, users can set up a professional blog in minutes, eliminating the hassle of complicated setups. Key features include seamless user authentication, effortless payment management through Stripe, scalable database solutions, and an intuitive content creation tool. The platform also offers beautiful, customizable designs and optimized performance for high traffic. BlogSquirrel provides various pricing plans, from a free 'Freelancer' plan to a 'Startup' plan, making it suitable for both beginners and small businesses.",
+    projectLink: "https://blog-squirrel.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/blogSaaS",
+    
+  },
+  {
     title: "Pantry Panic",
     imgSrc:
     "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",
