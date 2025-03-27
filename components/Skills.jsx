@@ -113,10 +113,10 @@ const Skills = () => {
           className="text-center mb-10"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
-            <span className="green_gradient">My Tech Stack</span>
+            <span className="green_gradient">Technical Expertise</span>
           </h2>
           <p className="text-muted-foreground mt-3 max-w-3xl mx-auto text-sm sm:text-base">
-            I leverage modern technologies to build responsive, robust, and scalable web applications.
+            Specialized skills across frontend, backend, and DevOps for end-to-end application development
           </p>
 
           <div className="flex flex-wrap justify-center gap-2 mt-5">

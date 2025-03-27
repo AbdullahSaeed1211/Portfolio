@@ -156,10 +156,10 @@ const SocialProof = () => {
         >
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-              <span className="blue_gradient">Technologies I Work With</span>
+              <span className="blue_gradient">Preferred Development Ecosystem</span>
             </h2>
             <p className="text-muted-foreground mt-3 max-w-3xl mx-auto text-sm sm:text-base">
-              Leveraging modern tools to build exceptional digital experiences
+              Tools and frameworks I use to deliver production-ready applications
             </p>
           </div>
           

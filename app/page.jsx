@@ -39,7 +39,7 @@ export default function Home() {
         <Hero />
         <ValueProposition />
         <About />
-        <SocialProof />
+        {/* <SocialProof /> */}
         <Project />
         <Skills />
         <Contact />

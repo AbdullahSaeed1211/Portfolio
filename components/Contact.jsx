@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { useAnalytics } from "@/lib/hooks/use-analytics";
+import { sendContactEmail } from "@/app/api/send/action";
 
 // Inner component with analytics functionality
 function ContactContent() {
@@ -17,6 +18,7 @@ function ContactContent() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const { trackEvent } = useAnalytics();
 
@@ -27,6 +29,7 @@ function ContactContent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     
     // Track the form submission attempt
     trackEvent('contact_form_submit', {
@@ -35,23 +38,46 @@ function ContactContent() {
     
     setIsSubmitting(true);
     
-    // Simulate form submission - in a real scenario, you'd connect this to your backend
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        projectType: "Web Application"
+    try {
+      // Call our server action to send email with Resend
+      const result = await sendContactEmail(formData);
+      
+      if (result.success) {
+        // Track success
+        trackEvent('contact_form_success', {
+          source: 'contact_section'
+        });
+        
+        // Reset form and show success state
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          projectType: "Web Application"
+        });
+      } else {
+        // Track error
+        trackEvent('contact_form_error', {
+          source: 'contact_section',
+          error_type: 'api_error'
+        });
+        
+        setError(result.error || "Failed to send your message. Please try again.");
+      }
+    } catch (err) {
+      // Track unexpected error
+      trackEvent('contact_form_error', {
+        source: 'contact_section',
+        error_type: 'unexpected_error'
       });
       
-      // Track success or failure
-      trackEvent('contact_form_success', {
-        source: 'contact_section'
-      });
-    }, 1500);
+      setError("An unexpected error occurred. Please try again later.");
+      console.error("Contact form error:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -171,6 +197,12 @@ function ContactContent() {
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+                      {error}
+                    </div>
+                  )}
+                  
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
