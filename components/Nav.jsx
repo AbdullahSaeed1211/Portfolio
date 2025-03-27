@@ -149,9 +149,10 @@ function NavbarContent() {
               );
             })}
             <a 
-              href="/assets/resume.pdf" 
+              href="https://cal.com/abdullahsaeed/15min?user=abdullahsaeed" 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={() => handleNavClick('Book a call')}
             >
               <Button variant="gradient" size="sm" className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-[10px] px-3 py-0.5 h-auto text-white ml-1">
                 Book a call
@@ -244,10 +245,10 @@ function NavbarContent() {
 
         <div className="mt-auto pt-4 border-t border-border">
           <a 
-            href="/assets/resume.pdf" 
+            href="https://cal.com/abdullahsaeed" 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => setNav(false)}
+            onClick={() => handleNavClick('Book a call')}
           >
             <Button variant="gradient" className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-xs py-1.5">
               Book a call

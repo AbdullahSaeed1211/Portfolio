@@ -10,6 +10,7 @@
     "test-analytics": "node scripts/test-analytics.js"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.2",
     "@hookform/resolvers": "^3.3.4",
     "@next/third-parties": "^15.2.4",
     "@radix-ui/react-accordion": "^1.1.2",
