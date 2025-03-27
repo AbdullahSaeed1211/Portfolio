@@ -24,7 +24,7 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://abdullahsaeed.me",
-    title: "Abdullah Saeed | AI-Powered Web Developer",
+    title: "Abdullah Saeed | Fullstack Developer",
     description: "Building intelligent digital experiences that drive business growth with Next.js, React, and cutting-edge AI integrations.",
     siteName: "Abdullah Saeed Portfolio",
     images: [{
@@ -36,7 +36,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdullah Saeed | AI-Powered Web Developer",
+    title: "Abdullah Saeed | Fullstack Developer",
     description: "Building intelligent digital experiences that drive business growth with Next.js, React, and cutting-edge AI integrations.",
     images: ["/assets/og-image.jpg"],
     creator: "@abdullahsaeed_"

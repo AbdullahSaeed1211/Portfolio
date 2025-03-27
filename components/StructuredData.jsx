@@ -12,7 +12,7 @@ export default function StructuredData() {
       "https://www.linkedin.com/in/abdullah-saeed1211/",
       "https://twitter.com/abdullahsaeed_"
     ],
-    "jobTitle": "Full Stack Developer & AI Specialist",
+    "jobTitle": "Fullstack Developer",
     "worksFor": {
       "@type": "Organization",
       "name": "Freelance"

@@ -12,7 +12,7 @@ import ValueProposition from "@/components/ValueProposition";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata = {
-  title: "Abdullah Saeed | AI-Powered Web Developer",
+  title: "Abdullah Saeed | Fullstack Developer",
   description: "Portfolio of Abdullah Saeed, a developer specializing in AI-enhanced web applications that solve real business problems using Next.js, React, and TypeScript.",
   alternates: {
     canonical: "https://abdullahsaeed.me"
