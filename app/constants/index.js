@@ -79,6 +79,26 @@ export const skillsData = [
 //   Projects
 export const ProjectCardList = [
   {
+    title: "Dubbby",
+    imgSrc:
+    "https://github.com/user-attachments/assets/45333f11-c1b8-44b8-84ed-534d888886c5",
+    description:
+      "Dubbby is an AI-powered video dubbing platform built with Next.js, TypeScript, and React that automatically translates videos into 15+ languages with perfect lip synchronization in just 30 seconds. The application features an intuitive UI with responsive design, secure authentication via Clerk, and seamless media handling through Uploadcare and Cloudinary. Dubbby matches dubbed audio to lip movements frame-by-frame, helping content creators achieve an average 2.7X engagement boost by eliminating language barriers.",
+    projectLink: "https://dubbby.com/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
+    
+  },
+  {
+    title: "Brain Wise",
+    imgSrc:
+    "https://github.com/user-attachments/assets/729de2ed-13db-40c2-aef8-91ad77f5cce2",
+    description:
+      "Your Complete Brain Health Companion is an innovative digital platform combining machine learning with neuroscience research to help users monitor and enhance their cognitive well-being. The application offers scientifically-designed cognitive training tools, personalized stroke risk assessments, an educational brain health library, performance tracking, and a curated research portal. Unlike typical brain games, BrainWise takes a comprehensive approach by considering multiple factors affecting cognitive function and providing actionable insights for anyone committed to maintaining optimal brain health through evidence-based methods.",
+    projectLink: "https://brainwise-health.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
+    
+  },
+  {
     title: "Blog Squirrel",
     imgSrc:
     "https://github.com/user-attachments/assets/5793ad0c-527a-4e8a-ab8c-0a8c3092b2fa",
