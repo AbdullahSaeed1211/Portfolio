@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react'
-import { BiArrowFromBottom } from 'react-icons/bi'
+import { ArrowUp } from 'lucide-react'
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -24,7 +24,7 @@ export const ScrollToTop = () => {
     window.addEventListener('scroll', toggleVisibility)
 
     return () => {
-      window.removeEventListener('scroll',[()=>{}])
+      window.removeEventListener('scroll', toggleVisibility)
     }
   }, [])
 
@@ -34,12 +34,15 @@ export const ScrollToTop = () => {
         type="button"
         onClick={scrollToTop}
         className={
-          isVisible ? ('opacity-100') : ('opacity-0',
-          'bg-red-700 hover:bg-red-600 focus:ring-red-600 inline-flex items-center rounded-full p-3 text-white shadow-sm transition-opacity focus:outline-none focus:ring-1')
+          isVisible 
+            ? 'opacity-100 bg-red-700 hover:bg-red-600 focus:ring-red-600 inline-flex items-center rounded-full p-3 text-white shadow-sm transition-opacity focus:outline-none focus:ring-1'
+            : 'opacity-0 bg-red-700 hover:bg-red-600 focus:ring-red-600 inline-flex items-center rounded-full p-3 text-white shadow-sm transition-opacity focus:outline-none focus:ring-1'
         }
       >
-        <BiArrowFromBottom className="h-6 w-6" aria-hidden="true" />
+        <ArrowUp className="h-6 w-6" aria-hidden="true" />
       </button>
     </div>
   )
 }
+
+export default ScrollToTop;

@@ -1,76 +1,243 @@
 "use client";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowRight, Sparkles, Zap, Code, Rocket } from "lucide-react";
+import { BlurFade } from "@/components/magicui/blur-fade";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
 const Hero = () => {
+  const containerRef = useRef(null);
+  const headingRef = useRef(null);
+  const imageRef = useRef(null);
+
   const containerVariants = {
     hidden: {
       opacity: 0,
-      y: 50, // Start from 50px below
     },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.35,
+        duration: 0.5,
         when: "beforeChildren",
+        staggerChildren: 0.2,
       },
     },
   };
 
-  const imageVariants = {
-    hidden: {
-      opacity: 0,
-      x: 100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.4,
-      },
-    },
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <motion.section
-      className="w-full min-h-screen flex-center flex-col  md:flex-left md:flex-row"
+    <section
+      id="home"
+      ref={containerRef}
+      className="w-full min-h-screen pt-28 sm:pt-32 pb-8 lg:pt-24 lg:pb-0 flex flex-col lg:flex-row items-center justify-center relative"
+    >
+      {/* Animated beam connecting headline to image - only visible on desktop */}
+      <div className="hidden lg:block">
+        <AnimatedBeam 
+          containerRef={containerRef} 
+          fromRef={headingRef} 
+          toRef={imageRef}
+          gradientStartColor="#3b82f6"
+          gradientStopColor="#06b6d4"
+          curvature={100}
+          duration={3}
+          pathWidth={1.5}
+        />
+      </div>
+      
+      {/* Left Content */}
+      <motion.div
+        className="w-full lg:w-1/2 lg:pr-12 z-10 px-4"
       variants={containerVariants}
       initial="hidden"
-      animate="visible">
-      <div className="flex-col md:flex-auto">
-        <motion.h2
-          className="head_text text-center md:text-left"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}>
-          Hello, My name is
-          <br className="max-lg:hidden" />
-          <span className="cyan_gradient"> Abdullah Saeed</span>
-        </motion.h2>
-        <motion.p
-          className="desc text-center md:text-left"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}>
-          Software & Web-Developer
-        </motion.p>
+        animate="visible"
+      >
+        <BlurFade 
+          direction="left" 
+          delay={0.1} 
+          className="space-y-2"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950 border border-blue-100 dark:border-blue-900 text-blue-700 dark:text-blue-400 text-xs sm:text-sm font-medium mb-4">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Full-Stack Developer & AI Specialist
+          </div>
+        </BlurFade>
+        
+        <BlurFade delay={0.3} direction="up">
+          <h1
+            ref={headingRef}
+            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 sm:mb-6"
+          >
+            Crafting <span className="cyan_gradient">Intelligent Digital</span> Experiences That <span className="blue_gradient">Drive Growth</span>
+          </h1>
+        </BlurFade>
+
+        <BlurFade delay={0.5} direction="up">
+          <p className="text-base sm:text-lg md:text-lg mb-6 sm:mb-8 max-w-2xl text-muted-foreground">
+            I specialize in building AI-powered web applications that solve real business challenges. Combining cutting-edge technology with strategic thinking to deliver solutions that transform ideas into measurable results.
+          </p>
+        </BlurFade>
+
+        <BlurFade delay={0.7} direction="up" className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <InteractiveHoverButton
+            onClick={() => document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' })} 
+            className="w-full sm:w-auto mx-auto sm:mx-0 text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent py-2.5 sm:py-2.5 text-sm font-medium transition-all duration-300"
+          >
+            View My Projects
+          </InteractiveHoverButton>
+          
+          <motion.a
+            href="#value"
+            className="w-full sm:w-auto mx-auto sm:mx-0 flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-full bg-background border border-border text-foreground font-medium text-sm hover:bg-accent/50 transition-all duration-300 group"
+            whileHover={{ y: -3 }}
+            whileTap={{ y: 0 }}
+          >
+            Why Choose Me
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </motion.a>
+        </BlurFade>
+
+        {/* Key Value Propositions - show only two items per row on mobile */}
+        <BlurFade delay={0.9} direction="up" className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs">
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-background border border-border hover:shadow-md transition-all">
+            <div className="flex-shrink-0 p-2 rounded-md bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
+              <Zap className="w-3.5 h-3.5" />
+            </div>
+            <div>
+              <h3 className="font-medium mb-1 text-xs">Performance Optimized</h3>
+              <p className="text-muted-foreground text-[10px]">Lightning-fast applications with excellent Core Web Vitals</p>
+            </div>
+          </div>
+          
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-background border border-border hover:shadow-md transition-all">
+            <div className="flex-shrink-0 p-2 rounded-md bg-green-100 dark:bg-green-950 text-green-600 dark:text-green-400">
+              <Sparkles className="w-3.5 h-3.5" />
+            </div>
+            <div>
+              <h3 className="font-medium mb-1 text-xs">AI-Enhanced</h3>
+              <p className="text-muted-foreground text-[10px]">Smart solutions powered by cutting-edge AI technologies</p>
+            </div>
+          </div>
+          
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-background border border-border hover:shadow-md transition-all">
+            <div className="flex-shrink-0 p-2 rounded-md bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400">
+              <Code className="w-3.5 h-3.5" />
+            </div>
+            <div>
+              <h3 className="font-medium mb-1 text-xs">Clean, Robust Code</h3>
+              <p className="text-muted-foreground text-[10px]">TypeScript and best practices for maintainable applications</p>
+            </div>
+          </div>
+          
+          <div className="flex items-start gap-3 p-3 rounded-lg bg-background border border-border hover:shadow-md transition-all">
+            <div className="flex-shrink-0 p-2 rounded-md bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400">
+              <Rocket className="w-3.5 h-3.5" />
+            </div>
+            <div>
+              <h3 className="font-medium mb-1 text-xs">Strategic Approach</h3>
+              <p className="text-muted-foreground text-[10px]">Solutions focused on business goals and measurable results</p>
+            </div>
       </div>
-      <div className="sm:mt-5">
-        <motion.div variants={imageVariants} initial="hidden" animate="visible">
-           <div className="relative items-center w-[375px] h-[375px] sm:h-[300px] sm:w-[300px] lg:h-[600px] lg:w-[600px] -z-10">
+        </BlurFade>
+      </motion.div>
+
+      {/* Right Content - Image */}
+      <motion.div
+        className="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center relative z-10"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ 
+          duration: 0.6, 
+          delay: 0.3,
+          type: "spring",
+          stiffness: 100
+        }}
+      >
+        <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[450px] lg:h-[450px]">
+          {/* Animated gradient background */}
+          <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-30 blur-xl animate-pulse"></div>
+          <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl" ref={imageRef}>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 mix-blend-overlay"></div>
             <Image
-              className="mt-5 object-cover"
-              src={"/assets/images/logo2.svg"}
-              alt={"Hero pic"}
+              src="/assets/images/logo2.svg"
+              alt="Hero illustration"
               fill
+              className="object-contain"
+              priority
             />
           </div>
            
+          {/* Floating badges */}
+          <motion.div 
+            className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-full shadow-lg p-3 border border-gray-100 dark:border-gray-700"
+            animate={{ 
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+          >
+            <Image 
+              src="/assets/Skills/nextjs.png" 
+              alt="Next.js" 
+              width={30} 
+              height={30} 
+            />
+          </motion.div>
+          
+          <motion.div 
+            className="absolute bottom-12 -left-6 bg-white dark:bg-gray-800 rounded-full shadow-lg p-3 border border-gray-100 dark:border-gray-700"
+            animate={{ 
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: 1
+            }}
+          >
+            <Image 
+              src="/assets/Skills/react.png" 
+              alt="React" 
+              width={30} 
+              height={30} 
+            />
+          </motion.div>
+          
+          <motion.div 
+            className="absolute bottom-4 right-10 bg-white dark:bg-gray-800 rounded-full shadow-lg p-3 border border-gray-100 dark:border-gray-700"
+            animate={{ 
+              y: [0, 8, 0],
+            }}
+            transition={{
+              duration: 4.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: 0.5
+            }}
+          >
+            <Image 
+              src="/assets/Skills/tailwind.png" 
+              alt="Tailwind" 
+              width={30} 
+              height={30} 
+            />
         </motion.div>
       </div>
-      <hr />
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 

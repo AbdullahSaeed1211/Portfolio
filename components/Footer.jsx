@@ -41,99 +41,111 @@ const Footer = () => {
   // };
 
   return (
-    <footer className="bg-transparent w-full text-gray-600 py-10">
-      <div className="container grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10">
-        <div className="text-left">
-          <h2 className="text-xl font-semibold mb-2">Abdullah Saeed</h2>
-          <p className="text-sm">Software & Web Developer</p>
+    <footer className="bg-background border-t border-border py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="text-left">
+            <h2 className="text-lg font-semibold mb-1">Abdullah Saeed</h2>
+            <p className="text-xs">Software & Web Developer</p>
+          </div>
+          <div>
+            <span className="text-sm flex font-semibold mb-3">Quick Links</span>
+            <ul>
+              {navLinks.map((link, index) => (
+                // <motion.li
+                //   key={index}
+                //   variants={fadeInAnimationsVariants}
+                //   initial="initial"
+                //   whileInView="animate"
+                //   ref={ref}
+                //   animate={controls}
+                //   viewport={{ once: true }}
+                //   custom={index}
+                //   className="mb-2">
+                //   <Link href={link.href}>
+                //     <span className="text-sm">{link.text}</span>
+                //   </Link>
+                // </motion.li>
+                <li
+                  key={index}
+                  
+                  className="mb-1.5">
+                  <Link href={link.href}>
+                    <span className="text-xs">{link.text}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="hidden md:block">
+            <span className="text-sm flex font-semibold mb-3">Recent Projects</span>
+            <ul>
+              {ProjectCardList.slice(0, 5).map((link, index) => (
+                // <motion.li
+                //   key={index}
+                //   variants={fadeInAnimationsVariants}
+                //   initial="initial"
+                //   whileInView="animate"
+                //   ref={ref}
+                //   animate={controls}
+                //   viewport={{ once: true }}
+                //   custom={index}
+                //   className="mb-2">
+                //   <Link href={link.projectLink}>
+                //     <span className="text-sm">{link.title}</span>
+                //   </Link>
+                // </motion.li>
+                <li
+                  key={index}
+                  className="mb-1.5">
+                  <Link href={link.projectLink}>
+                    <span className="text-xs">{link.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm flex font-semibold mb-3 md:justify-end">
+              Connect with me
+            </span>
+            <div className="flex justify-start md:justify-end gap-5 mt-1">
+              {footerLinks.map((link, index) => (
+                // <motion.a
+                //   key={index}
+                //   variants={fadeInAnimationsVariantsX}
+                //   initial="initial"
+                //   whileInView="animate"
+                //   ref={ref}
+                //   animate={controls}
+                //   viewport={{ once: true }}
+                //   custom={index}
+                //   href={link.href}
+                //   target="_blank"
+                //   rel="noopener noreferrer"
+                //   className="text-sm">
+                //   {link.icon}
+                // </motion.a>
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs">
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-        <div>
-          <span className="text-lg flex font-semibold mb-4">Quick Links</span>
-          <ul>
-            {navLinks.map((link, index) => (
-              // <motion.li
-              //   key={index}
-              //   variants={fadeInAnimationsVariants}
-              //   initial="initial"
-              //   whileInView="animate"
-              //   ref={ref}
-              //   animate={controls}
-              //   viewport={{ once: true }}
-              //   custom={index}
-              //   className="mb-2">
-              //   <Link href={link.href}>
-              //     <span className="text-sm">{link.text}</span>
-              //   </Link>
-              // </motion.li>
-              <li
-                key={index}
-                
-                className="mb-2">
-                <Link href={link.href}>
-                  <span className="text-sm">{link.text}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="hidden md:block">
-          <span className="text-lg flex font-semibold mb-4">Recent Projects</span>
-          <ul>
-            {ProjectCardList.slice(0, 5).map((link, index) => (
-              // <motion.li
-              //   key={index}
-              //   variants={fadeInAnimationsVariants}
-              //   initial="initial"
-              //   whileInView="animate"
-              //   ref={ref}
-              //   animate={controls}
-              //   viewport={{ once: true }}
-              //   custom={index}
-              //   className="mb-2">
-              //   <Link href={link.projectLink}>
-              //     <span className="text-sm">{link.title}</span>
-              //   </Link>
-              // </motion.li>
-              <li
-                key={index}
-                className="mb-2">
-                <Link href={link.projectLink}>
-                  <span className="text-sm">{link.title}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex flex-col">
-          <span className="text-lg flex font-semibold mb-4 md:justify-end">
-            Connect with me
-          </span>
-          <div className="flex justify-start md:justify-end gap-6 mt-2">
-            {footerLinks.map((link, index) => (
-              // <motion.a
-              //   key={index}
-              //   variants={fadeInAnimationsVariantsX}
-              //   initial="initial"
-              //   whileInView="animate"
-              //   ref={ref}
-              //   animate={controls}
-              //   viewport={{ once: true }}
-              //   custom={index}
-              //   href={link.href}
-              //   target="_blank"
-              //   rel="noopener noreferrer"
-              //   className="text-sm">
-              //   {link.icon}
-              // </motion.a>
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm">
-                {link.icon}
-              </a>
-            ))}
+        
+        <div className="border-t border-border mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-xs text-muted-foreground mb-3 md:mb-0">
+            &copy; {new Date().getFullYear()} Abdullah Saeed. All rights reserved.
+          </p>
+          
+          <div className="flex items-center space-x-3">
+            {/* ... existing social links ... */}
           </div>
         </div>
       </div>

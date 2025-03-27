@@ -1,0 +1,105 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <rect width="1200" height="630" fill="url(#paint0_linear)" />
+  
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.1">
+    <path d="M0 0L1200 0L1200 630L0 630L0 0Z" fill="url(#pattern)" />
+  </g>
+  
+  <!-- Main content container -->
+  <g>
+    <!-- Profile image placeholder -->
+    <circle cx="300" cy="315" r="150" fill="#1E293B" />
+    <circle cx="300" cy="315" r="145" fill="#0F172A" stroke="#3B82F6" stroke-width="2" />
+    
+    <!-- Placeholder for profile image icon -->
+    <g transform="translate(240, 255)">
+      <path d="M120 60C120 93.1371 93.1371 120 60 120C26.8629 120 0 93.1371 0 60C0 26.8629 26.8629 0 60 0C93.1371 0 120 26.8629 120 60Z" fill="#0EA5E9" opacity="0.9"/>
+      <text x="60" y="75" font-family="Inter, sans-serif" font-size="60" font-weight="700" fill="white" text-anchor="middle">AS</text>
+    </g>
+    
+    <!-- Text content -->
+    <g transform="translate(520, 215)">
+      <!-- Name -->
+      <text font-family="Inter, sans-serif" font-size="50" font-weight="700" fill="white">
+        <tspan x="0" y="0">Abdullah Saeed</tspan>
+      </text>
+      
+      <!-- Title with gradient -->
+      <g>
+        <text font-family="Inter, sans-serif" font-size="70" font-weight="800" fill="url(#text-gradient)">
+          <tspan x="0" y="100">AI-Powered</tspan>
+        </text>
+        <text font-family="Inter, sans-serif" font-size="70" font-weight="800" fill="white">
+          <tspan x="0" y="180">Web Developer</tspan>
+        </text>
+      </g>
+      
+      <!-- Tagline -->
+      <text font-family="Inter, sans-serif" font-size="24" font-weight="500" fill="#94A3B8">
+        <tspan x="0" y="250">Building intelligent digital experiences</tspan>
+        <tspan x="0" y="285">that drive business growth</tspan>
+      </text>
+      
+      <!-- Website -->
+      <text font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#3B82F6">
+        <tspan x="0" y="340">abdullahsaeed.me</tspan>
+      </text>
+    </g>
+    
+    <!-- Decorative elements -->
+    <g opacity="0.8">
+      <!-- Circles -->
+      <circle cx="1100" cy="150" r="40" fill="url(#circle-gradient1)" />
+      <circle cx="1050" cy="500" r="25" fill="url(#circle-gradient2)" />
+      <circle cx="150" cy="550" r="30" fill="url(#circle-gradient3)" />
+      
+      <!-- Lines -->
+      <path d="M450 315 L490 315" stroke="#3B82F6" stroke-width="3" />
+      <path d="M460 150 L460 180" stroke="#06B6D4" stroke-width="3" />
+      <path d="M1000 315 L1050 315" stroke="#3B82F6" stroke-width="3" />
+    </g>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F172A" />
+      <stop offset="1" stop-color="#1E293B" />
+    </linearGradient>
+    
+    <!-- Text gradient -->
+    <linearGradient id="text-gradient" x1="0" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#06B6D4" />
+    </linearGradient>
+    
+    <!-- Circle gradients -->
+    <linearGradient id="circle-gradient1" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#06B6D4" />
+    </linearGradient>
+    
+    <linearGradient id="circle-gradient2" x1="0" y1="0" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06B6D4" />
+      <stop offset="1" stop-color="#0EA5E9" />
+    </linearGradient>
+    
+    <linearGradient id="circle-gradient3" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#0EA5E9" />
+    </linearGradient>
+    
+    <!-- Pattern -->
+    <pattern id="pattern" patternUnits="userSpaceOnUse" width="100" height="100">
+      <path d="M0 10 L100 10" stroke="white" stroke-width="0.5" opacity="0.2" />
+      <path d="M0 50 L100 50" stroke="white" stroke-width="0.5" opacity="0.2" />
+      <path d="M0 90 L100 90" stroke="white" stroke-width="0.5" opacity="0.2" />
+      <path d="M10 0 L10 100" stroke="white" stroke-width="0.5" opacity="0.2" />
+      <path d="M50 0 L50 100" stroke="white" stroke-width="0.5" opacity="0.2" />
+      <path d="M90 0 L90 100" stroke="white" stroke-width="0.5" opacity="0.2" />
+    </pattern>
+  </defs>
+</svg> 
