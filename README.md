@@ -1,4 +1,3 @@
-
 # Abdullah Saeed's Portfolio
 Completely Responsive modern Portfolio
 
@@ -23,23 +22,58 @@ Completely Responsive modern Portfolio
 - [Vercel](https://vercel.com/) – hosting
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Features
+
+- Responsive design using Tailwind CSS
+- Dark mode support using next-themes
+- Animated UI components with Framer Motion
+- SEO optimized with metadata
+- Google Analytics integration
+- Performance metrics with Vercel Speed Insights
+
 ## Getting Started
 
-First, run the development server
-
+1. Clone the repository
+2. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Create a `.env.local` file in the root directory and add your Google Analytics measurement ID:
+```
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Your Google Analytics Measurement ID (format: G-XXXXXXXXXX) |
+
+## Build and Deploy
+
+1. Build the application:
+```bash
+npm run build
+```
+
+2. Deploy to your preferred hosting platform (Vercel recommended).
+
+## Technologies Used
+
+- Next.js 15.2.4
+- React 18.3.1
+- Tailwind CSS
+- Shadcn UI
+- Framer Motion
+- Vercel Speed Insights
 
 ## Learn More
 

@@ -10,6 +10,11 @@ import NextJS from "@public/assets/Skills/nextjs.png";
 import nextauth from "@public/assets/Skills/nextauth.png";
 import python from "@public/assets/Skills/python.png";
 import astro from "@public/assets/Skills/astro.png";
+import typescript from "@public/assets/Skills/typescript.svg";
+import mongodb from "@public/assets/Skills/mongodb.svg";
+import nodejs from "@public/assets/Skills/nodejs.svg";
+import firebase from "@public/assets/Skills/firebase.svg";
+import docker from "@public/assets/Skills/docker.svg";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -30,14 +35,44 @@ export const skillsData = [
     title: "Tailwind",
   },
   {
-    imgSrc: Github,
-    alt: "Github",
-    title: "Github",
-  },
-  {
     imgSrc: NextJS,
     alt: "Next",
     title: "Next",
+  },
+  {
+    imgSrc: ReactImg,
+    alt: "React",
+    title: "React",
+  },
+  {
+    imgSrc: typescript,
+    alt: "TypeScript",
+    title: "TypeScript",
+  },
+  {
+    imgSrc: Javascript,
+    alt: "JS",
+    title: "JS",
+  },
+  {
+    imgSrc: nodejs,
+    alt: "Node.js",
+    title: "Node.js",
+  },
+  {
+    imgSrc: mongodb,
+    alt: "MongoDB",
+    title: "MongoDB",
+  },
+  {
+    imgSrc: firebase,
+    alt: "Firebase",
+    title: "Firebase",
+  },
+  {
+    imgSrc: docker,
+    alt: "Docker",
+    title: "Docker",
   },
   {
     imgSrc: nextauth,
@@ -55,24 +90,19 @@ export const skillsData = [
     title: "CSS",
   },
   {
-    imgSrc: Javascript,
-    alt: "JS",
-    title: "JS",
-  },
-  {
     imgSrc: astro,
-    alt: "astro",
-    title: "astro",
+    alt: "Astro",
+    title: "Astro",
   },
   {
-    imgSrc: ReactImg,
-    alt: "React",
-    title: "React",
+    imgSrc: Github,
+    alt: "Github",
+    title: "Github",
   },
   {
     imgSrc: python,
-    alt: "python",
-    title: "python",
+    alt: "Python",
+    title: "Python",
   },
 ];
 
@@ -80,146 +110,121 @@ export const skillsData = [
 export const ProjectCardList = [
   {
     title: "Dubbby",
+    description: "A SaaS platform for AI-powered video dubbing and translation...",
     imgSrc: "/assets/images/projects/dubbby.webp",
-    description:
-      "Dubbby is an AI-powered video dubbing platform built with Next.js, TypeScript, and React that automatically translates videos into 15+ languages with perfect lip synchronization in just 30 seconds. The application features an intuitive UI with responsive design, secure authentication via Clerk, and seamless media handling through Uploadcare and Cloudinary. Dubbby matches dubbed audio to lip movements frame-by-frame, helping content creators achieve an average 2.7X engagement boost by eliminating language barriers.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
     projectLink: "https://dubbby.com/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
-    
   },
   {
     title: "Brain Wise",
+    description: "A SaaS solution for mental health professionals...",
     imgSrc: "/assets/images/projects/brainwise.webp",
-    description:
-      "Your Complete Brain Health Companion is an innovative digital platform combining machine learning with neuroscience research to help users monitor and enhance their cognitive well-being. The application offers scientifically-designed cognitive training tools, personalized stroke risk assessments, an educational brain health library, performance tracking, and a curated research portal. Unlike typical brain games, BrainWise takes a comprehensive approach by considering multiple factors affecting cognitive function and providing actionable insights for anyone committed to maintaining optimal brain health through evidence-based methods.",
+    tags: ["React", "Node.js", "MongoDB", "SaaS"],
     projectLink: "https://brainwise-health.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
-    
   },
   {
     title: "Blog Squirrel",
-    imgSrc:
-    "https://github.com/user-attachments/assets/5793ad0c-527a-4e8a-ab8c-0a8c3092b2fa",
-    description:
-      "a SaaS platform designed to make blogging quick and easy. With it, users can set up a professional blog in minutes, eliminating the hassle of complicated setups. Key features include seamless user authentication, effortless payment management through Stripe, scalable database solutions, and an intuitive content creation tool. The platform also offers beautiful, customizable designs and optimized performance for high traffic. BlogSquirrel provides various pricing plans, from a free 'Freelancer' plan to a 'Startup' plan, making it suitable for both beginners and small businesses.",
+    imgSrc: "/assets/images/projects/blogport.webp",
+    description: "a SaaS platform designed to make blogging quick and easy. With it, users can set up a professional blog in minutes, eliminating the hassle of complicated setups. Key features include seamless user authentication, effortless payment management through Stripe, scalable database solutions, and an intuitive content creation tool. The platform also offers beautiful, customizable designs and optimized performance for high traffic. BlogSquirrel provides various pricing plans, from a free 'Freelancer' plan to a 'Startup' plan, making it suitable for both beginners and small businesses.",
+    tags: ["Next.js", "Stripe", "MongoDB", "SaaS"],
     projectLink: "https://blog-squirrel.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/blogSaaS",
-    
   },
   {
     title: "Pantry Panic",
-    imgSrc:
-    "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",
-    description:
-      "An inventory management application designed for efficient tracking and management of food items. The app allows users to add, remove, and update inventory items, with real-time synchronization to Firebase Firestore. It features a modern UI with a responsive layout, and handles item images, quantities, prices, and dates. Users can view the inventory in a table format for desktop or a streamlined card layout for mobile devices.",
+    imgSrc: "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",
+    description: "An inventory management application designed for efficient tracking and management of food items. The app allows users to add, remove, and update inventory items, with real-time synchronization to Firebase Firestore. It features a modern UI with a responsive layout, and handles item images, quantities, prices, and dates. Users can view the inventory in a table format for desktop or a streamlined card layout for mobile devices.",
+    tags: ["React", "Firebase", "Tailwind", "PWA"],
     projectLink: "https://pantry-panic.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/inventory-ai/tree/main",
-    
   },
   {
     title: "Speak Speare",
-    imgSrc:
-    "https://github.com/user-attachments/assets/a4dd54e4-9495-42e6-9f74-726ea368c4a0",
-    description:
-      "Advanced voice translation tool that enables users to interact with a range of language processing features. It converts spoken words into text using the Web Speech API, translates the text with Gemini 1.5 Flash, and plays back the translation using speech synthesis. Additionally, it reads and translates text from uploaded files, fetches, supports language selection, and ensures a seamless experience across different devices with its responsive design, and uses a Writing and Speaking Prompt generator based on the category chosen by the user.",
+    imgSrc: "https://github.com/user-attachments/assets/a4dd54e4-9495-42e6-9f74-726ea368c4a0",
+    description: "Advanced voice translation tool that enables users to interact with a range of language processing features. It converts spoken words into text using the Web Speech API, translates the text with Gemini 1.5 Flash, and plays back the translation using speech synthesis. Additionally, it reads and translates text from uploaded files, fetches, supports language selection, and ensures a seamless experience across different devices with its responsive design, and uses a Writing and Speaking Prompt generator based on the category chosen by the user.",
+    tags: ["React", "Web Speech API", "Gemini AI", "Tailwind"],
     projectLink: "https://speak-speare.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/SpeakSpeare",
-    
   },
-
   {
     title: "StrikeMMA",
-    imgSrc:
-    "https://github.com/user-attachments/assets/81e21ea3-912d-4220-9f35-7888a7b67fbc",
-    description:
-      "We formed a last-minute 2-person hackathon team and built a product website to engage user responses. Our website features a modern landing page, an FAQ section, pricing cards, and features an AI chatbot, designed to gather user insights and interests for our future app/product.",
+    imgSrc: "https://github.com/user-attachments/assets/81e21ea3-912d-4220-9f35-7888a7b67fbc",
+    description: "We formed a last-minute 2-person hackathon team and built a product website to engage user responses. Our website features a modern landing page, an FAQ section, pricing cards, and features an AI chatbot, designed to gather user insights and interests for our future app/product.",
+    tags: ["Next.js", "Tailwind", "AI Chatbot", "Landing Page"],
     projectLink: "https://strike-mma.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/StrikeMMA-Demo",
-    // demoVideo: "https://youtu.be/wGn6Mg0i3aU",
-    // userForm: "https://tally.so/r/wL0eJp",
   },
   {
     title: "Media Compass",
-    imgSrc:
-      "https://github.com/AbdullahSaeed1211/Media-Compass/assets/85762594/8a83bf61-721f-409d-bcb2-381821ff869b",
-    description: " Frontend Demo for a SaaS Page",
+    imgSrc: "https://github.com/AbdullahSaeed1211/Media-Compass/assets/85762594/8a83bf61-721f-409d-bcb2-381821ff869b",
+    description: "Frontend Demo for a SaaS Page",
+    tags: ["React", "Tailwind", "Landing Page", "UI/UX"],
     projectLink: "https://media-compass.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Media-Compass",
   },
   {
     title: "Aroma & Craft Co.",
-    imgSrc:
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/5f972ff7-fb6b-4265-b8e6-4ba9d286d7ce",
-    description:
-      "Aroma & Craft Co. is a sophisticated and visually appealing e-commerce website that specializes in offering curated coffee products. Built using the Astro web framework and enhanced with Tailwind CSS for a sleek and modern user interface, the platform is designed to provide users with a seamless and enjoyable shopping experience.",
+    imgSrc: "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/5f972ff7-fb6b-4265-b8e6-4ba9d286d7ce",
+    description: "Aroma & Craft Co. is a sophisticated and visually appealing e-commerce website that specializes in offering curated coffee products. Built using the Astro web framework and enhanced with Tailwind CSS for a sleek and modern user interface, the platform is designed to provide users with a seamless and enjoyable shopping experience.",
+    tags: ["Astro", "Tailwind", "E-commerce", "UI/UX"],
     projectLink: "https://aromacraftco.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/AromaCraftCo",
   },
   {
     title: "Bento Dashboard",
-    imgSrc:
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/9376e261-2c5b-408c-9252-4f28bbc85c90",
-    description:
-      "Bento Dashboard is a modern, responsive, and visually appealing dashboard that provides users with a comprehensive overview of their graphical data in form of Pie, Line and Calendar Charts along with Tables. Built using React, Next.js, and Tailwind CSS, the platform offers a seamless user experience, showcasing spending, account balances, and financial goals.",
+    imgSrc: "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/9376e261-2c5b-408c-9252-4f28bbc85c90",
+    description: "Bento Dashboard is a modern, responsive, and visually appealing dashboard that provides users with a comprehensive overview of their graphical data in form of Pie, Line and Calendar Charts along with Tables. Built using React, Next.js, and Tailwind CSS, the platform offers a seamless user experience, showcasing spending, account balances, and financial goals.",
+    tags: ["React", "Next.js", "Tailwind", "Charts"],
     projectLink: "https://bento-dashboard.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Bento-Dashboard",
   },
   {
     title: "Skate Monkey",
-    imgSrc:
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/40db8982-d06b-4875-afce-252aadc16b19",
-    description:
-      "Skate Monkey is a modern e-commerce landing page developed, catering to skateboard enthusiasts. Built with React, Next.js, and Tailwind CSS, the platform offers a seamless, responsive landing page that showcases skateboards, accessories, and apparel. Users can explore a dynamic catalog, read reviews.",
+    imgSrc: "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/40db8982-d06b-4875-afce-252aadc16b19",
+    description: "Skate Monkey is a modern e-commerce landing page developed, catering to skateboard enthusiasts. Built with React, Next.js, and Tailwind CSS, the platform offers a seamless, responsive landing page that showcases skateboards, accessories, and apparel. Users can explore a dynamic catalog, read reviews.",
+    tags: ["React", "Next.js", "Tailwind", "E-commerce"],
     projectLink: "https://skate-monkey.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Skate-Monkey",
   },
   {
     title: "Prompt Verse",
-    imgSrc:
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/d66472ed-1f43-422e-9e8c-d7a3f13bad3b",
-    description:
-      "PromptVerse is a completely responsive fullstack open-source AI prompting tool complete with next-auth for modern world to discover, create and share creative prompts",
-    projectLink:
-      "https://prompt-verse-project-g9bookrjm-abdullahsaeed1211.vercel.app/",
+    imgSrc: "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/d66472ed-1f43-422e-9e8c-d7a3f13bad3b",
+    description: "PromptVerse is a completely responsive fullstack open-source AI prompting tool complete with next-auth for modern world to discover, create and share creative prompts",
+    tags: ["Next.js", "NextAuth", "MongoDB", "AI"],
+    projectLink: "https://prompt-verse-project-g9bookrjm-abdullahsaeed1211.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/PromptVerse",
   },
   {
     title: "Crypto Pedia",
-    imgSrc:
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/464cb0fe-4541-4b78-845b-7a0fa3693377",
-    description:
-      "A responsive website that uses Next js 13's new SearchParams function to allow the user to view and search among the current top 50 cryptocurrencies  from the coinranking API from rapidAPI ",
+    imgSrc: "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/464cb0fe-4541-4b78-845b-7a0fa3693377",
+    description: "A responsive website that uses Next js 13's new SearchParams function to allow the user to view and search among the current top 50 cryptocurrencies  from the coinranking API from rapidAPI",
+    tags: ["Next.js", "API", "Tailwind", "Crypto"],
     projectLink: "https://crypto-pedia-puce.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/CryptoPedia",
   },
   {
     title: "Simon Game",
-    imgSrc:
-      // <a href="https://storyset.com/music">Music illustrations by Storyset</a>
-      "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/cec24b02-c056-4792-89c3-befd30ac6517",
-    description:
-      "Simon game made using jQuery, Bootstrap 5, JavaScript, jQuery,HTML, CSS ",
+    imgSrc: "https://github.com/AbdullahSaeed1211/Portfolio/assets/85762594/cec24b02-c056-4792-89c3-befd30ac6517",
+    description: "Simon game made using jQuery, Bootstrap 5, JavaScript, jQuery,HTML, CSS",
+    tags: ["JavaScript", "jQuery", "Bootstrap", "Game"],
     projectLink: "https://abdullahsaeed1211.github.io/Simon-Game/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Simon-Game",
   },
   {
     title: "Weather App",
-    imgSrc:
-      // <a href="https://storyset.com/music">Music illustrations by Storyset</a>
-      "/assets/images/Weather.svg",
-    description:
-      "Website that displays weather information for the city entered by the user. Was made to revise my concepts of Bootstrap 5, Js, jQuery,HTML, CSS, and learn how to handle and manage API Request",
+    imgSrc: "/assets/images/Weather.svg",
+    description: "Website that displays weather information for the city entered by the user. Was made to revise my concepts of Bootstrap 5, Js, jQuery,HTML, CSS, and learn how to handle and manage API Request",
+    tags: ["JavaScript", "Bootstrap", "API", "Weather"],
     projectLink: "https://abdullahsaeed1211.github.io/Weather-App/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Weather-App",
   },
-  ,
   {
     title: "Drum Kit Site",
-    imgSrc:
-      // <a href="https://storyset.com/music">Music illustrations by Storyset</a>
-      "/assets/images/Drumkit.svg",
-    description:
-      "Drum kit website made using DOM manipulation, user can use their keyboard to play sounds corresponding to the instrument on screen",
+    imgSrc: "/assets/images/Drumkit.svg",
+    description: "Drum kit website made using DOM manipulation, user can use their keyboard to play sounds corresponding to the instrument on screen",
+    tags: ["JavaScript", "DOM", "HTML", "CSS"],
     projectLink: "https://abdullahsaeed1211.github.io/Drum-Kit-Site/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Drum-Kit-Site",
   },

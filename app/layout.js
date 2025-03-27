@@ -7,7 +7,7 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 export const metadata = {
   metadataBase: new URL('https://abdullahsaeed.me'),
   title: {
-    default: "Abdullah Saeed | AI-Powered Web Developer & Full-Stack Engineer",
+    default: "Abdullah Saeed | Full-Stack Developer",
     template: "%s | Abdullah Saeed"
   },
   description: "Experienced full-stack developer specializing in AI-enhanced web applications that solve real business challenges using Next.js, React, and TypeScript.",

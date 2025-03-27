@@ -21,10 +21,19 @@ export async function sendContactEmail(formData) {
       };
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return {
+        success: false,
+        error: 'Please enter a valid email address'
+      };
+    }
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact Form <onboarding@resend.dev>', // Update with your domain after verification
-      to: 'your.email@example.com', // Replace with your email
+      from: 'Contact Form <contact@resend.abdullahsaeed.me>',
+      to: ['abdullah.saeed1724@gmail.com'],
       reply_to: email,
       subject: `New Contact Form Submission: ${subject}`,
       text: `
@@ -52,21 +61,24 @@ ${message}
   <h1>New Contact Form Submission</h1>
   
   <div class="info">
+    <h2>Contact Information</h2>
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>Email:</strong> ${email}</p>
     <p><strong>Project Type:</strong> ${projectType}</p>
     <p><strong>Subject:</strong> ${subject}</p>
   </div>
   
-  <h2>Message</h2>
-  <div class="message">${message.replace(/\n/g, '<br />')}</div>
+  <div class="message">
+    <h2>Message</h2>
+    <p>${message.replace(/\n/g, '<br>')}</p>
+  </div>
 </body>
 </html>
       `,
     });
 
     if (error) {
-      console.error('Error sending email:', error);
+      console.error('Resend API Error:', error);
       return {
         success: false,
         error: 'Failed to send email. Please try again later.'
@@ -77,8 +89,9 @@ ${message}
       success: true,
       data
     };
+
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error('Server Error:', error);
     return {
       success: false,
       error: 'An unexpected error occurred. Please try again later.'
