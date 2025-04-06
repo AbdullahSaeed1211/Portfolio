@@ -5,7 +5,7 @@
 
 export const projectDetails = {
   "dubbby": {
-    completionDate: "June 2023",
+    completionDate: "March 2025",
     category: "SaaS, AI Tool, Web App",
     duration: "3 months",
     purpose: "Personal project to explore AI-powered video translation capabilities",
@@ -208,7 +208,7 @@ What sets BrainWise apart is its holistic approach to brain health. Beyond asses
   },
   
   "blog-squirrel": {
-    completionDate: "June 2023",
+    completionDate: "August 2024",
     category: "SaaS (Software as a Service)",
     duration: "8 weeks",
     purpose: "Personal project to demonstrate full-stack development capabilities",
@@ -305,7 +305,7 @@ The application has simplified the blogging process, reducing setup time from da
   },
   
   "speak-speare": {
-    completionDate: "January 2024",
+    completionDate: "September 2024",
     category: "Web App, Language Translation Tool",
     duration: "2-3 weeks",
     purpose: "Personal project focused on language translation and learning",
@@ -398,7 +398,7 @@ SpeakSpeare combines translation, speech recognition, and language learning prom
   },
   
   "strike-mma": {
-    completionDate: "2024",
+    completionDate: "October 2024",
     category: "Web Application / AI Training Platform",
     duration: "Ongoing project",
     purpose: "Personal portfolio project showcasing full-stack development skills",
