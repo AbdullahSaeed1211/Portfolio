@@ -125,6 +125,14 @@ export const ProjectCardList = [
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
   },
   {
+    title: "Simply Mortgage",
+    description: "A premium mortgage consultation service website for UAE homebuyers offering rate comparisons, mortgage calculators, and booking functionality.",
+    imgSrc: "/assets/images/projects/simply.webp",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "Framer Motion", "Responsive Design"],
+    projectLink: "https://simply-ten.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211",
+  },
+  {
     title: "Blog Squirrel",
     imgSrc: "/assets/images/projects/blogport.webp",
     description: "a SaaS platform designed to make blogging quick and easy. With it, users can set up a professional blog in minutes, eliminating the hassle of complicated setups. Key features include seamless user authentication, effortless payment management through Stripe, scalable database solutions, and an intuitive content creation tool. The platform also offers beautiful, customizable designs and optimized performance for high traffic. BlogSquirrel provides various pricing plans, from a free 'Freelancer' plan to a 'Startup' plan, making it suitable for both beginners and small businesses.",

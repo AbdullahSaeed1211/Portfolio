@@ -35,21 +35,32 @@ const ProjectCard = ({ project, index }) => {
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {project.featured && (
-            <Badge variant="ai" className="absolute top-3 right-3">
+            <Badge variant="featured" className="absolute top-3 right-3">
               Featured
             </Badge>
           )}
         </div>
         <CardHeader className="pb-2">
           <div className="flex gap-2 flex-wrap mb-2">
-            {project.tags.map((tag, i) => (
-              <Badge key={i} variant={tag.toLowerCase() === "ai" ? "ai" : 
-                           tag.toLowerCase() === "saas" ? "saas" : 
-                           tag.toLowerCase() === "health" ? "health" : 
-                           tag.toLowerCase() === "tech" ? "tech" : "default"}>
-                {tag}
-              </Badge>
-            ))}
+            {project.tags
+              .filter(tag => !["AI", "Next.js", "React"].includes(tag)) // Filter out AI, Next.js, and React tags
+              .map((tag, i) => {
+              // Map tag to appropriate variant
+              let badgeVariant = "default";
+              const tagLower = tag.toLowerCase();
+              
+              if (tagLower === "saas") badgeVariant = "saas";
+              else if (tagLower === "health") badgeVariant = "health";
+              else if (tagLower === "finance") badgeVariant = "finance";
+              else if (tagLower === "web") badgeVariant = "web";
+              else if (["typescript", "node.js", "mongodb"].includes(tagLower)) badgeVariant = "tech";
+              
+              return (
+                <Badge key={i} variant={badgeVariant}>
+                  {tag}
+                </Badge>
+              );
+            })}
           </div>
           <CardTitle className="text-xl">{project.title}</CardTitle>
           <CardDescription className="line-clamp-2 text-muted-foreground">

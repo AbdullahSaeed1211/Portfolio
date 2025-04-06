@@ -9,6 +9,8 @@ export const projectDetails = {
     category: "SaaS, AI Tool, Web App",
     duration: "3 months",
     purpose: "Personal project to explore AI-powered video translation capabilities",
+    projectLink: "https://dubbby.com/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
     
     detailedDescription: `Dubbby is an innovative AI-powered video dubbing platform designed to help content creators reach global audiences by breaking language barriers. Traditional dubbing methods are expensive ($50-120/min) and time-consuming (3-14 days), making them inaccessible for most creators.
 
@@ -106,6 +108,8 @@ As the full-stack developer, I was responsible for all aspects of development, f
     category: "Healthcare/AI Web Application",
     duration: "6 months",
     purpose: "Research-backed health tool for public benefit",
+    projectLink: "https://brainwise-health.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
     
     detailedDescription: `BrainWise is an innovative digital health platform designed to revolutionize how individuals monitor, maintain, and enhance their cognitive health. In today's aging society, declining brain health and stroke risk represent significant public health concerns, yet accessible tools for evaluation and intervention remain scarce.
 
@@ -561,6 +565,111 @@ What makes Pantry Panic unique is its integration of AI for inventory suggestion
       text: "#FFFFFF",
       neutral: "#e5e5e5",
       accent: "#a3a3a3"
+    }
+  },
+  
+  "simply-mortgage": {
+    completionDate: "April 2025",
+    category: "Financial Services, Web Application, Consultation",
+    duration: "1 month",
+    purpose: "To provide UAE residents with a modern, intuitive platform for exploring mortgage options, calculating costs, and booking consultations with mortgage experts.",
+    projectLink: "https://simply-ten.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211",
+    
+    detailedDescription: `Simply Mortgage is a comprehensive mortgage consultation website designed for the UAE market. The platform helps potential homebuyers navigate the complex mortgage landscape with expert guidance and cutting-edge tools.
+
+The website features a sleek, responsive design with modern UI components and fluid animations that enhance user experience. The interactive mortgage calculator allows users to estimate monthly payments, understand total costs, and make informed financial decisions.
+
+The site architecture follows Next.js App Router for optimal performance, implementing server components where possible and minimizing client-side JavaScript. The UI is built with a component-based approach using Shadcn UI and Radix for accessible, reusable interface elements styled with Tailwind CSS.
+
+Key features include a mortgage calculator, appointment booking integration with Cal.com, responsive design across all devices, and optimized loading states with Suspense boundaries.`,
+    
+    techStack: [
+      {
+        name: "Next.js 15",
+        description: "Utilized for server-side rendering, App Router, and improved performance"
+      },
+      {
+        name: "TypeScript",
+        description: "Implemented for type safety throughout the codebase"
+      },
+      {
+        name: "Tailwind CSS",
+        description: "Used for responsive, utility-first styling"
+      },
+      {
+        name: "Shadcn UI",
+        description: "Provided accessible, customizable UI components"
+      },
+      {
+        name: "Radix UI",
+        description: "Used for headless, accessible UI primitives"
+      },
+      {
+        name: "Framer Motion",
+        description: "Implemented for smooth animations and transitions"
+      },
+      {
+        name: "Cal.com Integration",
+        description: "Enabled seamless appointment booking functionality"
+      },
+      {
+        name: "React Server Components",
+        description: "Optimized performance by reducing client-side JavaScript"
+      }
+    ],
+    
+    keyFeatures: [
+      {
+        name: "Interactive Mortgage Calculator",
+        description: "Advanced calculator that provides accurate monthly payment estimates, total interest costs, and amortization details",
+        icon: "Calculator"
+      },
+      {
+        name: "Appointment Booking System",
+        description: "Integration with Cal.com for seamless consultant booking",
+        icon: "Calendar"
+      },
+      {
+        name: "Responsive Design",
+        description: "Mobile-first approach ensuring optimal experience across all devices",
+        icon: "Smartphone"
+      },
+      {
+        name: "Dynamic Animations",
+        description: "Subtle animations and transitions enhancing user experience",
+        icon: "Sparkles"
+      },
+      {
+        name: "24/7 Support",
+        description: "Clear calls-to-action for connecting with mortgage specialists",
+        icon: "Headset"
+      },
+      {
+        name: "Optimized Performance",
+        description: "Implemented with Next.js App Router for fast loading times",
+        icon: "Gauge"
+      }
+    ],
+    
+    problemSolution: {
+      problem: "The UAE mortgage market can be complex for homebuyers to navigate, with fragmented information sources and complicated rate structures. Potential homeowners need access to accurate calculations, transparent information, and expert guidance in one centralized platform.",
+      solution: "Simply Mortgage addresses these challenges by providing an all-in-one solution with accurate mortgage calculations, clear information about rates and options, and easy access to mortgage experts. The intuitive interface guides users through the mortgage process, helping them make informed decisions with confidence."
+    },
+    
+    metrics: [
+      { label: "Average Load Time", value: "1.2 sec" },
+      { label: "Lighthouse Score", value: "98/100" },
+      { label: "Client Consultations", value: "500+" },
+      { label: "Starting Interest Rate", value: "3.75%" }
+    ],
+    
+    colorScheme: {
+      primary: "#E32124",
+      secondary: "#F8F9FA",
+      accent: "#0056B3",
+      success: "#28A745",
+      warning: "#FFC107"
     }
   }
 }; 

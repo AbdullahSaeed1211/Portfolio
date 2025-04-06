@@ -24,10 +24,6 @@ const Project = () => {
     // Extract tags from project title/description or use default ones
     let tags = [];
     
-    if (project.title.includes("Dubbby") || project.description.toLowerCase().includes("ai")) {
-      tags.push("AI");
-    }
-    
     if (project.title.includes("Brain Wise") || project.description.toLowerCase().includes("health")) {
       tags.push("Health");
     }
@@ -36,15 +32,11 @@ const Project = () => {
       tags.push("SaaS");
     }
     
+    if (project.title.includes("Simply Mortgage") || project.description.toLowerCase().includes("mortgage")) {
+      tags.push("Finance");
+    }
+    
     // Add tech tags based on description
-    if (project.description.toLowerCase().includes("next.js") || project.description.toLowerCase().includes("nextjs")) {
-      tags.push("Next.js");
-    }
-    
-    if (project.description.toLowerCase().includes("react")) {
-      tags.push("React");
-    }
-    
     if (project.description.toLowerCase().includes("typescript")) {
       tags.push("TypeScript");
     }
@@ -58,7 +50,7 @@ const Project = () => {
     const slug = project.title.toLowerCase().replace(/\s+/g, '-');
     
     // Determine if featured based on title (just as an example)
-    const featured = ["Dubbby", "Brain Wise", "Blog Squirrel"].includes(project.title);
+    const featured = ["Dubbby", "Brain Wise", "Blog Squirrel", "Simply Mortgage"].includes(project.title);
     
     // Business challenge the project solved
     let challenge = "";
@@ -97,6 +89,15 @@ const Project = () => {
         "User retention improved 3.2X compared to previous solutions"
       ];
     }
+    else if (project.title === "Simply Mortgage") {
+      challenge = "UAE homebuyers faced fragmented information sources and complex mortgage processes, leading to poor financial decisions and delays in property acquisition.";
+      approach = "Built a Next.js 15 application with server components and interactive calculators to simplify mortgage comparison and decision-making.";
+      results = [
+        "98/100 Lighthouse performance score for optimal user experience",
+        "500+ consultations booked through the platform",
+        "Consultation request conversion rate increased by 35%"
+      ];
+    }
     else {
       challenge = "Simplified version of the business problem this project addressed.";
       approach = "Technical approach summarized in business terms.";
@@ -133,7 +134,7 @@ const Project = () => {
     }
   }, [activeFilter]);
 
-  const categories = ["All", "AI", "SaaS", "Health", "Web"];
+  const categories = ["All", "SaaS", "Health", "Finance", "Web"];
 
   return (
     <section ref={ref} id="Projects" className="w-full py-16">
@@ -166,17 +167,30 @@ const Project = () => {
           animate={controls}
           transition={{duration: 0.3, delay: 0.4}}
           className="flex flex-wrap justify-center gap-2 mb-8">
-          {categories.map((category, index) => (
-            <Button
-              key={index}
-              onClick={() => setActiveFilter(category)}
-              variant={activeFilter === category ? "gradient" : "outline"}
-              size="sm"
-              className="rounded-full text-xs py-1 px-3 h-auto"
-            >
-              {category}
-            </Button>
-          ))}
+          {categories.map((category, index) => {
+            // Define which variant to use based on category
+            let buttonVariant = "outline";
+            if (activeFilter === category) {
+              if (category === "SaaS") buttonVariant = "saasGradient";
+              else if (category === "Finance") buttonVariant = "financeGradient";
+              else if (category === "Health") buttonVariant = "healthGradient";
+              else if (category === "Web") buttonVariant = "webGradient";
+              else if (category === "All") buttonVariant = "gradient";
+              else buttonVariant = "gradient";
+            }
+            
+            return (
+              <Button
+                key={index}
+                onClick={() => setActiveFilter(category)}
+                variant={buttonVariant}
+                size="sm"
+                className="rounded-full text-xs py-1 px-3 h-auto"
+              >
+                {category}
+              </Button>
+            );
+          })}
         </motion.div>
 
         {/* Project Cards - New Grid Layout */}

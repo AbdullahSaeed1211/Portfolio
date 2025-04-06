@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }) {
         project={project}
         slug={slug}
         tags={project.tags || []}
-        techStack={[]}
+        techStack={detailedData?.techStack?.map(tech => tech.name) || []}
         completionDate={detailedData?.completionDate || "2023"}
       />
       <ProjectDetailContent 
