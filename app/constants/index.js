@@ -108,14 +108,7 @@ export const skillsData = [
 
 //   Projects
 export const ProjectCardList = [
-  {
-    title: "Midori Labs",
-    description: "A conversion-focused digital agency website that demonstrates expertise in creating high-performing web experiences through modern design and strategic development.",
-    imgSrc: "/assets/images/projects/midori.webp",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
-    projectLink: "https://midori-pi.vercel.app/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/midori",
-  },
+ 
   {
     title: "Dubbby",
     description: "A SaaS platform for AI-powered video dubbing and translation...",
@@ -132,14 +125,13 @@ export const ProjectCardList = [
     projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
   },
-  
   {
-    title: "Blog Squirrel",
-    imgSrc: "/assets/images/projects/blogport.webp",
-    description: "a SaaS platform designed to make blogging quick and easy. With it, users can set up a professional blog in minutes, eliminating the hassle of complicated setups. Key features include seamless user authentication, effortless payment management through Stripe, scalable database solutions, and an intuitive content creation tool. The platform also offers beautiful, customizable designs and optimized performance for high traffic. BlogSquirrel provides various pricing plans, from a free 'Freelancer' plan to a 'Startup' plan, making it suitable for both beginners and small businesses.",
-    tags: ["Next.js", "Stripe", "MongoDB", "SaaS"],
-    projectLink: "https://blog-squirrel.vercel.app/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/blogSaaS",
+    title: "Midori Labs",
+    description: "A conversion-focused digital agency website that demonstrates expertise in creating high-performing web experiences through modern design and strategic development.",
+    imgSrc: "/assets/images/projects/midori.webp",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
+    projectLink: "https://midori-pi.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/midori",
   },
   {
     title: "Simply Mortgage",
@@ -149,6 +141,15 @@ export const ProjectCardList = [
     projectLink: "https://simply-ten.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211",
   },
+  {
+    title: "Blog Squirrel",
+    imgSrc: "/assets/images/projects/blogport.webp",
+    description: "a SaaS platform designed to make blogging quick and easy. With it, users can set up a professional blog in minutes, eliminating the hassle of complicated setups. Key features include seamless user authentication, effortless payment management through Stripe, scalable database solutions, and an intuitive content creation tool. The platform also offers beautiful, customizable designs and optimized performance for high traffic. BlogSquirrel provides various pricing plans, from a free 'Freelancer' plan to a 'Startup' plan, making it suitable for both beginners and small businesses.",
+    tags: ["Next.js", "Stripe", "MongoDB", "SaaS"],
+    projectLink: "https://blog-squirrel.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/blogSaaS",
+  },
+  
   {
     title: "Pantry Panic",
     imgSrc: "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",

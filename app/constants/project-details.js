@@ -106,7 +106,7 @@ What sets Midori Labs apart is its commitment to results-oriented development, t
   "dubbby": {
     completionDate: "March 2025",
     category: "SaaS, AI Tool, Web App",
-    duration: "3 months",
+    duration: "2 months",
     purpose: "Personal project to explore AI-powered video translation capabilities",
     projectLink: "https://dubbby.com/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
@@ -205,7 +205,7 @@ As the full-stack developer, I was responsible for all aspects of development, f
   "brain-wise": {
     completionDate: "March 2024",
     category: "Healthcare/AI Web Application",
-    duration: "6 months",
+    duration: "2 months",
     purpose: "Research-backed health tool for public benefit",
     projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
@@ -670,7 +670,7 @@ What makes Pantry Panic unique is its integration of AI for inventory suggestion
   "simply-mortgage": {
     completionDate: "April 2025",
     category: "Financial Services, Web Application, Consultation",
-    duration: "1 month",
+    duration: "1 week",
     purpose: "To provide UAE residents with a modern, intuitive platform for exploring mortgage options, calculating costs, and booking consultations with mortgage experts.",
     projectLink: "https://simply-ten.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211",
