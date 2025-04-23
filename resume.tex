@@ -1,0 +1,286 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1.4 cm,
+    bottom=1.4 cm,
+    left=1.6 cm,
+    right=1.6 cm,
+    footskip=0.5 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 139} % Dark blue for links
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Abdullah Saeed's Resume},
+    pdfauthor={Abdullah Saeed},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.1cm}
+\pagenumbering{gobble}
+
+% Section formatting
+\titleformat{\section}{\needspace{2\baselineskip}\bfseries\normalsize}{}{0pt}{}[\vspace{0.8pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.2cm}{0.15cm}
+
+% Bullet point formatting
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.04cm,
+        parsep=0.04cm,
+        partopsep=0pt,
+        itemsep=0.01cm,
+        leftmargin=0.2cm + 9pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.08cm,
+        parsep=0.08cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=9pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0cm + 0.00001cm}{0cm + 0.00001cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.2cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.35}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{20pt}{20pt}\selectfont \textbf{Abdullah Saeed}
+
+        \vspace{2pt}
+        \small
+        \mbox{\hrefWithoutArrow{mailto:abdullah.saeed1724@gmail.com}{\textcolor{primaryColor}{abdullah.saeed1724@gmail.com}}}%
+        \kern 3pt%
+        \AND%
+        \kern 3pt%
+        \mbox{\hrefWithoutArrow{https://abdullahsaeed.me}{\textcolor{primaryColor}{abdullahsaeed.me}}}%
+        \kern 3pt%
+        \AND%
+        \kern 3pt%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/abdullah-saeed1211/}{\textcolor{primaryColor}{LinkedIn}}}%
+        \kern 3pt%
+        \AND%
+        \kern 3pt%
+        \mbox{\hrefWithoutArrow{https://github.com/AbdullahSaeed1211}{\textcolor{primaryColor}{Github}}}%
+    \end{header}
+
+    \vspace{2pt}
+
+    \section{EDUCATION}
+        \begin{twocolentry}{
+            Expected May 2025
+        }
+            \textbf{Amity University}, B.Tech in Computer Science \& Engineering, Uttar Pradesh, India
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item \textbf{CGPA:} 8.40/10.00 | \textbf{Coursework:} Data Structures, Algorithms, AI, Compiler Design, OOP
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{EXPERIENCE}
+        \begin{twocolentry}{
+            Mar 2025
+        }
+            \textbf{Software Development Intern}, \textcolor{primaryColor}{Blue Rocket LLC} -- Delhi, India (Contract)
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Aggregated \textbf{18 PDF conversion tools} and \textbf{9 AI document processing tools} into a unified ecosystem
+                \item Leveraged \textbf{Mistral OCR API} for comprehensive document analysis including extraction and PDF manipulation
+                \item Created an AI-powered video transformation tool supporting format conversion and content preservation
+            \end{highlights}
+        \end{onecolentry}
+    
+        \vspace{0.08cm}
+        \begin{twocolentry}{
+            July 2024 – Sep 2024
+        }
+            \textbf{Software Engineering Fellow}, \textcolor{primaryColor}{Headstarter AI} -- Remote
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Ranked \textbf{Top 10 out of 500+} submissions, developing \textbf{5 scalable web applications} serving \textbf{300+ users}
+                \item Implemented AI solutions using \textbf{Gemini 1.5 Flash}, Pinecone, and LangChain for custom RAG pipelines
+                \item Collaborated in agile teams, optimizing applications based on user feedback and performance metrics
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.08cm}
+        \begin{twocolentry}{
+            Mar 2024 – July 2024
+        }
+            \textbf{Web Developer Intern}, \textcolor{primaryColor}{Mirch Media} -- New York (Remote)
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed interactive front-end websites using modern frameworks and component libraries
+                \item Translated Figma designs into clean, maintainable code promoting reusability and performance
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{PROJECTS}
+        \begin{twocolentry}{
+            \textcolor{primaryColor}{\href{https://dubbby.com}{Live Link}}
+        }
+            \textbf{Dubbby}
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed AI-powered video dubbing platform with waitlist of \textbf{50+ content creators}, targeting \textbf{90\% cost reduction} in dubbing
+                \item Engineered scalable architecture using \textbf{Next.js 14}, TypeScript, and Prisma, implementing AI voice cloning for \textbf{15+ languages}
+                \item Integrated advanced AI models for voice synthesis and translation, achieving \textbf{95\% accuracy} in initial testing
+                \item \textbf{Technologies:} Next.js, TypeScript, Clerk Auth, MongoDB, Shadcn UI, Tailwind CSS
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.08cm}
+        \begin{twocolentry}{
+            \textcolor{primaryColor}{\href{https://brainwise-health.vercel.app}{Live Link}}
+        }
+            \textbf{BrainWise}
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed cognitive health platform with ML-driven stroke risk assessment and training tools
+                \item Achieved \textbf{98\% assessment accuracy} across \textbf{6 cognitive domains} with analytics dashboard
+                \item \textbf{Technologies:} Next.js, TypeScript, TensorFlow.js, MongoDB, Tailwind CSS
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.08cm}
+        \begin{twocolentry}{
+            \textcolor{primaryColor}{\href{https://blog-squirrel.vercel.app}{Live Link}}
+        }
+            \textbf{Blog Squirrel}
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Created SaaS platform that empowers content creators to simplify setup and management of blogs
+                \item Reduced upload errors by \textbf{30\%} with unique subdirectory validation and form validation using Zod
+                \item \textbf{Technologies:} Next.js, Supabase, Kinde, Prisma, Stripe, TypeScript, Tailwind CSS
+            \end{highlights}
+        \end{onecolentry}
+        
+        \vspace{0.08cm}
+        \begin{twocolentry}{
+            \textcolor{primaryColor}{\href{https://pantry-panic.vercel.app}{Live Link}}
+        }
+            \textbf{Pantry Panic}
+        \end{twocolentry}
+        \vspace{0.02cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Created a real-time inventory management system using Firebase Firestore with cross-device functionality
+                \item Achieved \textbf{446 page views}, \textbf{322 user engagement events} while driving traffic through direct channels
+                \item \textbf{Technologies:} Next.js, Firebase Auth, Firestore, Gemini 1.5 Flash, TypeScript, Tailwind CSS
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{LEADERSHIP \& ACHIEVEMENTS}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item \textbf{Google Developer Groups Lucknow:} Coordinator for Women's Day event (\textbf{90+ attendees})
+                \item \textbf{Google Developer Student Group:} Led \textbf{20+ technical events} at Amity University
+                \item \textbf{Postman Student Expert:} Recognized for advanced API development skills
+                \item \textbf{Merit Scholarship Recipient:} Maintained throughout undergraduate studies
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{SKILLS}
+        \begin{onecolentry}
+            \textbf{Frontend:} \textcolor{primaryColor}{React}, \textcolor{primaryColor}{Next.js}, TypeScript, JavaScript, Tailwind CSS, Shadcn UI, Radix UI, Framer Motion
+        \end{onecolentry}
+        
+        \vspace{0.06cm}
+        \begin{onecolentry}
+            \textbf{Backend \& DevOps:} Node.js, MongoDB, Supabase, Firebase, \textcolor{primaryColor}{Prisma}, Git, Vercel, REST APIs
+        \end{onecolentry}
+        
+        \vspace{0.06cm}
+        \begin{onecolentry}
+            \textbf{AI/ML:} \textcolor{primaryColor}{Gemini AI}, LangChain, Pinecone, TensorFlow.js, \textcolor{primaryColor}{Mistral OCR API}, RAG Pipelines, Document Analysis
+        \end{onecolentry}
+
+\end{document} 

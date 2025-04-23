@@ -109,6 +109,14 @@ export const skillsData = [
 //   Projects
 export const ProjectCardList = [
   {
+    title: "Midori Labs",
+    description: "A conversion-focused digital agency website that demonstrates expertise in creating high-performing web experiences through modern design and strategic development.",
+    imgSrc: "/assets/images/projects/midori.webp",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
+    projectLink: "https://midori-pi.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/midori",
+  },
+  {
     title: "Dubbby",
     description: "A SaaS platform for AI-powered video dubbing and translation...",
     imgSrc: "/assets/images/projects/dubbby.webp",
@@ -121,7 +129,7 @@ export const ProjectCardList = [
     description: "A SaaS solution for mental health professionals...",
     imgSrc: "/assets/images/projects/brainwise.webp",
     tags: ["React", "Node.js", "MongoDB", "SaaS"],
-    projectLink: "https://brainwise-health.vercel.app/",
+    projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
   },
   

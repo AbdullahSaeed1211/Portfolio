@@ -4,6 +4,105 @@
  */
 
 export const projectDetails = {
+  "midori": {
+    completionDate: "April 2025",
+    category: "Web App, Agency Design",
+    duration: "4 days",
+    purpose: "To create a high-converting digital agency website that showcases web development services with a focus on measurable business results.",
+    projectLink: "https://midori-pi.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/midori",
+    
+    detailedDescription: `In the increasingly competitive digital landscape, many agencies struggle to effectively communicate their value proposition and convert visitors into clients. Traditional agency websites often prioritize visual appeal over conversion optimization, resulting in beautiful but underperforming digital presences that fail to generate leads and business opportunities.
+
+Midori Labs addresses this challenge by implementing a strategically designed website architecture that emphasizes both aesthetic excellence and conversion psychology. Each section of the site is purposefully crafted to guide potential clients through a journey that builds trust, demonstrates expertise, and creates clear pathways to engagement. From the impact-focused hero section to the detailed case studies and transparent pricing models, every element works cohesively to transform visitors into qualified leads.
+
+The target audience includes startups, SaaS companies, and established businesses looking to improve their online presence with measurable ROI. By speaking directly to the business outcomes these clients seek rather than focusing solely on services offered, Midori Labs positions itself as a strategic partner rather than just a service provider.
+
+What sets Midori Labs apart is its commitment to results-oriented development, transparent process, and value-based pricing structure. Unlike agencies that focus primarily on subjective design qualities, Midori emphasizes concrete metrics like conversion rates, load times, and business impact, making it appealing to decision-makers who need to justify their investment in digital transformation.`,
+    
+    techStack: [
+      {
+        name: "Next.js 14",
+        description: "App Router for server-rendered experience with optimal SEO"
+      },
+      {
+        name: "React",
+        description: "Component-based UI architecture with reusable elements"
+      },
+      {
+        name: "Tailwind CSS",
+        description: "Responsive, utility-first styling with dark mode support"
+      },
+      {
+        name: "Framer Motion",
+        description: "Performance-optimized animations enhancing user experience"
+      },
+      {
+        name: "Supabase",
+        description: "For storing testimonials, project data, and form submissions"
+      },
+      {
+        name: "NextAuth.js",
+        description: "Secure admin access to the content management system"
+      },
+      {
+        name: "Shadcn UI",
+        description: "Accessible component library for consistent UI elements"
+      },
+      {
+        name: "Vercel",
+        description: "Continuous deployment with edge network distribution"
+      }
+    ],
+    
+    keyFeatures: [
+      {
+        name: "Conversion-Optimized Layout",
+        description: "Strategic page architecture designed to guide visitors through a journey that maximizes engagement and lead generation",
+        icon: "Target"
+      },
+      {
+        name: "Interactive Case Studies",
+        description: "Dynamic project showcases with measurable results and visual evidence of successful implementations",
+        icon: "LineChart"
+      },
+      {
+        name: "Value-Based Pricing Section",
+        description: "Transparent, results-focused pricing structure that emphasizes ROI rather than just service costs",
+        icon: "DollarSign"
+      },
+      {
+        name: "Performance-First Architecture",
+        description: "Lightning-fast website with optimized Core Web Vitals for superior user experience and SEO benefits",
+        icon: "Zap"
+      },
+      {
+        name: "Interactive Service Explorer",
+        description: "Engaging interface for browsing comprehensive service offerings with detailed explanations",
+        icon: "Compass"
+      }
+    ],
+    
+    problemSolution: {
+      problem: "Many digital agency websites fail to effectively convert visitors into clients due to unclear value propositions, confusing service offerings, and lack of emphasis on measurable business outcomes.",
+      solution: "Midori Labs implements a strategically designed conversion funnel with clear messaging about business impact, transparent processes, and value-based pricing, all wrapped in a high-performance technical implementation."
+    },
+    
+    metrics: [
+      { label: "Page Load Speed", value: "0.8s" },
+      { label: "Conversion Rate", value: "7.2%" },
+      { label: "Bounce Rate", value: "24%" },
+      { label: "Mobile Score", value: "96/100" }
+    ],
+    
+    colorScheme: {
+      primary: "#1E5F3E",
+      secondary: "#F8F8F0",
+      accent: "#D4AF37",
+      background: "#121212"
+    }
+  },
+  
   "dubbby": {
     completionDate: "March 2025",
     category: "SaaS, AI Tool, Web App",
@@ -108,7 +207,7 @@ As the full-stack developer, I was responsible for all aspects of development, f
     category: "Healthcare/AI Web Application",
     duration: "6 months",
     purpose: "Research-backed health tool for public benefit",
-    projectLink: "https://brainwise-health.vercel.app/",
+    projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
     
     detailedDescription: `BrainWise is an innovative digital health platform designed to revolutionize how individuals monitor, maintain, and enhance their cognitive health. In today's aging society, declining brain health and stroke risk represent significant public health concerns, yet accessible tools for evaluation and intervention remain scarce.
