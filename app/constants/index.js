@@ -108,7 +108,14 @@ export const skillsData = [
 
 //   Projects
 export const ProjectCardList = [
- 
+  {
+    title: "TestimonialNudger",
+    description: "A comprehensive platform that automates testimonial collection, management, and display for businesses. It helps businesses gather, curate, and showcase client testimonials on their websites with minimal effort, enhancing social proof and credibility.",
+    imgSrc: "/assets/images/projects/testimonialnudger.webp",
+    tags: ["Next.js", "React", "TypeScript", "MongoDB", "Clerk", "Tailwind CSS", "ShadcnUI"],
+    projectLink: "https://testimonial-nudger.vercel.app",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/TestimonialNudger",
+  },
   {
     title: "Dubbby",
     description: "A SaaS platform for AI-powered video dubbing and translation...",
