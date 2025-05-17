@@ -335,15 +335,15 @@ export default function ProjectDetailContent({ project, slug, detailedData }) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-12">
             <div className="lg:col-span-2">
               <BlurFade direction="up" delay={0.1}>
-                <h1 ref={headingRef} className="text-3xl md:text-4xl font-bold mb-4">
+                <h1 ref={headingRef} className="text-4xl md:text-5xl font-bold mb-4">
                   <span className="blue_gradient">{project.title}</span>
                 </h1>
               </BlurFade>
               
               <BlurFade direction="up" delay={0.2}>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {tags.map((tag, index) => (
-                    <Badge key={index} variant="outline" className="bg-accent/50 text-xs">
+                    <Badge key={index} variant="outline" className="bg-accent/50 text-xs font-medium px-3 py-1">
                       {tag}
                     </Badge>
                   ))}
@@ -351,46 +351,46 @@ export default function ProjectDetailContent({ project, slug, detailedData }) {
               </BlurFade>
               
               <BlurFade direction="up" delay={0.3}>
-                <div className="flex flex-wrap items-center text-sm text-muted-foreground mb-6 gap-4">
-                  <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-1.5" />
-                    <span>Completed: {completionDate}</span>
+                <div className="flex flex-wrap items-center text-sm mb-8 gap-6">
+                  <div className="flex items-center bg-muted/80 px-3 py-2 rounded-md">
+                    <Calendar className="h-4 w-4 mr-2 text-blue-500" />
+                    <span>Completed: <span className="font-medium">{completionDate}</span></span>
                   </div>
                   
-                  <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-1.5" />
-                    <span>Duration: {duration}</span>
+                  <div className="flex items-center bg-muted/80 px-3 py-2 rounded-md">
+                    <Clock className="h-4 w-4 mr-2 text-blue-500" />
+                    <span>Duration: <span className="font-medium">{duration}</span></span>
                   </div>
                   
-                  <div className="flex items-center">
-                    <Tag className="h-4 w-4 mr-1.5" />
-                    <span>{purpose}</span>
+                  <div className="flex items-center bg-muted/80 px-3 py-2 rounded-md">
+                    <Tag className="h-4 w-4 mr-2 text-blue-500" />
+                    <span><span className="font-medium">{purpose}</span></span>
                   </div>
                 </div>
               </BlurFade>
               
               <BlurFade direction="up" delay={0.4}>
                 <div className="prose prose-slate dark:prose-invert max-w-none">
-                  <p className="text-lg mb-4">
+                  <p className="text-xl leading-relaxed mb-6">
                     {detailedDescription.split('\n\n')[0]}
                   </p>
                 </div>
               </BlurFade>
               
-              <BlurFade direction="up" delay={0.5} className="flex flex-wrap gap-4 mt-6">
+              <BlurFade direction="up" delay={0.5} className="flex flex-wrap gap-4 mt-8">
                 {project.projectLink && (
-                  <Button asChild className="gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent text-white shadow-blue-500/25 hover:shadow-blue-500/50 transition-all">
+                  <Button asChild size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent text-white shadow-blue-500/25 hover:shadow-blue-500/50 transition-all">
                     <Link href={project.projectLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4" />
+                      <ExternalLink className="h-5 w-5" />
                       View Live Project
                     </Link>
                   </Button>
                 )}
                 
                 {project.projectLinkGithub && (
-                  <Button variant="outline" asChild className="gap-2 hover:bg-accent/50 group">
+                  <Button variant="outline" size="lg" asChild className="gap-2 hover:bg-accent/50 group">
                     <Link href={project.projectLinkGithub} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
+                      <Github className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
                       View Source Code
                     </Link>
                   </Button>
@@ -399,8 +399,9 @@ export default function ProjectDetailContent({ project, slug, detailedData }) {
             </div>
             
             <BlurFade direction="left" delay={0.4} className="relative">
-              <div ref={imageRef} className="aspect-video overflow-hidden rounded-lg shadow-lg border border-border">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-cyan-500/10 mix-blend-overlay"></div>
+              <div ref={imageRef} className="aspect-video overflow-hidden rounded-xl shadow-xl border border-border relative group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-500/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
@@ -411,7 +412,7 @@ export default function ProjectDetailContent({ project, slug, detailedData }) {
                     alt={project.title}
                     width={1000}
                     height={563}
-                    className="object-cover object-center w-full h-full"
+                    className="object-cover object-center w-full h-full transition-transform duration-700 ease-out"
                   />
                 </motion.div>
               </div>
@@ -438,35 +439,139 @@ export default function ProjectDetailContent({ project, slug, detailedData }) {
           {/* Problem Solution Box */}
           {problemSolution && (
             <BlurFade direction="up" delay={0.2}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 bg-muted rounded-lg p-6 border border-border">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 rounded-xl overflow-hidden border border-border shadow-lg">
                 <motion.div 
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.3 }}
+                  className="p-8 bg-red-50 dark:bg-red-950/30"
                 >
-                  <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 dark:bg-red-950">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="w-10 h-10 flex items-center justify-center rounded-full bg-red-100 dark:bg-red-900">
                       <span className="text-red-600 dark:text-red-400">❌</span>
                     </span>
                     <span className="red_gradient">The Problem</span>
                   </h3>
-                  <p>{problemSolution.problem}</p>
+                  <p className="text-lg leading-relaxed">{problemSolution.problem}</p>
                 </motion.div>
                 
                 <motion.div 
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.3 }}
+                  className="p-8 bg-green-50 dark:bg-green-950/30"
                 >
-                  <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-950">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
                       <span className="text-green-600 dark:text-green-400">✓</span>
                     </span>
                     <span className="green_gradient">The Solution</span>
                   </h3>
-                  <p>{problemSolution.solution}</p>
+                  <p className="text-lg leading-relaxed">{problemSolution.solution}</p>
                 </motion.div>
               </div>
             </BlurFade>
           )}
+          
+          {/* Tech Stack */}
+          <BlurFade direction="up" delay={0.3}>
+            <motion.section 
+              className="mb-16"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 inline-block relative">
+                <span className="blue_gradient">Technology Stack</span>
+                <span className="absolute -bottom-1 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-600 to-cyan-600"></span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {detailedTechStack.map((tech, index) => (
+                  <motion.div 
+                    key={index}
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate="visible"
+                    whileHover="hover"
+                    transition={{ delay: 0.1 * index }}
+                    className="p-6 rounded-xl border border-border bg-card hover:bg-card/80 transition-colors shadow-md hover:shadow-lg hover:border-blue-500/30"
+                  >
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/60">
+                        <Code className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <h3 className="text-lg font-semibold">{tech.name}</h3>
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tech.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
+          </BlurFade>
+          
+          {/* Key Features */}
+          <BlurFade direction="up" delay={0.4}>
+            <motion.section 
+              className="mb-16"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 inline-block relative">
+                <span className="blue_gradient">Key Features</span>
+                <span className="absolute -bottom-1 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-600 to-cyan-600"></span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {keyFeatures.map((feature, index) => {
+                  const IconComponent = getIconComponent(feature.icon);
+                  return (
+                    <motion.div 
+                      key={index}
+                      variants={cardVariants}
+                      initial="hidden"
+                      animate="visible"
+                      whileHover="hover"
+                      transition={{ delay: 0.1 * index }}
+                      className="p-6 rounded-xl border border-border bg-card hover:bg-card/80 transition-colors shadow-md hover:shadow-lg hover:border-blue-500/30"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40">
+                          <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold mb-2">{feature.name}</h3>
+                          <p className="text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.section>
+          </BlurFade>
+          
+          {/* Project Description Paragraphs */}
+          <BlurFade direction="up" delay={0.5}>
+            <motion.section 
+              className="mb-16"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 inline-block relative">
+                <span className="blue_gradient">Project Details</span>
+                <span className="absolute -bottom-1 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-600 to-cyan-600"></span>
+              </h2>
+              
+              <div className="prose prose-slate dark:prose-invert max-w-none">
+                {detailedDescription.split('\n\n').slice(1).map((paragraph, index) => (
+                  <p key={index} className="mb-4 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </motion.section>
+          </BlurFade>
           
           {/* Call to Action */}
           <BlurFade direction="up" delay={0.6} className="mt-16">

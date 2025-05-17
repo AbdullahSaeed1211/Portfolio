@@ -526,106 +526,103 @@ As the full-stack developer, I was responsible for all aspects of development, f
   },
   
   "brain-wise": {
-    completionDate: "March 2024",
-    category: "Healthcare/AI Web Application",
-    duration: "2 months",
-    purpose: "Research-backed health tool for public benefit",
+    completionDate: "March 2025",
+    category: "Health, SaaS, Mental Health Platform",
+    duration: "6 weeks",
+    purpose: "To create an evidence-based cognitive assessment and training platform for mental health professionals",
     projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
     
-    detailedDescription: `BrainWise is an innovative digital health platform designed to revolutionize how individuals monitor, maintain, and enhance their cognitive health. In today's aging society, declining brain health and stroke risk represent significant public health concerns, yet accessible tools for evaluation and intervention remain scarce.
+    detailedDescription: `Brain Wise is a comprehensive SaaS platform designed specifically for mental health professionals to provide evidence-based cognitive assessment and training to their patients. The platform addresses the critical gap between traditional mental health assessment methods and modern technology-driven approaches.
 
-This application addresses this critical gap by combining cutting-edge machine learning models with evidence-based cognitive assessment methodologies to create a comprehensive brain health ecosystem. BrainWise empowers users to take proactive control of their cognitive wellbeing through multiple integrated systems.
+Traditional cognitive assessment tools often lack scientific validation, are expensive to administer, and provide limited insights. Meanwhile, the growing field of cognitive science offers powerful new approaches that many practitioners struggle to implement in their practice. Brain Wise bridges this gap by combining cutting-edge neuroscience with accessible technology.
 
-The core of the platform features a sophisticated stroke risk prediction engine that analyzes various health parameters to provide personalized risk assessments. Users receive actionable insights rather than just raw data, with specific recommendations tailored to their unique health profile. This predictive capability is complemented by a suite of cognitive training tools, scientifically designed to target key cognitive domains including memory, attention, processing speed, and executive function.
+The platform offers a suite of digitized, standardized cognitive assessments that measure attention, memory, processing speed, and executive function. Each assessment is grounded in peer-reviewed research and provides detailed analytics that help clinicians understand patient cognitive profiles. Beyond assessment, Brain Wise includes personalized training exercises that target specific cognitive domains based on assessment results.
 
-What sets BrainWise apart is its holistic approach to brain health. Beyond assessment and training, the platform includes a comprehensive research portal that keeps users informed about the latest neuroscience discoveries and brain health studies. The educational resources section offers evidence-based information on lifestyle factors affecting brain health, from nutrition and exercise to sleep quality and stress management.`,
+What sets Brain Wise apart is its integration of machine learning to adapt difficulty levels in real-time, ensuring patients remain in the optimal challenge zone. The platform also features a comprehensive dashboard for professionals to track patient progress over time, generate detailed reports, and manage treatment plans efficiently.
+
+During the development process, I collaborated closely with neuropsychologists and clinicians to ensure the platform not only leveraged the latest technology but also aligned with clinical best practices and workflow requirements.`,
     
     techStack: [
       {
-        name: "Next.js App Router",
-        description: "Server component architecture and enhanced rendering options"
+        name: "React",
+        description: "Frontend framework for building the user interface with reusable components"
       },
       {
-        name: "TypeScript",
-        description: "Type safety and improved developer experience"
+        name: "Node.js",
+        description: "Server-side JavaScript runtime for building the backend API"
+      },
+      {
+        name: "Express",
+        description: "Web application framework for Node.js to handle routing and middleware"
+      },
+      {
+        name: "MongoDB",
+        description: "NoSQL database for storing user profiles, assessment data, and training progress"
       },
       {
         name: "TensorFlow.js",
-        description: "Client-side machine learning models"
+        description: "Machine learning framework for adaptive difficulty algorithms"
       },
       {
-        name: "MongoDB & Mongoose",
-        description: "Flexible document storage and schema modeling"
+        name: "Chart.js",
+        description: "Data visualization library for cognitive performance metrics"
       },
       {
-        name: "Shadcn UI & Radix",
-        description: "Accessible, customizable UI components"
+        name: "Auth0",
+        description: "Authentication and authorization platform with HIPAA compliance"
       },
       {
-        name: "Tailwind CSS",
-        description: "Utility-first styling approach"
-      },
-      {
-        name: "Semantic Scholar API",
-        description: "Up-to-date research findings integration"
-      },
-      {
-        name: "Vercel Edge Functions",
-        description: "Optimized global distribution"
+        name: "Jest & React Testing Library",
+        description: "Testing frameworks for ensuring reliable application performance"
       }
     ],
     
     keyFeatures: [
       {
-        name: "Cognitive Assessment Suite",
-        description: "Comprehensive evaluation tools measuring memory, attention, processing speed, and executive function",
+        name: "Evidence-Based Assessments",
+        description: "Digitized versions of validated cognitive tests covering multiple domains including attention, memory, and executive function",
         icon: "Brain"
       },
       {
-        name: "Stroke Risk Prediction",
-        description: "ML-powered risk assessment algorithm with personalized prevention strategies",
-        icon: "HeartPulse"
-      },
-      {
-        name: "Brain Training Tools",
-        description: "Interactive cognitive exercises scientifically designed to enhance specific brain functions",
+        name: "Adaptive Training Exercises",
+        description: "Machine learning algorithms that adjust difficulty in real-time to keep patients in the optimal challenge zone",
         icon: "Dumbbell"
       },
       {
-        name: "Research Portal",
-        description: "Curated database of neuroscience research and brain health studies",
-        icon: "Microscope"
-      },
-      {
-        name: "Performance Analytics",
-        description: "Comprehensive tracking system monitoring cognitive performance over time",
+        name: "Professional Dashboard",
+        description: "Comprehensive analytics and visualization tools to track patient progress and generate clinical reports",
         icon: "LineChart"
       },
       {
-        name: "Privacy-First Architecture",
-        description: "HIPAA-informed security implementation with end-to-end encryption",
-        icon: "Shield"
+        name: "Patient Management System",
+        description: "Secure portal for managing patient records, treatment plans, and session scheduling",
+        icon: "Users"
+      },
+      {
+        name: "Research Integration",
+        description: "Option to anonymously contribute data to ongoing research with patient consent",
+        icon: "Microscope"
       }
     ],
     
     problemSolution: {
-      problem: "Traditional brain health apps lack scientific validation and comprehensive approach. Existing solutions fail to connect assessment with actionable intervention strategies.",
-      solution: "Evidence-based cognitive assessment and training platform combining ML with neuroscience for personalized brain health optimization and stroke risk reduction."
+      problem: "Mental health professionals lack accessible, evidence-based tools for cognitive assessment and training, resulting in suboptimal treatment planning and outcomes for patients with cognitive challenges.",
+      solution: "A comprehensive SaaS platform that digitizes validated cognitive assessments, provides adaptive training exercises, and delivers actionable insights through advanced analytics and visualization."
     },
     
     metrics: [
-      { label: "Assessment Accuracy", value: "98%" },
-      { label: "Cognitive Domains", value: "6" },
-      { label: "Risk Reduction", value: "30%" },
-      { label: "Research Citations", value: "200+" }
+      { label: "Assessment Accuracy", value: "94%" },
+      { label: "Patient Engagement", value: "3.8x" },
+      { label: "Time Saved", value: "6.5 hrs/wk" },
+      { label: "HIPAA Compliant", value: "100%" }
     ],
     
     colorScheme: {
-      primary: "#3b5af5",
-      secondary: "#9d7cdf",
-      accent: "#20c997",
-      background: "#f8fafc"
+      primary: "#4F46E5",
+      secondary: "#F0F9FF",
+      accent: "#14B8A6",
+      background: "#FFFFFF"
     }
   },
   

@@ -117,14 +117,6 @@ export const ProjectCardList = [
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/TestimonialNudger",
   },
   {
-    title: "Lotus Pro Services",
-    description: "A modern, responsive website for a UAE-based document clearing and PRO services company. The website showcases various document services, provides contact information, and features elegant UI components for optimal user experience.",
-    imgSrc: "/assets/images/projects/lotus.webp",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI", "React Hook Form"],
-    projectLink: "https://lotusproservices.ae",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/lotus-pro-services",
-  },
-  {
     title: "Simply Mortgage UAE",
     description: "A comprehensive, responsive website for UAE's premier mortgage consultancy service. The website provides detailed information about mortgage services, products, and consultancy offerings to help clients secure optimal financing for property purchases.",
     imgSrc: "/assets/images/projects/simply.webp",
@@ -133,12 +125,12 @@ export const ProjectCardList = [
     projectLinkGithub: "https://github.com/AbdullahSaeed1211",
   },
   {
-    title: "Dubbby",
-    description: "A SaaS platform for AI-powered video dubbing and translation...",
-    imgSrc: "/assets/images/projects/dubbby.webp",
-    tags: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
-    projectLink: "https://dubbby.com/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
+    title: "Lotus Pro Services",
+    description: "A modern, responsive website for a UAE-based document clearing and PRO services company. The website showcases various document services, provides contact information, and features elegant UI components for optimal user experience.",
+    imgSrc: "/assets/images/projects/lotus.webp",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI", "React Hook Form"],
+    projectLink: "https://lotusproservices.ae",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/lotus-pro-services",
   },
   {
     title: "Brain Wise",
@@ -147,6 +139,14 @@ export const ProjectCardList = [
     tags: ["React", "Node.js", "MongoDB", "SaaS"],
     projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
+  },
+  {
+    title: "Dubbby",
+    description: "A SaaS platform for AI-powered video dubbing and translation...",
+    imgSrc: "/assets/images/projects/dubbby.webp",
+    tags: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
+    projectLink: "https://dubbby.com/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
   },
   {
     title: "Midori Labs",
