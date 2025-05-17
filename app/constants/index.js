@@ -117,6 +117,22 @@ export const ProjectCardList = [
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/TestimonialNudger",
   },
   {
+    title: "Lotus Pro Services",
+    description: "A modern, responsive website for a UAE-based document clearing and PRO services company. The website showcases various document services, provides contact information, and features elegant UI components for optimal user experience.",
+    imgSrc: "/assets/images/projects/lotus.webp",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI", "React Hook Form"],
+    projectLink: "https://lotusproservices.ae",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/lotus-pro-services",
+  },
+  {
+    title: "Simply Mortgage UAE",
+    description: "A comprehensive, responsive website for UAE's premier mortgage consultancy service. The website provides detailed information about mortgage services, products, and consultancy offerings to help clients secure optimal financing for property purchases.",
+    imgSrc: "/assets/images/projects/simply.webp",
+    tags: ["Next.js 15", "React 18", "TypeScript", "Tailwind CSS", "Radix UI", "Framer Motion", "Dark Mode"],
+    projectLink: "https://simply-ten.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211",
+  },
+  {
     title: "Dubbby",
     description: "A SaaS platform for AI-powered video dubbing and translation...",
     imgSrc: "/assets/images/projects/dubbby.webp",
@@ -139,14 +155,6 @@ export const ProjectCardList = [
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
     projectLink: "https://midori-pi.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/midori",
-  },
-  {
-    title: "Simply Mortgage",
-    description: "A premium mortgage consultation service website for UAE homebuyers offering rate comparisons, mortgage calculators, and booking functionality.",
-    imgSrc: "/assets/images/projects/simply.webp",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "Framer Motion", "Responsive Design"],
-    projectLink: "https://simply-ten.vercel.app/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211",
   },
   {
     title: "Blog Squirrel",

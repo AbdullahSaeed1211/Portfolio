@@ -119,6 +119,214 @@ Designed with both businesses and their clients in mind, TestimonialNudger makes
     }
   },
   
+  "lotus-pro-services": {
+    completionDate: "May 2025",
+    category: "Web Application, Corporate Website",
+    duration: "3 weeks",
+    purpose: "To create a modern digital presence for a UAE-based document clearing and PRO services company",
+    projectLink: "https://lotusproservices.ae",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/lotus-pro-services",
+    
+    detailedDescription: `The Lotus Document Clearing Services LLC website serves as the digital storefront for a professional document services company based in the UAE. The website provides comprehensive information about various document-related services, including document clearing, PRO services, translation, verification, and more.
+
+The project features a modern architecture built with the latest Next.js 15 framework using the App Router, TypeScript for improved type safety, and responsive design optimized for all device sizes. The website showcases various document services, provides contact information, and features elegant UI components for optimal user experience.
+
+Key services featured on the website include PRO Services, Document Clearing, Document Copying, Verification Services, Translation Services, Maps & Drawings Copying, and Licensed Activities. The website implements a dual email solution using Resend API with Gmail fallback to ensure contact form submissions are always delivered properly.
+
+What sets this project apart is its visually distinctive interface with custom UI components inspired by modern design trends, including an Apple-style card carousel and animated text components, creating a premium feel that aligns with the client's brand identity.`,
+    
+    techStack: [
+      {
+        name: "Next.js 15",
+        description: "App Router architecture for optimized performance and routing"
+      },
+      {
+        name: "TypeScript",
+        description: "Enhanced type safety and developer experience"
+      },
+      {
+        name: "Tailwind CSS",
+        description: "Utility-first styling for responsive design"
+      },
+      {
+        name: "Framer Motion",
+        description: "Advanced animations and transitions"
+      },
+      {
+        name: "Resend & Nodemailer",
+        description: "Dual email solution for reliable contact form submissions"
+      },
+      {
+        name: "React Hook Form & Zod",
+        description: "Efficient form state management with robust validation"
+      },
+      {
+        name: "Shadcn UI",
+        description: "Customizable, accessible component library"
+      },
+      {
+        name: "Custom UI Components",
+        description: "Apple-inspired design patterns for premium feel"
+      }
+    ],
+    
+    keyFeatures: [
+      {
+        name: "Service Showcase",
+        description: "Detailed pages for each service with custom UI components",
+        icon: "FileText"
+      },
+      {
+        name: "Contact System",
+        description: "Integrated email functionality with Resend API and Gmail fallback",
+        icon: "Mail"
+      },
+      {
+        name: "Resizable Navbar",
+        description: "Dynamic navigation that transforms on scroll",
+        icon: "Menu"
+      },
+      {
+        name: "Cards Carousel",
+        description: "Apple-inspired carousel for showcasing service highlights",
+        icon: "Layout"
+      },
+      {
+        name: "Animated Components",
+        description: "Custom animations and transitions for improved user engagement",
+        icon: "Sparkles"
+      },
+      {
+        name: "Notification Banner",
+        description: "Sticky banner for important announcements",
+        icon: "Bell"
+      }
+    ],
+    
+    problemSolution: {
+      problem: "The client needed a professional digital presence that effectively showcases multiple service categories while providing a premium user experience to position them as a trusted service provider in the UAE market.",
+      solution: "A modern, responsive website with custom UI components and comprehensive service pages, implementing logical information architecture with primary service categories and subcategories using consistent UI patterns to make navigation intuitive."
+    },
+    
+    metrics: [
+      { label: "Device Compatibility", value: "100%" },
+      { label: "Load Time", value: "<2s" },
+      { label: "Service Categories", value: "7+" },
+      { label: "UI Components", value: "20+" }
+    ],
+    
+    colorScheme: {
+      primary: "#1e40af",
+      secondary: "#f8fafc",
+      accent: "#f59e0b",
+      background: "#ffffff"
+    }
+  },
+  
+  "simply-mortgage": {
+    completionDate: "May 2025",
+    category: "Corporate Website, Mortgage Consultancy",
+    duration: "4 weeks",
+    purpose: "To create a comprehensive digital presence for UAE's premier mortgage consultancy service, helping clients secure optimal financing for property purchases",
+    projectLink: "https://simply-ten.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211",
+    
+    detailedDescription: `The Simply Mortgage UAE website serves as a comprehensive digital platform for the UAE's premier mortgage consultancy service. It provides detailed information about mortgage services, products, and consultancy offerings to help clients in the UAE secure optimal financing for property purchases.
+
+The website was built using Next.js 15's App Router pattern, focusing on modularity and component reusability. Key technical implementations include server-side rendering and static generation for optimal SEO performance, dynamic routes for product and service detail pages, TypeScript integration for full type safety, responsive design ensuring perfect rendering across all devices, dark mode support with theme persistence, and comprehensive meta tags and structured data for enhanced SEO.
+
+The design focuses on professionalism with attention to user experience, featuring clean, modern UI components with a consistent visual language, subtle animations that enhance the user experience without compromising performance, WCAG-compliant accessibility with proper contrast ratios and semantic markup, performance optimization for fast page loads, and bespoke UI elements that maintain brand identity.
+
+The content strategy is structured around comprehensive service and product sections, dynamic detail pages with in-depth information, company information, and multiple contact points with form submission capabilities.`,
+    
+    techStack: [
+      {
+        name: "Next.js 15",
+        description: "App Router pattern for optimal SEO and performance"
+      },
+      {
+        name: "React 18",
+        description: "Component-based architecture with hooks"
+      },
+      {
+        name: "TypeScript",
+        description: "Full type safety across components and data structures"
+      },
+      {
+        name: "Tailwind CSS",
+        description: "Utility-first styling for responsive design"
+      },
+      {
+        name: "Radix UI Components",
+        description: "Accessible, customizable UI primitives"
+      },
+      {
+        name: "Framer Motion",
+        description: "Subtle animations enhancing user experience"
+      },
+      {
+        name: "Shadcn UI",
+        description: "Component library built on Radix UI primitives"
+      },
+      {
+        name: "SEO Optimization",
+        description: "Comprehensive meta tags and structured data"
+      }
+    ],
+    
+    keyFeatures: [
+      {
+        name: "Server-side Rendering",
+        description: "Pre-rendered pages for optimal SEO performance",
+        icon: "Server"
+      },
+      {
+        name: "Dynamic Routes",
+        description: "Parameterized routes for product and service detail pages",
+        icon: "Route"
+      },
+      {
+        name: "Responsive Design",
+        description: "Mobile-first approach ensuring perfect rendering across all devices",
+        icon: "Smartphone"
+      },
+      {
+        name: "Dark Mode Support",
+        description: "Theme persistence using localStorage with smooth transitions",
+        icon: "Moon"
+      },
+      {
+        name: "Content Management",
+        description: "Structured architecture for services and products information",
+        icon: "FileText"
+      },
+      {
+        name: "Contact Integration",
+        description: "Multiple contact points with form submission capabilities",
+        icon: "Mail"
+      }
+    ],
+    
+    problemSolution: {
+      problem: "Mortgage consultancy services in the UAE needed a professional digital presence that effectively communicates complex financial services while providing an intuitive user experience for potential clients researching property financing options.",
+      solution: "A comprehensive website with clear service categorization, detailed product information, and multiple conversion pathways, all wrapped in a professional, responsive design with dark mode support and optimal performance."
+    },
+    
+    metrics: [
+      { label: "Lighthouse Score", value: "95+" },
+      { label: "Page Load Time", value: "<1.5s" },
+      { label: "Device Compatibility", value: "100%" },
+      { label: "SEO Optimization", value: "Full" }
+    ],
+    
+    colorScheme: {
+      primary: "#E32124",
+      secondary: "#F8F9FA",
+      accent: "#0056B3",
+      background: "#FFFFFF"
+    }
+  },
+  
   "midori": {
     completionDate: "April 2025",
     category: "Web App, Agency Design",
@@ -779,111 +987,6 @@ What makes Pantry Panic unique is its integration of AI for inventory suggestion
       text: "#FFFFFF",
       neutral: "#e5e5e5",
       accent: "#a3a3a3"
-    }
-  },
-  
-  "simply-mortgage": {
-    completionDate: "April 2025",
-    category: "Financial Services, Web Application, Consultation",
-    duration: "1 week",
-    purpose: "To provide UAE residents with a modern, intuitive platform for exploring mortgage options, calculating costs, and booking consultations with mortgage experts.",
-    projectLink: "https://simply-ten.vercel.app/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211",
-    
-    detailedDescription: `Simply Mortgage is a comprehensive mortgage consultation website designed for the UAE market. The platform helps potential homebuyers navigate the complex mortgage landscape with expert guidance and cutting-edge tools.
-
-The website features a sleek, responsive design with modern UI components and fluid animations that enhance user experience. The interactive mortgage calculator allows users to estimate monthly payments, understand total costs, and make informed financial decisions.
-
-The site architecture follows Next.js App Router for optimal performance, implementing server components where possible and minimizing client-side JavaScript. The UI is built with a component-based approach using Shadcn UI and Radix for accessible, reusable interface elements styled with Tailwind CSS.
-
-Key features include a mortgage calculator, appointment booking integration with Cal.com, responsive design across all devices, and optimized loading states with Suspense boundaries.`,
-    
-    techStack: [
-      {
-        name: "Next.js 15",
-        description: "Utilized for server-side rendering, App Router, and improved performance"
-      },
-      {
-        name: "TypeScript",
-        description: "Implemented for type safety throughout the codebase"
-      },
-      {
-        name: "Tailwind CSS",
-        description: "Used for responsive, utility-first styling"
-      },
-      {
-        name: "Shadcn UI",
-        description: "Provided accessible, customizable UI components"
-      },
-      {
-        name: "Radix UI",
-        description: "Used for headless, accessible UI primitives"
-      },
-      {
-        name: "Framer Motion",
-        description: "Implemented for smooth animations and transitions"
-      },
-      {
-        name: "Cal.com Integration",
-        description: "Enabled seamless appointment booking functionality"
-      },
-      {
-        name: "React Server Components",
-        description: "Optimized performance by reducing client-side JavaScript"
-      }
-    ],
-    
-    keyFeatures: [
-      {
-        name: "Interactive Mortgage Calculator",
-        description: "Advanced calculator that provides accurate monthly payment estimates, total interest costs, and amortization details",
-        icon: "Calculator"
-      },
-      {
-        name: "Appointment Booking System",
-        description: "Integration with Cal.com for seamless consultant booking",
-        icon: "Calendar"
-      },
-      {
-        name: "Responsive Design",
-        description: "Mobile-first approach ensuring optimal experience across all devices",
-        icon: "Smartphone"
-      },
-      {
-        name: "Dynamic Animations",
-        description: "Subtle animations and transitions enhancing user experience",
-        icon: "Sparkles"
-      },
-      {
-        name: "24/7 Support",
-        description: "Clear calls-to-action for connecting with mortgage specialists",
-        icon: "Headset"
-      },
-      {
-        name: "Optimized Performance",
-        description: "Implemented with Next.js App Router for fast loading times",
-        icon: "Gauge"
-      }
-    ],
-    
-    problemSolution: {
-      problem: "The UAE mortgage market can be complex for homebuyers to navigate, with fragmented information sources and complicated rate structures. Potential homeowners need access to accurate calculations, transparent information, and expert guidance in one centralized platform.",
-      solution: "Simply Mortgage addresses these challenges by providing an all-in-one solution with accurate mortgage calculations, clear information about rates and options, and easy access to mortgage experts. The intuitive interface guides users through the mortgage process, helping them make informed decisions with confidence."
-    },
-    
-    metrics: [
-      { label: "Average Load Time", value: "1.2 sec" },
-      { label: "Lighthouse Score", value: "98/100" },
-      { label: "Client Consultations", value: "500+" },
-      { label: "Starting Interest Rate", value: "3.75%" }
-    ],
-    
-    colorScheme: {
-      primary: "#E32124",
-      secondary: "#F8F9FA",
-      accent: "#0056B3",
-      success: "#28A745",
-      warning: "#FFC107"
     }
   }
 }; 
