@@ -25,7 +25,7 @@ Lotus Pro Services was built using Next.js for the frontend with Tailwind CSS fo
     description: "A personal blogging platform with social sharing, analytics, and SEO optimization built in React and Firebase.",
     imgSrc: "/assets/images/projects/blogport.webp",
     tags: ["React", "Firebase", "CSS3", "Responsive"],
-    projectLink: "https://blogsquirrel-demo.vercel.app/",
+    projectLink: "https://blog-squirrel.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/blogsquirrel",
     detailedDescription: `BlogSquirrel is a lightweight blogging platform designed for personal use, with a focus on simplicity and performance. It provides an easy way for individuals to publish and share their thoughts without the complexity of larger CMS platforms.
 
@@ -65,7 +65,7 @@ The website was built with Next.js for optimal performance and SEO benefits, wit
     description: "An AI-powered learning platform that creates personalized study materials and adaptive quizzes based on user learning patterns.",
     imgSrc: "/assets/images/projects/brainwise.webp",
     tags: ["Next.js", "Python", "TensorFlow", "MongoDB"],
-    projectLink: "https://brainwise-learning.vercel.app/",
+    projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/brainwise",
     detailedDescription: `BrainWise is an innovative learning platform that leverages artificial intelligence to create personalized educational experiences. The platform analyzes user learning patterns and adapts content delivery to optimize knowledge retention and comprehension.
 
