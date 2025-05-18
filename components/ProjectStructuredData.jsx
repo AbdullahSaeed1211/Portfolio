@@ -1,6 +1,20 @@
 "use client";
 
-export default function ProjectStructuredData({ project, slug, tags, techStack, completionDate }) {
+import { getProjectById } from "@/app/constants/projects";
+
+export default function ProjectStructuredData({ slug }) {
+  // Get project using our new structure
+  const project = getProjectById(slug);
+  
+  if (!project) {
+    return null;
+  }
+  
+  // Extract metadata from the project
+  const tags = project.tags || [];
+  const techStack = project.techStack ? project.techStack.map(tech => tech.name) : [];
+  const completionDate = project.metadata?.completionDate || "2023";
+
   // Create JSON-LD data for the project
   const projectStructuredData = {
     "@context": "https://schema.org",
@@ -22,14 +36,14 @@ export default function ProjectStructuredData({ project, slug, tags, techStack, 
       }
     },
     "description": project.description,
-    "keywords": [...tags, ...techStack, "case study", "web development"],
+    "keywords": [...tags, ...(techStack || []), "case study", "web development"],
     "url": `https://abdullahsaeed.me/projects/${slug}`,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://abdullahsaeed.me/projects/${slug}`
     },
     "articleSection": "Case Study",
-    "articleBody": project.description,
+    "articleBody": project.detailedDescription || project.description,
     "about": {
       "@type": "SoftwareApplication",
       "name": project.title,

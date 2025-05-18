@@ -27,9 +27,6 @@ import {
   FileText,
 } from "lucide-react";
 
-// Import all projects from the projects directory
-import { allProjects } from './projects';
-
 // Skills
 export const skillsData = [
   {
@@ -109,12 +106,58 @@ export const skillsData = [
   },
 ];
 
-// Projects - now imported from the projects directory
+//   Projects
 export const ProjectCardList = [
-  // Major projects from individual files
-  ...allProjects,
+  {
+    title: "TestimonialNudger",
+    description: "A comprehensive platform that automates testimonial collection, management, and display for businesses. It helps businesses gather, curate, and showcase client testimonials on their websites with minimal effort, enhancing social proof and credibility.",
+    imgSrc: "/assets/images/projects/testimonialnudger.webp",
+    tags: ["Next.js", "React", "TypeScript", "MongoDB", "Clerk", "Tailwind CSS", "ShadcnUI"],
+    projectLink: "https://testimonial-nudger.vercel.app",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/TestimonialNudger",
+  },
+  {
+    title: "Simply Mortgage UAE",
+    description: "A comprehensive, responsive website for UAE's premier mortgage consultancy service. The website provides detailed information about mortgage services, products, and consultancy offerings to help clients secure optimal financing for property purchases.",
+    imgSrc: "/assets/images/projects/simply.webp",
+    tags: ["Next.js 15", "React 18", "TypeScript", "Tailwind CSS", "Radix UI", "Framer Motion", "Dark Mode"],
+    projectLink: "https://simply-ten.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211",
+  },
+  {
+    title: "Lotus Pro Services",
+    description: "A modern, responsive website for a UAE-based document clearing and PRO services company. The website showcases various document services, provides contact information, and features elegant UI components for optimal user experience.",
+    imgSrc: "/assets/images/projects/lotus.webp",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI", "React Hook Form"],
+    projectLink: "https://lotusproservices.ae",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/lotus-pro-services",
+  },
+  {
+    title: "Brain Wise",
+    description: "A SaaS solution for mental health professionals...",
+    imgSrc: "/assets/images/projects/brainwise.webp",
+    tags: ["React", "Node.js", "MongoDB", "SaaS"],
+    projectLink: "https://brainwise.pro/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/BrainWise",
+  },
+  {
+    title: "Dubbby",
+    description: "A SaaS platform for AI-powered video dubbing and translation...",
+    imgSrc: "/assets/images/projects/dubbby.webp",
+    tags: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
+    projectLink: "https://dubbby.com/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
+  },
+    {    title: "Kiiro.cx",    description: "A conversion-focused digital agency website that demonstrates expertise in creating high-performing web experiences through modern design and strategic development.",    imgSrc: "/assets/images/projects/kiiro.webp",    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],    projectLink: "https://midori-pi.vercel.app/",    projectLinkGithub: "https://github.com/AbdullahSaeed1211/midori",  },
+  {
+    title: "Blog Squirrel",
+    imgSrc: "/assets/images/projects/blogport.webp",
+    description: "a SaaS platform designed to make blogging quick and easy. With it, users can set up a professional blog in minutes, eliminating the hassle of complicated setups. Key features include seamless user authentication, effortless payment management through Stripe, scalable database solutions, and an intuitive content creation tool. The platform also offers beautiful, customizable designs and optimized performance for high traffic. BlogSquirrel provides various pricing plans, from a free 'Freelancer' plan to a 'Startup' plan, making it suitable for both beginners and small businesses.",
+    tags: ["Next.js", "Stripe", "MongoDB", "SaaS"],
+    projectLink: "https://blog-squirrel.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/blogSaaS",
+  },
   
-  // Additional projects not yet migrated to the new structure
   {
     title: "Pantry Panic",
     imgSrc: "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",

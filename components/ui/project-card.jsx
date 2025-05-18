@@ -18,6 +18,9 @@ import { Github, ExternalLink, ChevronRight } from "lucide-react";
 import { TrackEvent } from "@/components/ui/track-event";
 
 const ProjectCard = ({ project, index }) => {
+  // Create a valid project ID if none exists - use a slug from title
+  const projectId = project.id || project.title?.toLowerCase().replace(/\s+/g, '-');
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -29,7 +32,7 @@ const ProjectCard = ({ project, index }) => {
       <Card className="h-full flex flex-col overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-300 group">
         <div className="relative overflow-hidden aspect-video">
           <Image
-            src={project.imageUrl}
+            src={project.imageUrl || project.imgSrc || "/assets/images/placeholder-project.jpg"}
             alt={project.title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -94,16 +97,17 @@ const ProjectCard = ({ project, index }) => {
               </Button>
             )}
           </div>
-          {project.slug && (
+          {/* Show the View Details button for all projects using the ID or generated slug */}
+          {projectId && (
             <TrackEvent 
               eventName="project_details_click" 
               properties={{ 
                 project_name: project.title,
-                project_id: project.slug 
+                project_id: projectId 
               }}
             >
               <Button variant="default" size="sm" asChild>
-                <Link href={`/projects/${project.slug}`}>
+                <Link href={`/projects/${projectId}`}>
                   View Details
                 </Link>
               </Button>
