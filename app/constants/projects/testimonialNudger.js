@@ -182,7 +182,7 @@ Designed with both businesses and their clients in mind, TestimonialNudger makes
   metadata: {
     completionDate: "May 2025",
     category: "SaaS, Web App, Testimonial Platform",
-    duration: "2 weeks",
+    duration: "1 week",
     purpose: "To automate the testimonial collection process for businesses and freelancers with an elegant, user-friendly platform"
   }
 }; 

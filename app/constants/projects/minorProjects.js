@@ -5,7 +5,7 @@ export const minorProjects = [
     description: "A modern, responsive website for a UAE-based document clearing and PRO services company.",
     imgSrc: "/assets/images/projects/lotus.webp",
     tags: ["Next.js", "Tailwind CSS", "Responsive", "UI/UX"],
-    projectLink: "https://lotus-pro-services.vercel.app/",
+    projectLink: "https://lotusproservices.ae/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/lotus-pro-services",
     detailedDescription: `Lotus Pro Services is a modern, responsive website designed for a UAE-based document clearing and PRO services company. It features a clean, professional interface that effectively communicates the company's services and value proposition.
 
@@ -13,9 +13,9 @@ The website includes service listings, contact forms, testimonials, and clear ca
 
 Lotus Pro Services was built using Next.js for the frontend with Tailwind CSS for styling, enabling a fast, responsive experience with excellent performance metrics.`,
     metadata: {
-      completionDate: "December 2024",
+      completionDate: "May 2025",
       category: "Web App, Business Website",
-      duration: "3 weeks",
+      duration: "3 days",
       purpose: "To create a modern website for a UAE-based document services company"
     }
   },
@@ -53,9 +53,9 @@ Key features include interactive mortgage calculators, detailed service listings
 
 The website was built with Next.js for optimal performance and SEO benefits, with Tailwind CSS providing the styling framework. It achieves excellent performance scores while delivering a user-friendly experience.`,
     metadata: {
-      completionDate: "June 2024",
+      completionDate: "May 2025",
       category: "Web App, Finance, Business Website",
-      duration: "4 weeks",
+      duration: "2 weeks",
       purpose: "To create a comprehensive mortgage consultancy website for the UAE market"
     }
   },
@@ -73,10 +73,51 @@ The system features personalized study plan generation based on learning goals a
 
 The platform was built using Next.js for the frontend interface, with Python and TensorFlow powering the AI recommendation engine. MongoDB stores user data and learning materials, while a custom API handles communication between the frontend and AI services.`,
     metadata: {
-      completionDate: "March 2024",
+      completionDate: "March 2025",
       category: "EdTech, AI, Learning Platform",
-      duration: "8 weeks",
+      duration: "3 weeks",
       purpose: "To create an adaptive learning platform that personalizes content based on user patterns"
+    }
+  },
+  // Include other minor projects like Pantry Panic and Speakspeare here with proper IDs
+  {
+    id: "pantry-panic",
+    title: "Pantry Panic",
+    description: "An ingredient-based recipe finder app that helps users discover meals based on what they already have in their pantry.",
+    imgSrc: "/assets/images/projects/pantry.webp",
+    tags: ["React", "API Integration", "UI/UX", "Food"],
+    projectLink: "https://pantry-panic.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/pantry-panic",
+    detailedDescription: `Pantry Panic is a practical web application designed to solve the everyday problem of "what to cook with what I have." Users simply input the ingredients they have on hand, and the app suggests recipes that can be made with those ingredients.
+
+The app features a clean, intuitive interface that makes finding recipes quick and easy. It integrates with a comprehensive recipe API to offer thousands of possible meal options based on ingredient combinations. Users can also filter results by cuisine type, diet restrictions, and preparation time.
+
+Pantry Panic was built using React for the frontend, with a focus on responsive design for seamless use on both desktop and mobile devices. The project demonstrates effective API integration and user-focused design principles.`,
+    metadata: {
+      completionDate: "April 2025",
+      category: "Web App, Food, Utility",
+      duration: "2 weeks",
+      purpose: "To help users reduce food waste and simplify meal planning with an ingredient-first approach"
+    }
+  },
+  {
+    id: "speakspeare",
+    title: "SpeakSpeare",
+    description: "An AI-powered tool that translates modern English into Shakespearean language with historical accuracy and literary flair.",
+    imgSrc: "/assets/images/projects/speakspeare.webp",
+    tags: ["Next.js", "OpenAI", "NLP", "Educational"],
+    projectLink: "https://speakspeare.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/speakspeare",
+    detailedDescription: `SpeakSpeare is a unique language tool that transforms modern English text into authentic Shakespearean-style prose or poetry. It uses advanced natural language processing techniques to not only replace modern words with period-appropriate equivalents but also restructure sentences in the distinctive syntax and style of Elizabethan English.
+
+The tool offers multiple "inspiration modes" based on different Shakespearean works - users can choose to have their text transformed in the style of his tragedies, comedies, or sonnets. Each mode applies different linguistic patterns and vocabulary choices appropriate to that genre.
+
+SpeakSpeare was developed using Next.js for the frontend with integration to OpenAI's language models, fine-tuned on a corpus of Shakespeare's complete works. The project demonstrates creative application of AI technologies for educational and entertainment purposes.`,
+    metadata: {
+      completionDate: "March 2025",
+      category: "Web App, AI, Educational, Entertainment",
+      duration: "3 weeks",
+      purpose: "To create an entertaining yet educational tool that helps users appreciate Shakespearean language through personal interaction"
     }
   }
 ]; 
