@@ -45,7 +45,7 @@ BlogSquirrel was built using React for the frontend with custom CSS for styling.
     description: "A comprehensive, responsive website for UAE's premier mortgage consultancy service provider.",
     imgSrc: "/assets/images/projects/simply.webp",
     tags: ["Next.js", "Finance", "Responsive", "UI/UX"],
-    projectLink: "https://simply-mortgage-uae.vercel.app/",
+    projectLink: "https://simply-ten.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/simply-mortgage",
     detailedDescription: `Simply Mortgage UAE is a comprehensive, responsive website for UAE's premier mortgage consultancy service provider. The website combines elegant design with practical functionality to help users navigate the complex mortgage landscape in the UAE.
 
