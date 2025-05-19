@@ -79,6 +79,68 @@ The platform was built using Next.js for the frontend interface, with Python and
       purpose: "To create an adaptive learning platform that personalizes content based on user patterns"
     }
   },
+  {
+    id: "sproutly",
+    title: "Sproutly",
+    description: "A modern web platform designed to empower urban dwellers to transform their living spaces into thriving gardens through expert-led courses and resources.",
+    imgSrc: "/assets/images/projects/sproutly.webp",
+    tags: ["Next.js", "React", "UI/UX", "Education"],
+    projectLink: "https://garden-client-wine.vercel.app/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/sproutly",
+    detailedDescription: `Sproutly is a modern web platform designed to empower urban dwellers to transform their living spaces into thriving gardens. The project's mission is to make gardening accessible, enjoyable, and educational for people with limited space and experience. Sproutly offers a curated selection of expert-led courses, practical resources, and a vibrant community, all tailored to the unique challenges of urban gardening.
+
+The platform features a clean, modern layout with a nature-inspired color palette and plant-themed illustrations. The user experience was carefully crafted to be welcoming and intuitive, with streamlined navigation to help users quickly find courses, resources, and community features.
+
+Built using Next.js and React, Sproutly leverages server-side rendering for fast load times and SEO benefits. The site includes dynamic course listings, responsive design for all screen sizes, and accessibility features such as descriptive alt text for all images.
+
+Key features include course cards with engaging images and concise descriptions, a progressive learning journey from basic to advanced gardening techniques, and practical projects that users can implement in their own spaces.`,
+    problemSolution: {
+      problem: "Urban dwellers face unique gardening challenges including limited space, inadequate sunlight, and uncertainty about proper plant care, with most gardening resources not addressing these specific constraints.",
+      solution: "A dedicated platform offering expert guidance, tailored courses, and community support specifically designed for urban gardening scenarios, with a focus on practical, space-efficient techniques."
+    },
+    keyFeatures: [
+      {
+        name: "Expert-Led Courses",
+        description: "Structured 6-week curriculum taught by professional gardeners specialized in urban settings"
+      },
+      {
+        name: "Practical Projects",
+        description: "Hands-on gardening projects specifically designed for small spaces and urban environments"
+      },
+      {
+        name: "Responsive Design",
+        description: "Seamless experience across all devices, allowing users to access gardening resources anywhere"
+      },
+      {
+        name: "Visual Learning",
+        description: "Rich imagery and clear instructions that simplify complex gardening concepts"
+      }
+    ],
+    techStack: [
+      {
+        name: "Next.js",
+        description: "Server-side rendering framework for optimal performance and SEO"
+      },
+      {
+        name: "React",
+        description: "Component-based UI development for reusability and maintenance"
+      },
+      {
+        name: "Tailwind CSS",
+        description: "Utility-first styling for rapid design implementation"
+      },
+      {
+        name: "Framer Motion",
+        description: "Animation library for subtle, engaging UI interactions"
+      }
+    ],
+    metadata: {
+      completionDate: "May 2025",
+      category: "Education, Lifestyle, Web Platform",
+      duration: "2 days",
+      purpose: "To make urban gardening accessible and enjoyable through expert guidance and practical resources"
+    }
+  },
   // Include other minor projects like Pantry Panic and Speakspeare here with proper IDs
   {
     id: "pantry-panic",
