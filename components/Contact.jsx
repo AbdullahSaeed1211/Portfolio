@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useAnalytics } from "@/lib/hooks/use-analytics";
 import { sendContactEmail } from "@/app/api/send/action";
 
+
 // Inner component with analytics functionality
 function ContactContent() {
   const [formData, setFormData] = useState({

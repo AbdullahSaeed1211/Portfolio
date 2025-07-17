@@ -1,0 +1,118 @@
+{
+  "name": "Abdullah Saeed",
+  "email": "abdullah.saeed1724@gmail.com",
+  "website": "https://abdullahsaeed.me",
+  "linkedin": "https://linkedin.com/in/abdullahsaeed1724",
+  "github": "https://github.com/abdullahsaeed1724",
+  "tagline": "AI/ML Research Engineer & IEEE Published Researcher | Building Scalable Systems with Academic Rigor",
+  "aboutMe": {
+    "intro": "I'm an AI-focused software engineer and published IEEE researcher with a commitment to bridging academic research and real-world system implementation through machine learning and distributed computing.",
+    "academicProfile": "I hold a B.Tech in Computer Science and Engineering from Amity University (2021–2025), graduating with a CGPA of 8.48/10 and Merit Scholar recognition. My academic foundation includes rigorous coursework in Data Structures Using C, Analysis & Design of Algorithms, Database Management Systems, Operating Systems, Theory of Computation, Compiler Construction, Distributed Systems, Artificial Intelligence, Generative AI, Software Engineering, Object Oriented System Design, and Cyber Security. My research output includes two IEEE conference papers featuring novel approaches to medical AI and semantic search optimization—demonstrating both theoretical innovation and practical implementation capabilities.",
+    "researchFocus": "My research interests center on applied machine learning for healthcare, distributed system optimization, and human-computer interaction. My published work includes a ResNet50-based brain tumor detection system achieving 94.2% accuracy improvement and a semantic indexing algorithm improving query response times by 40%. I've successfully translated academic research into production systems serving 100+ users with enterprise-grade reliability.",
+    "leadershipNote": "Beyond academic pursuits, I founded Kiiro.cx, delivering 8+ AI-enhanced web solutions to international clients across UAE, US, and UK markets. I also lead technical workshops and mentor junior developers, contributing to the broader CS education ecosystem through Google Developer Student Club initiatives.",
+    "omscsIntent": "I'm applying to Georgia Tech's OMSCS program to advance my research capabilities in Machine Learning and Computing Systems while contributing to cutting-edge research in distributed AI systems. OMSCS will provide the theoretical foundation and research mentorship needed to transition into PhD-level research or senior engineering roles in AI infrastructure at leading technology companies."
+  },
+  "impactStats": {
+    "productionApps": 8,
+    "averageEngagementBoost": "2.7x",
+    "averageTimeToMarketGain": "3–5x",
+    "academicHonors": "8.48/10 CGPA, Merit Scholar (25% scholarship), Top Academic Quartile",
+    "researchPublications": 2,
+    "clientRegions": ["India", "UAE", "US", "UK"],
+    "technicalContributions": "100+ active users across deployed systems, 60-80% API optimization improvements"
+  },
+  "featuredProjects": [
+    {
+      "name": "Guidance Welfare Foundation - Educational LMS",
+      "link": "https://guidancewelfare.com",
+      "description": "A production-ready Learning Management System serving 100+ active learners with enterprise-grade architecture, comprehensive role-based access control, and real-time analytics.",
+      "technicalHighlight": "Architected full-stack PWA using Next.js 15, TypeScript, and PostgreSQL with 15+ interconnected database tables. Implemented advanced caching strategies achieving 60-80% API call reduction through React Query optimization. Features include automated test management, payment processing workflows, and offline functionality with custom analytics views.",
+      "academicRelevance": "Demonstrates distributed system design, database optimization, and scalable web architecture principles applicable to educational technology research."
+    },
+    {
+      "name": "BrainWise.pro - Medical AI Research Platform",
+      "link": "https://brainwise.pro",
+      "description": "Research-validated medical AI platform with published academic methodology achieving clinical-grade performance metrics across multiple neurological assessment domains.",
+      "technicalHighlight": "Developed 3 production-grade AI models with clinical accuracy: Stroke prediction (95%), brain tumor detection (95% with ResNet50 CNN), and Alzheimer's detection (94% with EfficientNet). Architected distributed system with Hugging Face Spaces, achieving 60-75% model size reduction through quantization. Implemented 15+ cognitive assessment tools with longitudinal tracking and HIPAA-compliant architecture.",
+      "academicRelevance": "Exemplifies applied machine learning research, medical AI ethics, and human-computer interaction in healthcare contexts. Performance metrics approach clinical standards (89-91% vs radiologist assessments)."
+    },
+    {
+      "name": "TestimonialNudger - AI-Powered SaaS",
+      "link": "https://testimonialnudger.vercel.app",
+      "description": "Intelligent testimonial collection and analysis system leveraging natural language processing for automated feedback synthesis and moderation.",
+      "technicalHighlight": "Integrated Gemini 1.5 Flash API with LangChain for sophisticated text processing pipelines. Built modular microservices architecture with MongoDB and serverless deployment. Features automated sentiment analysis, content summarization, and intelligent routing systems.",
+      "academicRelevance": "Demonstrates NLP applications, microservices architecture, and human-AI collaboration patterns relevant to computational linguistics research."
+    },
+    {
+      "name": "Galaxy.ai - Document Processing Suite",
+      "link": "https://galaxyai.vercel.app",
+      "description": "Enterprise-scale document automation platform integrating 27 AI tools for OCR, NLP, and PDF processing with microservices architecture.",
+      "technicalHighlight": "Engineered scalable Flask-based microservices with Mistral OCR integration. Designed load-balanced architecture supporting 18 PDF manipulation tools and 9 NLP services with distributed processing capabilities.",
+      "academicRelevance": "Showcases distributed computing principles, API design patterns, and scalable system architecture applicable to large-scale data processing research."
+    },
+    {
+      "name": "Pantry Panic - Predictive Analytics System",
+      "link": "https://pantry-panic.vercel.app",
+      "description": "Machine learning-driven inventory management system with predictive analytics achieving 85% accuracy in demand forecasting.",
+      "technicalHighlight": "Built predictive ML pipelines using historical data analysis and pattern recognition. Implemented real-time synchronization with Firebase Firestore and responsive cross-platform interfaces. Features automated recommendation systems and user behavior analytics.",
+      "academicRelevance": "Demonstrates practical application of machine learning algorithms, time-series analysis, and real-time data processing systems."
+    }
+  ],
+  "ieeePublications": [
+    {
+      "title": "Enhanced Brain Tumor Detection via ResNet50 Classification and Residual U-Net Segmentation",
+      "conference": "IEEE CICTN 2025",
+      "status": "Published",
+      "impact": "94.2% accuracy improvement over baseline models using ensemble deep learning approach",
+      "technicalContribution": "Novel ResNet50-based classification system with Residual U-Net for precise tumor segmentation"
+    },
+    {
+      "title": "AI-Enabled Semantic Web: Enhancing Information Retrieval Through Intelligent Knowledge Graphs",
+      "conference": "IEEE ICDT 2024", 
+      "status": "Published",
+              "impact": "40% improvement in query response time through novel semantic indexing algorithm",
+        "technicalContribution": "Intelligent knowledge graph architecture for enhanced information retrieval systems"
+      }    
+  ],
+  "technicalExpertise": {
+    "programmingLanguages": ["JavaScript", "TypeScript", "Python", "Java", "C++", "SQL"],
+    "aiMlTechnologies": ["TensorFlow.js", "PyTorch", "ResNet50", "EfficientNet", "Random Forest", "Hugging Face", "FastAPI", "Docker", "Medical AI"],
+    "systemsAndInfrastructure": ["Next.js", "Node.js", "PostgreSQL", "MongoDB", "Microservices", "PWA Development", "Distributed Systems"],
+    "researchTools": ["Academic Paper APIs", "Clinical Data Processing", "Statistical Analysis", "Model Quantization", "Performance Benchmarking"]
+  },
+  "academicAchievements": {
+    "gpa": "8.48/10.00",
+    "honors": ["Merit Scholar - 25% Academic Excellence Scholarship", "Top Academic Quartile", "Google Developer Student Club Leadership"],
+    "mentorship": "10+ junior developers in full-stack development and research methodologies",
+    "technicalLeadership": "Led 20+ technical workshops and events at university level"
+  },
+  "omscsReadiness": {
+    "relevantCoursework": [
+      "Data Structures Using C",
+      "Analysis & Design of Algorithms", 
+      "Database Management Systems",
+      "Operating Systems",
+      "Theory of Computation",
+      "Compiler Construction",
+      "Distributed Systems",
+      "Artificial Intelligence",
+      "Generative AI",
+      "Software Engineering",
+      "Object Oriented System Design",
+      "Cyber Security"
+    ],
+    "researchExperience": "2 IEEE publications with practical implementations",
+    "industryExperience": "Production systems serving 100+ users with enterprise-grade architecture",
+    "technicalDepth": "Advanced ML/AI implementation with clinical-grade performance metrics"
+  },
+  "careerObjectives": {
+    "shortTerm": "Complete OMSCS with focus on Machine Learning and Computing Systems specializations",
+    "mediumTerm": "Transition to research scientist or senior AI engineer role at leading technology company",
+    "longTerm": "Contribute to breakthrough research in distributed AI systems and pursue PhD-level research in computational healthcare",
+    "geographicFocus": "UAE, US, and international markets with emphasis on AI infrastructure and healthcare technology"
+  },
+  "resumeLink": "https://abdullahsaeed.me/resume",
+  "academicTranscript": "Available through OMSCS application portal - demonstrates consistent academic excellence",
+  "portfolioNote": "This portfolio demonstrates readiness for graduate-level computer science study through published research, production system deployment, and comprehensive technical foundation.",
+  "lastUpdated": "January 2025"
+} 

@@ -6,6 +6,8 @@ import { motion, useInView, useAnimation } from "framer-motion";
 import { Marquee } from "@/components/magicui/marquee";
 import { cn } from "@/lib/utils";
 
+
+
 // Add more modern technologies to the skills data
 const extendedSkillsData = [
   ...skillsData,

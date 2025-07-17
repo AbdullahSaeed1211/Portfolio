@@ -1,5 +1,87 @@
 export const minorProjects = [
   {
+    id: "guidancewelfare",
+    title: "Guidance Welfare Foundation",
+    description: "A production-ready Learning Management System serving 100+ active learners with enterprise-grade architecture, comprehensive role-based access control, and real-time analytics.",
+    imgSrc: "/assets/images/projects/guidancewelfare.webp",
+    tags: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma ORM", "PWA"],
+    projectLink: "https://guidancewelfare.com",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/guidance-welfare-foundation",
+    detailedDescription: `Guidance Welfare Foundation is a comprehensive Islamic Educational Platform built as a full-stack Learning Management System serving over 100 active learners. This enterprise-grade application demonstrates advanced software architecture, scalable system design, and production-ready deployment practices.
+
+The platform features comprehensive role-based access control with distinct admin and student permissions, advanced test management system with multiple question types and auto-grading capabilities, payment processing workflow supporting multiple payment methods (UPI/Cash/Bank transfers), PWA (Progressive Web App) capabilities with offline functionality, and real-time analytics dashboard with custom database views.
+
+The system architecture includes 15+ interconnected database tables with optimized queries and indexing, advanced caching strategies achieving 60-80% reduction in API calls through React Query optimization, automated attendance tracking with flexible scheduling (daily/weekly/bi-weekly), course management system with progress tracking and personalized dashboards.
+
+Built using cutting-edge technologies including Next.js 15 with App Router for optimal performance, TypeScript for type safety and developer experience, Prisma ORM with PostgreSQL for robust data management, Clerk Authentication for secure user management, React Query for efficient data fetching and caching, Tailwind CSS for responsive design, and PWA features for app-like experience.
+
+This project showcases distributed system design principles, database optimization techniques, scalable web architecture applicable to educational technology research, and enterprise-grade performance with real-world production deployment.`,
+    problemSolution: {
+      problem: "Traditional Islamic educational institutions struggled with digital transformation, lacking modern tools for student management, course delivery, and progress tracking, while requiring cultural and religious sensitivity in design and functionality.",
+      solution: "A comprehensive LMS specifically designed for Islamic education with role-based access, automated testing, payment processing, and real-time analytics, built with enterprise-grade architecture to scale for growing educational institutions."
+    },
+    keyFeatures: [
+      {
+        name: "Enterprise Architecture",
+        description: "Production-ready system serving 100+ concurrent users with 15+ optimized database tables and advanced caching"
+      },
+      {
+        name: "Role-Based Access Control",
+        description: "Comprehensive permission system with admin/student roles and granular access management"
+      },
+      {
+        name: "Advanced Test Management",
+        description: "Multiple question types, auto-grading, real-time analytics, and detailed performance tracking"
+      },
+      {
+        name: "PWA Capabilities",
+        description: "Offline functionality, app installation, and mobile-first responsive design"
+      },
+      {
+        name: "Payment Processing",
+        description: "Multi-method payment support with automated transaction tracking and reporting"
+      },
+      {
+        name: "Performance Optimization",
+        description: "60-80% API call reduction through React Query caching and custom optimization strategies"
+      }
+    ],
+    techStack: [
+      {
+        name: "Next.js 15",
+        description: "Latest App Router with server components for optimal performance and SEO"
+      },
+      {
+        name: "TypeScript",
+        description: "Full type safety throughout the application for robust development"
+      },
+      {
+        name: "Prisma ORM",
+        description: "Type-safe database access with PostgreSQL for scalable data management"
+      },
+      {
+        name: "Clerk Auth",
+        description: "Secure authentication and user management with role-based permissions"
+      },
+      {
+        name: "React Query",
+        description: "Advanced data fetching, caching, and synchronization for optimal performance"
+      },
+      {
+        name: "PWA",
+        description: "Progressive Web App features for offline capability and app-like experience"
+      }
+    ],
+    metadata: {
+      completionDate: "June 2025",
+      category: "EdTech, LMS, Enterprise Application",
+      duration: "12 months",
+      purpose: "To create a production-ready Islamic educational platform with enterprise-grade architecture and modern learning management features",
+      status: "Production Ready (95% Complete)",
+      users: "100+ active learners"
+    }
+  },
+  {
     id: "lotusproservices",
     title: "Lotus Pro Services",
     description: "A modern, responsive website for a UAE-based document clearing and PRO services company.",
@@ -61,22 +143,85 @@ The website was built with Next.js for optimal performance and SEO benefits, wit
   },
   {
     id: "brainwise",
-    title: "BrainWise",
-    description: "An AI-powered learning platform that creates personalized study materials and adaptive quizzes based on user learning patterns.",
+    title: "BrainWise.pro",
+    description: "Research-validated medical AI platform with published academic methodology achieving clinical-grade performance metrics across multiple neurological assessment domains.",
     imgSrc: "/assets/images/projects/brainwise.webp",
-    tags: ["Next.js", "Python", "TensorFlow", "MongoDB"],
+    tags: ["Next.js 14", "TensorFlow.js", "MongoDB", "Hugging Face", "Medical AI"],
     projectLink: "https://brainwise.pro/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/brainwise",
-    detailedDescription: `BrainWise is an innovative learning platform that leverages artificial intelligence to create personalized educational experiences. The platform analyzes user learning patterns and adapts content delivery to optimize knowledge retention and comprehension.
+    detailedDescription: `BrainWise.pro is a comprehensive brain health research platform that combines cutting-edge AI technology with clinical-grade medical assessments. This research-validated platform demonstrates the practical application of machine learning in healthcare contexts, achieving performance metrics that approach clinical standards.
 
-The system features personalized study plan generation based on learning goals and past performance, adaptive quizzes that adjust difficulty based on user responses, spaced repetition algorithms for optimal memory retention, AI-generated explanations for difficult concepts, and progress tracking with detailed analytics.
+The platform features 3 production-grade AI models with clinical accuracy: Stroke prediction (95% accuracy), Brain tumor detection (95% accuracy with ResNet50 CNN), and Alzheimer's disease detection (94% accuracy with EfficientNet). The system implements 15+ cognitive assessment tools including memory games, reaction tests, visual attention, pattern recognition, and verbal fluency tests with comprehensive performance tracking.
 
-The platform was built using Next.js for the frontend interface, with Python and TensorFlow powering the AI recommendation engine. MongoDB stores user data and learning materials, while a custom API handles communication between the frontend and AI services.`,
+Advanced technical features include distributed system architecture with Hugging Face Spaces for ML model hosting, achieving 60-75% model size reduction through quantization while maintaining accuracy. The platform includes real-time medical image processing pipeline for MRI scan analysis with secure patient data management and HIPAA-compliant architecture.
+
+Research and academic validation includes integration with research paper APIs providing live academic literature feeds and evidence-based educational resources. The platform achieves clinical-grade performance with model agreement rates of 89-91% compared to radiologist assessments (vs. 94.3% inter-radiologist agreement).
+
+Built using modern technologies including Next.js 14 for optimal performance, TypeScript for type safety, TensorFlow.js for client-side AI processing, MongoDB for scalable data storage, Hugging Face Spaces for distributed ML model hosting, Uploadcare CDN for medical image processing, FastAPI for high-performance backend services, and Docker for containerized deployment.
+
+This project exemplifies applied machine learning research, medical AI ethics, human-computer interaction in healthcare contexts, and demonstrates practical translation of academic research into production systems serving real users.`,
+    problemSolution: {
+      problem: "Early detection of neurological conditions remains challenging due to limited access to specialized medical expertise, expensive diagnostic procedures, and lack of comprehensive cognitive assessment tools that can be used remotely or as screening mechanisms.",
+      solution: "A research-validated AI platform that provides accessible cognitive assessments and medical AI screening tools with clinical-grade accuracy, enabling early detection and continuous monitoring of brain health conditions while maintaining medical standards and ethical guidelines."
+    },
+    keyFeatures: [
+      {
+        name: "Clinical-Grade AI Models",
+        description: "3 production AI models achieving 94-95% accuracy in stroke, brain tumor, and Alzheimer's detection"
+      },
+      {
+        name: "Comprehensive Cognitive Assessment",
+        description: "15+ validated cognitive tests covering memory, attention, pattern recognition, and verbal fluency"
+      },
+      {
+        name: "Medical Image Processing",
+        description: "Real-time MRI scan analysis with secure, HIPAA-compliant patient data management"
+      },
+      {
+        name: "Research Integration",
+        description: "Live academic literature feeds and evidence-based educational resources"
+      },
+      {
+        name: "Distributed AI Architecture",
+        description: "Hugging Face Spaces deployment with 60-75% model size reduction through quantization"
+      },
+      {
+        name: "Clinical Validation",
+        description: "89-91% agreement rates with radiologist assessments, approaching clinical standards"
+      }
+    ],
+    techStack: [
+      {
+        name: "TensorFlow.js",
+        description: "Client-side machine learning for real-time AI processing and model inference"
+      },
+      {
+        name: "ResNet50 & EfficientNet",
+        description: "State-of-the-art CNN architectures for medical image analysis and classification"
+      },
+      {
+        name: "Hugging Face Spaces",
+        description: "Distributed ML model hosting with quantization optimization for performance"
+      },
+      {
+        name: "FastAPI",
+        description: "High-performance backend services for medical data processing and API endpoints"
+      },
+      {
+        name: "MongoDB",
+        description: "Scalable document database for medical data storage and patient record management"
+      },
+      {
+        name: "Docker",
+        description: "Containerized deployment for consistent, scalable medical AI services"
+      }
+    ],
     metadata: {
-      completionDate: "March 2025",
-      category: "EdTech, AI, Learning Platform",
-      duration: "3 weeks",
-      purpose: "To create an adaptive learning platform that personalizes content based on user patterns"
+      completionDate: "December 2024",
+      category: "HealthTech, Medical AI, Research Platform",
+      duration: "4 months",
+      purpose: "To create a research-validated medical AI platform with clinical-grade performance for brain health assessment and early detection",
+      academicRelevance: "Exemplifies applied machine learning research, medical AI ethics, and human-computer interaction in healthcare contexts"
     }
   },
   {

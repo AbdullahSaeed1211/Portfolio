@@ -33,14 +33,9 @@ import { allProjects } from './projects';
 // Skills
 export const skillsData = [
   {
-    imgSrc: Tailwind,
-    alt: "Tailwind",
-    title: "Tailwind",
-  },
-  {
     imgSrc: NextJS,
-    alt: "Next",
-    title: "Next",
+    alt: "Next.js",
+    title: "Next.js",
   },
   {
     imgSrc: ReactImg,
@@ -53,9 +48,9 @@ export const skillsData = [
     title: "TypeScript",
   },
   {
-    imgSrc: Javascript,
-    alt: "JS",
-    title: "JS",
+    imgSrc: python,
+    alt: "Python",
+    title: "Python",
   },
   {
     imgSrc: nodejs,
@@ -78,34 +73,39 @@ export const skillsData = [
     title: "Docker",
   },
   {
+    imgSrc: Tailwind,
+    alt: "Tailwind CSS",
+    title: "Tailwind CSS",
+  },
+  {
+    imgSrc: Javascript,
+    alt: "JavaScript",
+    title: "JavaScript",
+  },
+  {
     imgSrc: nextauth,
-    alt: "Next-Auth",
-    title: "Next-Auth",
+    alt: "Authentication",
+    title: "Auth Systems",
+  },
+  {
+    imgSrc: Github,
+    alt: "GitHub",
+    title: "GitHub",
   },
   {
     imgSrc: Html,
-    alt: "HTML",
-    title: "HTML",
+    alt: "HTML5",
+    title: "HTML5",
   },
   {
     imgSrc: Css,
-    alt: "CSS",
-    title: "CSS",
+    alt: "CSS3",
+    title: "CSS3",
   },
   {
     imgSrc: astro,
     alt: "Astro",
     title: "Astro",
-  },
-  {
-    imgSrc: Github,
-    alt: "Github",
-    title: "Github",
-  },
-  {
-    imgSrc: python,
-    alt: "Python",
-    title: "Python",
   },
 ];
 
@@ -262,11 +262,11 @@ export const navLinks = [
 
 export const mobileNavIcons = [
   {
-    href: "https://www.linkedin.com/in/abdullah-saeed1211/",
+    href: "https://linkedin.com/in/abdullahsaeed1724",
     icon: <FaLinkedinIn />,
   },
   {
-    href: "https://github.com/AbdullahSaeed1211",
+    href: "https://github.com/abdullahsaeed1724",
     icon: <FaGithub />,
   },
   {
@@ -282,11 +282,11 @@ export const mobileNavIcons = [
 // Footer
 export const footerLinks = [
   {
-    href: "https://github.com/AbdullahSaeed1211",
+    href: "https://github.com/abdullahsaeed1724",
     icon: <FaGithub />,
   },
   {
-    href: "https://www.linkedin.com/in/abdullah-saeed1211/",
+    href: "https://linkedin.com/in/abdullahsaeed1724",
     icon: <FaLinkedinIn />,
   },
   {

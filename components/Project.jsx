@@ -6,6 +6,8 @@ import ProjectCard from "@/components/ui/project-card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+
+
 const Project = () => {
   const controls = useAnimation();
   const ref = useRef(null);

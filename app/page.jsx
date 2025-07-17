@@ -1,15 +1,16 @@
 import React from "react";
 import Nav from "@/components/Nav";
-import { ScrollToTop } from "@/components/ScrollTopTop";
 import About from "@/components/About";
 import Project from "@/components/Project";
 import Skills from "@/components/Skills";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
-import SocialProof from "@/components/SocialProof";
+// import SocialProof from "@/components/SocialProof";
 import ValueProposition from "@/components/ValueProposition";
 import StructuredData from "@/components/StructuredData";
+import SectionDivider from "@/components/SectionDivider";
+import FeaturedQuote from "@/components/FeaturedQuote";
 
 export const metadata = {
   title: "Abdullah Saeed | Fullstack Developer",
@@ -33,17 +34,22 @@ export default function Home() {
   return (
     <div className="w-full overflow-x-hidden">
       <StructuredData />
-      <ScrollToTop />
       <Nav />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <Hero />
-        <ValueProposition />
-        <About />
-        {/* <SocialProof /> */}
-        <Project />
-        <Skills />
-        <Contact />
-      </div>
+      <Hero />
+      <SectionDivider variant="dots" />
+      <About />
+      <SectionDivider variant="waves" />
+      <FeaturedQuote />
+      <SectionDivider variant="minimal" />
+      <Project />
+      <SectionDivider variant="dots" />
+      <Skills />
+      <SectionDivider variant="waves" />
+      <ValueProposition />
+      <SectionDivider variant="minimal" />
+      {/* <SocialProof /> */}
+      <SectionDivider variant="dots" />
+      <Contact />
       <Footer />
     </div>
   );

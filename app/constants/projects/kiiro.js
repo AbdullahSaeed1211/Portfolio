@@ -4,7 +4,7 @@ export const kiroProject = {
   description: "Strategic web redesign & identity refresh that amplified conversions and strengthened market position for a premium web design agency.",
   imgSrc: "/assets/images/projects/kiiro.webp",
   tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-  projectLink: "https://midori-pi.vercel.app/",
+  projectLink: "https://kiiro.cx",
   projectLinkGithub: "https://github.com/AbdullahSaeed1211/midori",
   
   // Detailed case study content

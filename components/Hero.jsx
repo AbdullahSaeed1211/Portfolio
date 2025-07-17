@@ -7,6 +7,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
+
 const Hero = () => {
   const containerRef = useRef(null);
   const headingRef = useRef(null);
@@ -68,7 +69,7 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            Full-Stack Developer & AI Specialist
+            Developer & Problem Solver
           </div>
         </BlurFade>
         
@@ -77,7 +78,7 @@ const Hero = () => {
             ref={headingRef}
             className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 sm:mb-6"
           >
-            Crafting <span className="cyan_gradient">Intelligent Digital</span> Experiences That <span className="blue_gradient">Drive Growth</span>
+            Building <span className="cyan_gradient">Digital Solutions</span> That <span className="blue_gradient">Actually Work</span>
           </h1>
         </BlurFade>
 
@@ -92,7 +93,7 @@ const Hero = () => {
             onClick={() => document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' })} 
             className="w-full sm:w-auto mx-auto sm:mx-0 text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent py-2.5 sm:py-2.5 text-sm font-medium transition-all duration-300"
           >
-            View My Projects
+            See What I've Built
           </InteractiveHoverButton>
           
           <motion.a
@@ -101,7 +102,7 @@ const Hero = () => {
             whileHover={{ y: -3 }}
             whileTap={{ y: 0 }}
           >
-            Why Choose Me
+            About My Journey
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </motion.a>
         </BlurFade>
@@ -110,11 +111,11 @@ const Hero = () => {
         <BlurFade delay={0.9} direction="up" className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs">
           <div className="flex items-start gap-3 p-3 rounded-lg bg-background border border-border hover:shadow-md transition-all">
             <div className="flex-shrink-0 p-2 rounded-md bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
-              <Zap className="w-3.5 h-3.5" />
+              <Code className="w-3.5 h-3.5" />
             </div>
             <div>
-              <h3 className="font-medium mb-1 text-xs">Performance Optimized</h3>
-              <p className="text-muted-foreground text-[10px]">Lightning-fast applications with excellent Core Web Vitals</p>
+              <h3 className="font-medium mb-1 text-xs">Full-Stack Development</h3>
+              <p className="text-muted-foreground text-[10px]">Next.js, React, Node.js - building complete web applications</p>
             </div>
           </div>
           
@@ -123,18 +124,18 @@ const Hero = () => {
               <Sparkles className="w-3.5 h-3.5" />
             </div>
             <div>
-              <h3 className="font-medium mb-1 text-xs">AI-Enhanced</h3>
-              <p className="text-muted-foreground text-[10px]">Smart solutions powered by cutting-edge AI technologies</p>
+              <h3 className="font-medium mb-1 text-xs">Machine Learning</h3>
+              <p className="text-muted-foreground text-[10px]">AI applications and research projects in healthcare</p>
             </div>
           </div>
           
           <div className="flex items-start gap-3 p-3 rounded-lg bg-background border border-border hover:shadow-md transition-all">
             <div className="flex-shrink-0 p-2 rounded-md bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400">
-              <Code className="w-3.5 h-3.5" />
+              <Zap className="w-3.5 h-3.5" />
             </div>
             <div>
-              <h3 className="font-medium mb-1 text-xs">Clean, Robust Code</h3>
-              <p className="text-muted-foreground text-[10px]">TypeScript and best practices for maintainable applications</p>
+              <h3 className="font-medium mb-1 text-xs">System Design</h3>
+              <p className="text-muted-foreground text-[10px]">Creating scalable applications that can handle real users</p>
             </div>
           </div>
           
@@ -143,10 +144,10 @@ const Hero = () => {
               <Rocket className="w-3.5 h-3.5" />
             </div>
             <div>
-              <h3 className="font-medium mb-1 text-xs">Strategic Approach</h3>
-              <p className="text-muted-foreground text-[10px]">Solutions focused on business goals and measurable results</p>
+              <h3 className="font-medium mb-1 text-xs">Continuous Learning</h3>
+              <p className="text-muted-foreground text-[10px]">Always exploring new technologies and better ways to solve problems</p>
             </div>
-      </div>
+          </div>
         </BlurFade>
       </motion.div>
 

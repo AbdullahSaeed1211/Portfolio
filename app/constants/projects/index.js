@@ -4,6 +4,7 @@ import { dubbbyProject } from './dubbby';
 import { minorProjects } from './minorProjects';
 
 // Get projects from minorProjects
+const guidanceWelfareProject = minorProjects.find(p => p.id === "guidancewelfare");
 const simplyMortgageProject = minorProjects.find(p => p.id === "simply");
 const lotusProServicesProject = minorProjects.find(p => p.id === "lotusproservices");
 const brainWiseProject = minorProjects.find(p => p.id === "brainwise");
@@ -12,7 +13,7 @@ const sproutlyProject = minorProjects.find(p => p.id === "sproutly");
 
 // Other minor projects (excluding the ones we specifically pulled out)
 const otherMinorProjects = minorProjects.filter(p => 
-  !["simply", "lotusproservices", "brainwise", "blogsquirrel", "sproutly", "pantry-panic", "speakspeare"].includes(p.id)
+  !["guidancewelfare", "simply", "lotusproservices", "brainwise", "blogsquirrel", "sproutly", "pantry-panic", "speakspeare"].includes(p.id)
 );
 
 // Feature projects are the ones with detailed case studies
@@ -24,15 +25,16 @@ export const featureProjects = [
 
 // All projects combined for listing in the new requested order
 export const allProjects = [
-  simplyMortgageProject,         // 1. Simply Mortgages
-  lotusProServicesProject,       // 2. Lotus Pro Services
-  dubbbyProject,                // 3. Dubbby
-  brainWiseProject,             // 4. BrainWise
-  sproutlyProject,              // 5. Sproutly
-  kiroProject,                  // 6. Kiiro
-  testimonialNudgerProject,     // 7. Testimonial Nudger
-  blogSquirrelProject,          // 8. BlogSquirrel
-  ...otherMinorProjects         // 9. Rest as is
+  guidanceWelfareProject,       // 1. Guidance Welfare Foundation (Featured)
+  brainWiseProject,             // 2. BrainWise (Research Platform)
+  simplyMortgageProject,        // 3. Simply Mortgages
+  lotusProServicesProject,      // 4. Lotus Pro Services
+  dubbbyProject,                // 5. Dubbby
+  sproutlyProject,              // 6. Sproutly
+  kiroProject,                  // 7. Kiiro
+  testimonialNudgerProject,     // 8. Testimonial Nudger
+  blogSquirrelProject,          // 9. BlogSquirrel
+  ...otherMinorProjects         // 10. Rest as is
 ].filter(Boolean); // Remove any undefined entries (in case a project wasn't found)
 
 // Export individual projects for direct access

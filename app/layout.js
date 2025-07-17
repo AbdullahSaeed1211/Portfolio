@@ -1,6 +1,6 @@
 import "@styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Poppins, Inter } from 'next/font/google';
+import { Poppins, Inter, Bangers } from 'next/font/google';
 import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
@@ -84,9 +84,16 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const bangers = Bangers({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bangers',
+  weight: '400',
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`scroll-smooth ${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`scroll-smooth ${poppins.variable} ${inter.variable} ${bangers.variable}`} suppressHydrationWarning>
       <head>
         <GoogleAnalytics />
         <link rel="canonical" href="https://abdullahsaeed.me" />
