@@ -213,7 +213,7 @@ const Hero = () => (
             transition={{ duration: 0.3 }}
           >
             <motion.img
-              src="/heroimg.png"
+              src="/heroimgtry.png"
               className="w-full aspect-video object-cover"
               alt="Portfolio cover artwork showing mountains and night sky"
               loading="lazy"
