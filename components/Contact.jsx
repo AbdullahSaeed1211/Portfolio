@@ -91,7 +91,7 @@ function ContactContent() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-            <span className="red_gradient">Let's Build Something Impactful</span>
+            <span className="red_gradient">Let's Chat</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
             Have a business challenge that needs a technical solution? I'm ready to help transform your vision into reality with code that delivers results.

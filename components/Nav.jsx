@@ -250,7 +250,7 @@ function NavbarContent() {
             rel="noopener noreferrer"
             onClick={() => handleNavClick('Book a call')}
           >
-            <Button variant="gradient" className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-xs py-1.5">
+            <Button variant="gradient" className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-sm py-1.5">
               Book a call
             </Button>
           </a>

@@ -26,7 +26,7 @@ const ValueProposition = () => {
       icon: <TrendingUp className="h-6 w-6" />,
     },
     {
-      title: "Full-Stack Mastery",
+      title: "Full-Stack Development",
       description: "Frontend, backend, databases, APIs. I handle the entire stack so you don't have to juggle multiple developers.",
       icon: <Globe className="h-6 w-6" />,
     },
