@@ -1,10 +1,16 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
-
+import { Quote, Lightbulb, Eye, TreePine } from "lucide-react";
 
 const FeaturedQuote = () => {
+  const [currentIcon, setCurrentIcon] = useState(0);
+  const icons = [
+    { Icon: TreePine, label: "Forest" },
+    { Icon: Eye, label: "Vision" },
+    { Icon: Lightbulb, label: "Insight" }
+  ];
+
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background Pattern */}
@@ -29,10 +35,22 @@ const FeaturedQuote = () => {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800/50 text-emerald-800 dark:text-emerald-200 text-sm font-medium mb-8"
           >
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            Philosophy & Vision
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-100/80 dark:bg-emerald-900/40 border border-emerald-200 dark:border-emerald-800/50 text-emerald-800 dark:text-emerald-200 text-sm font-medium mb-8 backdrop-blur-sm shadow-lg">
+            <div className="relative w-5 h-5">
+              {icons.map(({ Icon }, index) => (
+                <Icon
+                  key={index}
+                  className={`absolute inset-0 w-full h-full transition-all duration-500 ${
+                    currentIcon === index 
+                      ? 'opacity-100 scale-100 rotate-0' 
+                      : 'opacity-0 scale-75 rotate-45'
+                  }`}
+                />
+              ))}
+            </div>
+            Thinking About
+          </div>
           </motion.div>
 
           {/* Main Quote */}
@@ -82,31 +100,7 @@ const FeaturedQuote = () => {
             </motion.cite>
           </motion.div>
 
-          {/* Emphasis Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            viewport={{ once: true }}
-            className="mt-12"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800/50 text-emerald-800 dark:text-emerald-200 text-sm font-medium">
-              <span className="text-lg">🌳</span>
-              See The Whole Picture
-            </div>
-          </motion.div>
-
-          {/* Contextual Message */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            viewport={{ once: true }}
-            className="mt-8 max-w-3xl mx-auto"
-          >
-            
-              
-          </motion.div>
+          
 
           {/* Decorative Line */}
           <motion.div

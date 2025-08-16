@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { CheckCircle2, BrainCircuit, Code2, Github, Cpu, Database } from "lucide-react";
+import {  BrainCircuit, Code2, Github, Cpu, Database, Zap } from "lucide-react";
 
 const About = () => {
   const controls = useAnimation();
@@ -41,7 +41,7 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="relative">
           <div className="absolute -inset-4 bg-gradient-to-tr from-red-200 to-red-100 rounded-xl opacity-60 blur-lg"></div>
-          <div className="relative w-full h-[400px] overflow-hidden rounded-xl">
+          <div className="relative w-full h-[400px] lg:h-[800px] overflow-hidden rounded-xl">
             <Image
               src="/assets/images/AboutMe.png"
               alt="Abdullah Saeed"
@@ -101,12 +101,64 @@ const About = () => {
           </div>
           
           {/* Current Focus */}
-          <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Building & Learning</h3>
-            <p className="text-gray-700 text-xs leading-relaxed">
-              Today, I'm building full-stack applications, exploring machine learning, and occasionally contributing to research when interesting problems arise. Whether it's developing a Next.js app or investigating AI applications, I approach each project with the same systematic curiosity that started with those redstone circuits – always asking how things work and how they can work better.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              delay: 1.1, 
+              duration: 0.7,
+              type: "spring",
+              damping: 20,
+              stiffness: 100
+            }}
+            className="relative"
+          >
+            <motion.div 
+              className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 relative overflow-hidden"
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
+              }}
+              transition={{ type: "spring", damping: 20, stiffness: 300 }}
+            >
+              {/* Subtle background animation */}
+              <motion.div
+                className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-red-100 to-transparent rounded-full opacity-30"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 90, 180]
+                }}
+                transition={{ 
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+              
+              <motion.h3 
+                className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", damping: 20, stiffness: 300 }}
+              >
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                >
+                  <Zap className="w-5 h-5 text-red-500" />
+                </motion.div>
+                Building & Learning
+              </motion.h3>
+              
+              <motion.p 
+                className="text-gray-700 text-sm leading-relaxed relative z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.3, duration: 0.6 }}
+              >
+                Today, I'm building full-stack applications, exploring machine learning, and occasionally contributing to research when interesting problems arise. Whether it's developing a Next.js app or investigating AI applications, I approach each project with the same systematic curiosity that started with those redstone circuits – always asking how things work and how they can work better.
+              </motion.p>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

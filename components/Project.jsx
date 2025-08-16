@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { ProjectCardList } from "@app/constants";
 import { motion, useInView, useAnimation } from "framer-motion";
 import ProjectCard from "@/components/ui/project-card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-
 
 const Project = () => {
   const controls = useAnimation();
@@ -14,6 +12,7 @@ const Project = () => {
   const isInView = useInView(ref, { once: true });
   const [activeFilter, setActiveFilter] = useState("All");
   const [filteredProjects, setFilteredProjects] = useState(ProjectCardList);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   useEffect(() => {
     if (isInView) {
@@ -21,108 +20,119 @@ const Project = () => {
     }
   }, [isInView, controls]);
 
-  // Prepare projects with proper tags, business value, and outcomes
-  const enhancedProjects = filteredProjects.map(project => {
-    // Extract tags from project title/description or use default ones
-    let tags = [];
-    
-    if (project.title.includes("Brain Wise") || project.description.toLowerCase().includes("health")) {
-      tags.push("Health");
+  // Memoize enhancedProjects to prevent infinite loops
+  const enhancedProjects = useMemo(() => {
+    return filteredProjects.map(project => {
+      // Extract tags from project title/description or use default ones
+      let tags = [];
+      
+      if (project.title.includes("Brain Wise") || project.description.toLowerCase().includes("health")) {
+        tags.push("Health");
+      }
+      
+      if (project.title.includes("Blog") || project.description.toLowerCase().includes("saas")) {
+        tags.push("SaaS");
+      }
+      
+      if (project.title.includes("Simply Mortgage") || project.description.toLowerCase().includes("mortgage")) {
+        tags.push("Finance");
+      }
+      
+      // Add tech tags based on description
+      if (project.description.toLowerCase().includes("typescript")) {
+        tags.push("TypeScript");
+      }
+      
+      // If no tags were found, add a default one
+      if (tags.length === 0) {
+        tags.push("Web");
+      }
+      
+      // Generate a slug from the title
+      const slug = project.title.toLowerCase().replace(/\s+/g, '-');
+      
+      // Determine if featured based on title (just as an example)
+      const featured = ["Dubbby", "Brain Wise", "Blog Squirrel", "Simply Mortgage"].includes(project.title);
+      
+      // Business challenge the project solved
+      let challenge = "";
+      
+      // Business results achieved
+      let results = [];
+      
+      // Technical approach summarized
+      let approach = "";
+      
+      // Add business context for each project
+      if (project.title === "Dubbby") {
+        challenge = "Global businesses were losing market share due to language barriers in video content, with traditional dubbing being expensive and time-consuming.";
+        approach = "Implemented a React-based front-end with WebGL for real-time preview, connected to a custom AI pipeline for voice synthesis and lip synchronization.";
+        results = [
+          "30-second processing for videos of any length",
+          "15+ language support increased global reach by 215%",
+          "2.7X increase in engagement metrics for dubbed content"
+        ];
+      } 
+      else if (project.title === "Brain Wise") {
+        challenge = "Healthcare providers lacked accessible tools to detect early cognitive decline, resulting in delayed interventions and poorer patient outcomes.";
+        approach = "Created a progressive web app with React and TypeScript that integrates with machine learning models to analyze cognitive test results.";
+        results = [
+          "87% accuracy in early detection scenarios",
+          "43% reduction in assessment time for practitioners",
+          "Accessible interface increased patient completion rate by 64%"
+        ];
+      }
+      else if (project.title === "Blog Squirrel") {
+        challenge = "Content creators struggled with consistent publishing schedules and audience engagement due to fragmented creation workflows.";
+        approach = "Designed a Next.js platform with rich editing capabilities and built-in SEO optimization tools.";
+        results = [
+          "Publishing workflow efficiency increased by 40%",
+          "Average article SEO score improved by 27 points",
+          "User retention improved 3.2X compared to previous solutions"
+        ];
+      }
+      else if (project.title === "Simply Mortgage") {
+        challenge = "UAE homebuyers faced fragmented information sources and complex mortgage processes, leading to poor financial decisions and delays in property acquisition.";
+        approach = "Built a Next.js 15 application with server components and interactive calculators to simplify mortgage comparison and decision-making.";
+        results = [
+          "98/100 Lighthouse performance score for optimal user experience",
+          "500+ consultations booked through the platform",
+          "Consultation request conversion rate increased by 35%"
+        ];
+      }
+      else {
+        challenge = "Simplified version of the business problem this project addressed.";
+        approach = "Technical approach summarized in business terms.";
+        results = [
+          "Core business improvement metric",
+          "User or customer impact statistic",
+          "Technical performance gain"
+        ];
+      }
+      
+      return {
+        ...project,
+        tags,
+        slug,
+        featured,
+        challenge,
+        approach,
+        results,
+        imageUrl: project.imgSrc,
+        github: project.projectLinkGithub,
+        liveUrl: project.projectLink
+      };
+    });
+  }, [filteredProjects]);
+
+  // Calculate displayed projects using useMemo
+  const displayedProjects = useMemo(() => {
+    if (showAllProjects) {
+      return enhancedProjects;
+    } else {
+      return enhancedProjects.slice(0, 9);
     }
-    
-    if (project.title.includes("Blog") || project.description.toLowerCase().includes("saas")) {
-      tags.push("SaaS");
-    }
-    
-    if (project.title.includes("Simply Mortgage") || project.description.toLowerCase().includes("mortgage")) {
-      tags.push("Finance");
-    }
-    
-    // Add tech tags based on description
-    if (project.description.toLowerCase().includes("typescript")) {
-      tags.push("TypeScript");
-    }
-    
-    // If no tags were found, add a default one
-    if (tags.length === 0) {
-      tags.push("Web");
-    }
-    
-    // Generate a slug from the title
-    const slug = project.title.toLowerCase().replace(/\s+/g, '-');
-    
-    // Determine if featured based on title (just as an example)
-    const featured = ["Dubbby", "Brain Wise", "Blog Squirrel", "Simply Mortgage"].includes(project.title);
-    
-    // Business challenge the project solved
-    let challenge = "";
-    
-    // Business results achieved
-    let results = [];
-    
-    // Technical approach summarized
-    let approach = "";
-    
-    // Add business context for each project
-    if (project.title === "Dubbby") {
-      challenge = "Global businesses were losing market share due to language barriers in video content, with traditional dubbing being expensive and time-consuming.";
-      approach = "Implemented a React-based front-end with WebGL for real-time preview, connected to a custom AI pipeline for voice synthesis and lip synchronization.";
-      results = [
-        "30-second processing for videos of any length",
-        "15+ language support increased global reach by 215%",
-        "2.7X increase in engagement metrics for dubbed content"
-      ];
-    } 
-    else if (project.title === "Brain Wise") {
-      challenge = "Healthcare providers lacked accessible tools to detect early cognitive decline, resulting in delayed interventions and poorer patient outcomes.";
-      approach = "Created a progressive web app with React and TypeScript that integrates with machine learning models to analyze cognitive test results.";
-      results = [
-        "87% accuracy in early detection scenarios",
-        "43% reduction in assessment time for practitioners",
-        "Accessible interface increased patient completion rate by 64%"
-      ];
-    }
-    else if (project.title === "Blog Squirrel") {
-      challenge = "Content creators struggled with consistent publishing schedules and audience engagement due to fragmented creation workflows.";
-      approach = "Designed a Next.js platform with rich editing capabilities and built-in SEO optimization tools.";
-      results = [
-        "Publishing workflow efficiency increased by 40%",
-        "Average article SEO score improved by 27 points",
-        "User retention improved 3.2X compared to previous solutions"
-      ];
-    }
-    else if (project.title === "Simply Mortgage") {
-      challenge = "UAE homebuyers faced fragmented information sources and complex mortgage processes, leading to poor financial decisions and delays in property acquisition.";
-      approach = "Built a Next.js 15 application with server components and interactive calculators to simplify mortgage comparison and decision-making.";
-      results = [
-        "98/100 Lighthouse performance score for optimal user experience",
-        "500+ consultations booked through the platform",
-        "Consultation request conversion rate increased by 35%"
-      ];
-    }
-    else {
-      challenge = "Simplified version of the business problem this project addressed.";
-      approach = "Technical approach summarized in business terms.";
-      results = [
-        "Core business improvement metric",
-        "User or customer impact statistic",
-        "Technical performance gain"
-      ];
-    }
-    
-    return {
-      ...project,
-      tags,
-      slug,
-      featured,
-      challenge,
-      approach,
-      results,
-      imageUrl: project.imgSrc,
-      github: project.projectLinkGithub,
-      liveUrl: project.projectLink
-    };
-  });
+  }, [enhancedProjects, showAllProjects]);
 
   useEffect(() => {
     if (activeFilter === "All") {
@@ -136,7 +146,13 @@ const Project = () => {
     }
   }, [activeFilter]);
 
+  // Reset showAllProjects when filter changes
+  useEffect(() => {
+    setShowAllProjects(false);
+  }, [activeFilter]);
+
   const categories = ["All", "SaaS", "Health", "Finance", "Web"];
+  const hasMoreProjects = enhancedProjects.length > 9;
 
   return (
     <section ref={ref} id="Projects" className="w-full py-16">
@@ -160,7 +176,7 @@ const Project = () => {
         </motion.div>
 
         {/* Project Category Filters */}
-            <motion.div
+        <motion.div
           variants={{
             hidden: {opacity: 0, y: 20},
             visible: {opacity: 1, y: 0},
@@ -197,46 +213,188 @@ const Project = () => {
 
         {/* Project Cards - New Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
-          {enhancedProjects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
+
+        {/* View More Button */}
+        {hasMoreProjects && (
+          <motion.div
+            variants={{
+              hidden: {opacity: 0, y: 20},
+              visible: {opacity: 1, y: 0},
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{duration: 0.3}}
+            className="text-center mt-8">
+            <Button
+              onClick={() => setShowAllProjects(!showAllProjects)}
+              variant="outline"
+              size="lg"
+              className="rounded-full px-8 py-2 border-2 hover:border-red-500 transition-all duration-300">
+              {showAllProjects ? (
+                <>
+                  Show Less
+                  <svg className="w-4 h-4 ml-2 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </>
+              ) : (
+                <>
+                  View All Projects ({enhancedProjects.length - 9} more)
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </>
+              )}
+            </Button>
+          </motion.div>
+        )}
         
-        {/* Client Results Section - Enhanced with value focus */}
+{/* Client Results Section - Enhanced with value focus */}
+<motion.div
+  variants={{
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="w-full max-w-6xl mx-auto mt-20 mb-20"
+>
+  <div className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-2xl p-8 sm:p-12 shadow-xl border border-gray-200 overflow-hidden">
+    {/* Background decoration */}
+    <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-100 to-transparent rounded-full opacity-50 -translate-y-32 translate-x-32"></div>
+    <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-red-100 to-transparent rounded-full opacity-50 translate-y-24 -translate-x-24"></div>
+    
+    {/* Content */}
+    <div className="relative z-10">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <motion.h3 
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3"
+        >
+          Delivering{" "}
+          <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+            Measurable Results
+          </span>
+        </motion.h3>
+        <motion.p 
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto"
+        >
+          Real metrics from real clients who trusted us to transform their business
+        </motion.p>
+      </div>
+
+      {/* Stats Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        {/* Stat 1 */}
         <motion.div
           variants={{
-            hidden: {opacity: 0, y: 50},
-            visible: {opacity: 1, y: 0},
+            hidden: { opacity: 0, scale: 0.8 },
+            visible: { opacity: 1, scale: 1 },
           }}
-          initial="hidden"
-          whileInView="visible"
-              viewport={{ once: true }}
-          transition={{duration: 0.5}}
-          className="w-full max-w-5xl mx-auto mt-16 mb-16 bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100">
-          <h3 className="text-xl sm:text-2xl font-bold text-center mb-8">
-            Delivering <span className="text-red-500">Business Impact</span>
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold mb-3 text-red-500">15+</div>
-              <p className="text-gray-500 text-xs">Production Applications Driving<br />Business Value</p>
-              </div>
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="group text-center p-6 rounded-xl bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/50"
+        >
+          <div className="relative mb-4">
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+              15+
+            </div>
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full animate-pulse opacity-75"></div>
+          </div>
+          <h4 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">
+            Production Applications
+          </h4>
+          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+            Live applications actively driving<br />
+            <span className="font-medium text-red-600">measurable business value</span>
+          </p>
+        </motion.div>
 
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold mb-3 text-blue-500">2.7X</div>
-              <p className="text-gray-500 text-xs">Average Customer Engagement<br />Increase</p>
-                </div>
+        {/* Stat 2 */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, scale: 0.8 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="group text-center p-6 rounded-xl bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/50"
+        >
+          <div className="relative mb-4">
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              2.7X
+            </div>
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-500 rounded-full animate-pulse opacity-75"></div>
+          </div>
+          <h4 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">
+            Engagement Boost
+          </h4>
+          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+            Average customer engagement<br />
+            <span className="font-medium text-blue-600">increase across projects</span>
+          </p>
+        </motion.div>
 
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold mb-3 text-purple-500">3-5x</div>
-              <p className="text-gray-500 text-xs">Faster Time-to-Market Than<br />Competitors</p>
-                </div>
-              </div>
-            </motion.div>
+        {/* Stat 3 */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, scale: 0.8 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="group text-center p-6 rounded-xl bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/50"
+        >
+          <div className="relative mb-4">
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">
+              3-5X
+            </div>
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-purple-500 rounded-full animate-pulse opacity-75"></div>
+          </div>
+          <h4 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">
+            Speed Advantage
+          </h4>
+          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+            Faster time-to-market than<br />
+            <span className="font-medium text-purple-600">industry competitors</span>
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Bottom CTA or additional info */}
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+        className="text-center mt-10 pt-8 border-t border-gray-200"
+      >
+        <p className="text-gray-600 text-sm">
+          <span className="font-medium">Ready to join them?</span> Let's discuss your next project.
+        </p>
+      </motion.div>
+    </div>
+  </div>
+</motion.div>
+
         
-        </div>
-      </section>
+      </div>
+    </section>
   );
 };
 

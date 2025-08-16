@@ -82,7 +82,7 @@ function ContactContent() {
   };
 
   return (
-    <section id="Contact" className="bg-gray-50 dark:bg-gray-900/20 py-20">
+    <section id="Contact" className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -308,64 +308,115 @@ function ContactContent() {
         
         {/* Full Width Social Links Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="w-full"
-        >
-          <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">Find Me At</h3>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <a 
-              href="https://github.com/AbdullahSaeed1211" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 p-4 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 transition-colors group"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-black/10 dark:bg-black/30 group-hover:scale-110 transition-transform">
-                <FaGithub className="text-2xl text-gray-800 dark:text-white" />
-              </div>
-              <span className="text-gray-700 dark:text-gray-300 font-medium text-sm mt-1">GitHub</span>
-            </a>
-            
-            <a 
-              href="https://www.linkedin.com/in/abdullah-saeed1211/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 p-4 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 transition-colors group"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30 group-hover:scale-110 transition-transform">
-                <FaLinkedinIn className="text-2xl text-blue-700 dark:text-blue-400" />
-              </div>
-              <span className="text-gray-700 dark:text-gray-300 font-medium text-sm mt-1">LinkedIn</span>
-            </a>
-            
-            <a 
-              href="mailto:example@example.com" 
-              className="flex flex-col items-center gap-2 p-4 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 transition-colors group"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30 group-hover:scale-110 transition-transform">
-                <HiMail className="text-2xl text-red-600 dark:text-red-400" />
-              </div>
-              <span className="text-gray-700 dark:text-gray-300 font-medium text-sm mt-1">Email</span>
-            </a>
-            
-            <a 
-              href="https://twitter.com/abdullahsaeed_" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 p-4 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 transition-colors group"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30 group-hover:scale-110 transition-transform">
-                <FaTwitter className="text-2xl text-blue-400" />
-              </div>
-              <span className="text-gray-700 dark:text-gray-300 font-medium text-sm mt-1">Twitter</span>
-            </a>
-          </div>
-        </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: 0.3 }}
+  className="w-full"
+>
+  <div className="text-center mb-8">
+    <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+      Let's Connect
+    </h3>
+    <p className="text-muted-foreground text-sm">
+      Find me across the web or drop me a line
+    </p>
+  </div>
+  
+  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+    <motion.a 
+      href="https://github.com/AbdullahSaeed1211" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="group relative flex flex-col items-center gap-3 p-6 rounded-xl bg-card hover:bg-accent/50 border border-border transition-all duration-300 overflow-hidden"
+      whileHover={{ y: -4, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
+      {/* Background gradient on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-black/5 dark:from-gray-400/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-all duration-300">
+        <FaGithub className="text-xl text-gray-700 dark:text-gray-300 group-hover:scale-110 transition-transform duration-300" />
       </div>
-    </section>
+      <span className="relative text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+        GitHub
+      </span>
+    </motion.a>
+    
+    <motion.a 
+      href="https://www.linkedin.com/in/abdullah-saeed1211/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="group relative flex flex-col items-center gap-3 p-6 rounded-xl bg-card hover:bg-accent/50 border border-border transition-all duration-300 overflow-hidden"
+      whileHover={{ y: -4, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
+      {/* Background gradient on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-950/50 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-all duration-300">
+        <FaLinkedinIn className="text-xl text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300" />
+      </div>
+      <span className="relative text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+        LinkedIn
+      </span>
+    </motion.a>
+    
+    <motion.a 
+      href="mailto:example@example.com" 
+      className="group relative flex flex-col items-center gap-3 p-6 rounded-xl bg-card hover:bg-accent/50 border border-border transition-all duration-300 overflow-hidden"
+      whileHover={{ y: -4, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.6 }}
+    >
+      {/* Background gradient on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-950/50 group-hover:bg-red-100 dark:group-hover:bg-red-900/50 transition-all duration-300">
+        <HiMail className="text-xl text-red-600 dark:text-red-400 group-hover:scale-110 transition-transform duration-300" />
+      </div>
+      <span className="relative text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+        Email
+      </span>
+    </motion.a>
+    
+    <motion.a 
+      href="https://twitter.com/abdullahsaeed_" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="group relative flex flex-col items-center gap-3 p-6 rounded-xl bg-card hover:bg-accent/50 border border-border transition-all duration-300 overflow-hidden"
+      whileHover={{ y: -4, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.7 }}
+    >
+      {/* Background gradient on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-sky-50 dark:bg-sky-950/50 group-hover:bg-sky-100 dark:group-hover:bg-sky-900/50 transition-all duration-300">
+        <FaTwitter className="text-xl text-sky-500 dark:text-sky-400 group-hover:scale-110 transition-transform duration-300" />
+      </div>
+      <span className="relative text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+        Twitter
+      </span>
+    </motion.a>
+  </div>
+</motion.div>
+</div>
+</section>
   );
 }
 
