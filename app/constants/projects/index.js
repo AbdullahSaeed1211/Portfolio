@@ -27,11 +27,11 @@ export const featureProjects = [
 export const allProjects = [
   guidanceWelfareProject,       // 1. Guidance Welfare Foundation (Featured)
   brainWiseProject,             // 2. BrainWise (Research Platform)
-  simplyMortgageProject,        // 3. Simply Mortgages
-  lotusProServicesProject,      // 4. Lotus Pro Services
-  dubbbyProject,                // 5. Dubbby
-  sproutlyProject,              // 6. Sproutly
-  kiroProject,                  // 7. Kiiro
+  kiroProject,                  // 3. Kiiro
+  simplyMortgageProject,        // 4. Simply Mortgages
+  lotusProServicesProject,      // 5. Lotus Pro Services
+  dubbbyProject,                // 6. Dubbby
+  sproutlyProject,              // 7. Sproutly
   testimonialNudgerProject,     // 8. Testimonial Nudger
   blogSquirrelProject,          // 9. BlogSquirrel
   ...otherMinorProjects         // 10. Rest as is
