@@ -29,9 +29,9 @@ export const allProjects = [
   brainWiseProject,             // 2. BrainWise (Research Platform)
   kiroProject,                  // 3. Kiiro
   simplyMortgageProject,        // 4. Simply Mortgages
-  lotusProServicesProject,      // 5. Lotus Pro Services
-  dubbbyProject,                // 6. Dubbby
-  sproutlyProject,              // 7. Sproutly
+  sproutlyProject,              // 5. Sproutly
+  lotusProServicesProject,      // 6. Lotus Pro Services
+  dubbbyProject,                // 7. Dubbby
   testimonialNudgerProject,     // 8. Testimonial Nudger
   blogSquirrelProject,          // 9. BlogSquirrel
   ...otherMinorProjects         // 10. Rest as is
