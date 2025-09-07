@@ -1,0 +1,41 @@
+{
+  "name": "Abdullah Saeed - Full-Stack Developer",
+  "short_name": "Abdullah Saeed",
+  "description": "Portfolio of Abdullah Saeed, a full-stack developer specializing in AI-enhanced web applications",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "technology", "portfolio"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/images/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View my latest projects",
+      "url": "/#Projects",
+      "icons": [{ "src": "/assets/icons/link.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "/#Contact",
+      "icons": [{ "src": "/assets/icons/link.svg", "sizes": "96x96" }]
+    }
+  ]
+}

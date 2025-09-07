@@ -13,23 +13,6 @@ import SectionDivider from "@/components/SectionDivider";
 import FeaturedQuote from "@/components/FeaturedQuote";
 import Skills2 from "@/components/skills2";
 
-export const metadata = {
-  title: "Abdullah Saeed | Fullstack Developer",
-  description: "Portfolio of Abdullah Saeed, a developer specializing in AI-enhanced web applications that solve real business problems using Next.js, React, and TypeScript.",
-  alternates: {
-    canonical: "https://abdullahsaeed.me"
-  },
-  openGraph: {
-    images: [
-      {
-        url: '/assets/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Abdullah Saeed - Full Stack Developer & AI Specialist'
-      }
-    ]
-  }
-};
 
 export default function Home() {
   return (

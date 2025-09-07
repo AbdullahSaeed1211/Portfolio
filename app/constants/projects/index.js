@@ -10,6 +10,8 @@ const lotusProServicesProject = minorProjects.find(p => p.id === "lotusproservic
 const brainWiseProject = minorProjects.find(p => p.id === "brainwise");
 const blogSquirrelProject = minorProjects.find(p => p.id === "blogsquirrel");
 const sproutlyProject = minorProjects.find(p => p.id === "sproutly");
+const pantryPanicProject = minorProjects.find(p => p.id === "pantry-panic");
+const speakspeareProject = minorProjects.find(p => p.id === "speakspeare");
 
 // Other minor projects (excluding the ones we specifically pulled out)
 const otherMinorProjects = minorProjects.filter(p => 
@@ -34,7 +36,9 @@ export const allProjects = [
   dubbbyProject,                // 7. Dubbby
   testimonialNudgerProject,     // 8. Testimonial Nudger
   blogSquirrelProject,          // 9. BlogSquirrel
-  ...otherMinorProjects         // 10. Rest as is
+  pantryPanicProject,           // 10. Pantry Panic
+  speakspeareProject,           // 11. SpeakSpeare
+  ...otherMinorProjects         // 12. Rest as is
 ].filter(Boolean); // Remove any undefined entries (in case a project wasn't found)
 
 // Export individual projects for direct access
@@ -42,6 +46,14 @@ export {
   kiroProject,
   testimonialNudgerProject,
   dubbbyProject,
+  guidanceWelfareProject,
+  brainWiseProject,
+  simplyMortgageProject,
+  sproutlyProject,
+  lotusProServicesProject,
+  blogSquirrelProject,
+  pantryPanicProject,
+  speakspeareProject,
   minorProjects
 };
 
