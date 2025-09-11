@@ -42,8 +42,8 @@ const nextConfig = {
         source: '/sitemap.xml',
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=1800, s-maxage=1800'
+            key: 'Content-Type',
+            value: 'application/xml'
           }
         ]
       },
@@ -52,7 +52,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, s-maxage=3600'
+            value: 'public, max-age=1800, s-maxage=1800'
           }
         ]
       }

@@ -4,6 +4,24 @@ import Nav from "@/components/Nav";
 import FooterSimple from "@/components/ui/footer-simple";
 import { FolderX } from "lucide-react";
 
+export const metadata = {
+  title: "Project Not Found - Abdullah Saeed",
+  description: "The requested project could not be found.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'none',
+      'max-snippet': -1,
+    },
+  },
+};
+
 export default function NotFound() {
   return (
     <>
