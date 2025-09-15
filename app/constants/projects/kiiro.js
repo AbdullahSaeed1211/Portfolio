@@ -171,7 +171,7 @@ Beyond the quantitative metrics, Kiiro reported significant qualitative improvem
   
   // Additional metadata
   metadata: {
-    completionDate: "May 2025",
+    completionDate: "May 2024",
     category: "Web App, Agency Design, Brand Evolution",
     duration: "5 days",
     purpose: "Strategic web redesign & identity refresh that amplified conversions and strengthened market position for a premium web design agency."

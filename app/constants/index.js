@@ -111,26 +111,8 @@ export const skillsData = [
 
 // Projects - now imported from the projects directory
 export const ProjectCardList = [
-  // Major projects from individual files
+  // All projects from the unified project structure
   ...allProjects,
-  
-  // Additional projects not yet migrated to the new structure
-  {
-    title: "Pantry Panic",
-    imgSrc: "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",
-    description: "An inventory management application designed for efficient tracking and management of food items. The app allows users to add, remove, and update inventory items, with real-time synchronization to Firebase Firestore. It features a modern UI with a responsive layout, and handles item images, quantities, prices, and dates. Users can view the inventory in a table format for desktop or a streamlined card layout for mobile devices.",
-    tags: ["React", "Firebase", "Tailwind", "PWA"],
-    projectLink: "https://pantry-panic.vercel.app/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/inventory-ai/tree/main",
-  },
-  {
-    title: "Speak Speare",
-    imgSrc: "https://github.com/user-attachments/assets/a4dd54e4-9495-42e6-9f74-726ea368c4a0",
-    description: "Advanced voice translation tool that enables users to interact with a range of language processing features. It converts spoken words into text using the Web Speech API, translates the text with Gemini 1.5 Flash, and plays back the translation using speech synthesis. Additionally, it reads and translates text from uploaded files, fetches, supports language selection, and ensures a seamless experience across different devices with its responsive design, and uses a Writing and Speaking Prompt generator based on the category chosen by the user.",
-    tags: ["React", "Web Speech API", "Gemini AI", "Tailwind"],
-    projectLink: "https://speak-speare.vercel.app/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/SpeakSpeare",
-  },
   {
     title: "StrikeMMA",
     imgSrc: "https://github.com/user-attachments/assets/81e21ea3-912d-4220-9f35-7888a7b67fbc",

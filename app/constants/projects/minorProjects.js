@@ -73,7 +73,7 @@ This project showcases distributed system design principles, database optimizati
       }
     ],
     metadata: {
-      completionDate: "June 2025",
+      completionDate: "June 2024",
       category: "EdTech, LMS, Enterprise Application",
       duration: "12 months",
       purpose: "To create a production-ready Islamic educational platform with enterprise-grade architecture and modern learning management features",
@@ -95,7 +95,7 @@ The website includes service listings, contact forms, testimonials, and clear ca
 
 Lotus Pro Services was built using Next.js for the frontend with Tailwind CSS for styling, enabling a fast, responsive experience with excellent performance metrics.`,
     metadata: {
-      completionDate: "May 2025",
+      completionDate: "May 2024",
       category: "Web App, Business Website",
       duration: "3 days",
       purpose: "To create a modern website for a UAE-based document services company"
@@ -135,7 +135,7 @@ Key features include interactive mortgage calculators, detailed service listings
 
 The website was built with Next.js for optimal performance and SEO benefits, with Tailwind CSS providing the styling framework. It achieves excellent performance scores while delivering a user-friendly experience.`,
     metadata: {
-      completionDate: "May 2025",
+      completionDate: "May 2024",
       category: "Web App, Finance, Business Website",
       duration: "2 weeks",
       purpose: "To create a comprehensive mortgage consultancy website for the UAE market"
@@ -280,7 +280,7 @@ Key features include course cards with engaging images and concise descriptions,
       }
     ],
     metadata: {
-      completionDate: "May 2025",
+      completionDate: "May 2024",
       category: "Education, Lifestyle, Web Platform",
       duration: "2 days",
       purpose: "To make urban gardening accessible and enjoyable through expert guidance and practical resources"
@@ -291,7 +291,7 @@ Key features include course cards with engaging images and concise descriptions,
     id: "pantry-panic",
     title: "Pantry Panic",
     description: "An ingredient-based recipe finder app that helps users discover meals based on what they already have in their pantry.",
-    imgSrc: "/assets/images/projects/pantry.webp",
+    imgSrc: "https://github.com/user-attachments/assets/c61f1853-dd02-48ee-ad93-a0623987aedc",
     tags: ["React", "API Integration", "UI/UX", "Food"],
     projectLink: "https://pantry-panic.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/pantry-panic",
@@ -301,7 +301,7 @@ The app features a clean, intuitive interface that makes finding recipes quick a
 
 Pantry Panic was built using React for the frontend, with a focus on responsive design for seamless use on both desktop and mobile devices. The project demonstrates effective API integration and user-focused design principles.`,
     metadata: {
-      completionDate: "April 2025",
+      completionDate: "April 2024",
       category: "Web App, Food, Utility",
       duration: "2 weeks",
       purpose: "To help users reduce food waste and simplify meal planning with an ingredient-first approach"
@@ -311,7 +311,7 @@ Pantry Panic was built using React for the frontend, with a focus on responsive 
     id: "speakspeare",
     title: "SpeakSpeare",
     description: "An AI-powered tool that translates modern English into Shakespearean language with historical accuracy and literary flair.",
-    imgSrc: "/assets/images/projects/speakspeare.webp",
+    imgSrc: "https://github.com/user-attachments/assets/a4dd54e4-9495-42e6-9f74-726ea368c4a0",
     tags: ["Next.js", "OpenAI", "NLP", "Educational"],
     projectLink: "https://speakspeare.vercel.app/",
     projectLinkGithub: "https://github.com/AbdullahSaeed1211/speakspeare",
@@ -321,7 +321,7 @@ The tool offers multiple "inspiration modes" based on different Shakespearean wo
 
 SpeakSpeare was developed using Next.js for the frontend with integration to OpenAI's language models, fine-tuned on a corpus of Shakespeare's complete works. The project demonstrates creative application of AI technologies for educational and entertainment purposes.`,
     metadata: {
-      completionDate: "March 2025",
+      completionDate: "March 2024",
       category: "Web App, AI, Educational, Entertainment",
       duration: "3 weeks",
       purpose: "To create an entertaining yet educational tool that helps users appreciate Shakespearean language through personal interaction"

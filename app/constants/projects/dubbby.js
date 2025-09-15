@@ -188,7 +188,7 @@ The technology has democratized professional-quality video dubbing, making it ac
   
   // Additional metadata
   metadata: {
-    completionDate: "May 2025",
+    completionDate: "May 2024",
     category: "SaaS, AI, Video Processing",
     duration: "5 days",
     purpose: "To democratize video translation and dubbing, making it accessible to all content creators regardless of budget"
