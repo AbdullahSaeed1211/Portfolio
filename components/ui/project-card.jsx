@@ -4,29 +4,46 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardFooter, 
-  CardHeader, 
-  CardTitle 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink, ChevronRight } from "lucide-react";
 import { TrackEvent } from "@/components/ui/track-event";
 
+const getCardRotation = (index) => {
+  const rotations = [-1, 1, -0.5, 0.5, -1.5, 1.5];
+  return rotations[index % rotations.length];
+};
+
 const ProjectCard = ({ project, index }) => {
   // Create a valid project ID if none exists - use a slug from title
   const projectId = project.id || project.title?.toLowerCase().replace(/\s+/g, '-');
-  
+  const rotation = getCardRotation(index);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 20, rotate: rotation * 0.3 }}
+      whileInView={{ opacity: 1, y: 0, rotate: rotation }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }}
       viewport={{ once: true }}
+      whileHover={{
+        rotate: rotation * 0.5,
+        scale: 1.02,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
       className="flex flex-col h-full"
     >
       <Card className="h-full flex flex-col overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-300 group">
@@ -46,27 +63,35 @@ const ProjectCard = ({ project, index }) => {
         <CardHeader className="pb-2">
           <div className="flex gap-2 flex-wrap mb-2">
             {project.tags
-              .filter(tag => !["AI", "Next.js", "React"].includes(tag)) // Filter out AI, Next.js, and React tags
+              .filter(tag => tag && tag.trim() !== '') // Filter out empty tags
+              .slice(0, 4) // Limit to 4 tags max
               .map((tag, i) => {
-              // Map tag to appropriate variant
-              let badgeVariant = "default";
-              const tagLower = tag.toLowerCase();
-              
-              if (tagLower === "saas") badgeVariant = "saas";
-              else if (tagLower === "health") badgeVariant = "health";
-              else if (tagLower === "finance") badgeVariant = "finance";
-              else if (tagLower === "web") badgeVariant = "web";
-              else if (["typescript", "node.js", "mongodb"].includes(tagLower)) badgeVariant = "tech";
-              
+              // Enhanced tag categorization
+              let badgeVariant = "skill"; // Default to skill
+              const tagLower = tag.toLowerCase().trim();
+
+              // Industry/CATEGORY tags
+              if (["saas", "platform", "software", "application"].includes(tagLower)) badgeVariant = "saas";
+              else if (["health", "medical", "healthcare", "wellness"].includes(tagLower)) badgeVariant = "health";
+              else if (["finance", "fintech", "mortgage", "banking", "financial"].includes(tagLower)) badgeVariant = "finance";
+              else if (["web", "website", "landing page", "web app"].includes(tagLower)) badgeVariant = "web";
+              else if (["ai", "artificial intelligence", "machine learning", "ml"].includes(tagLower)) badgeVariant = "ai";
+
+              // Technology/TOOL tags
+              else if (["typescript", "javascript", "python", "node.js", "react", "next.js", "vue", "angular", "svelte"].includes(tagLower)) badgeVariant = "tech";
+              else if (["mongodb", "postgresql", "mysql", "firebase", "supabase", "prisma"].includes(tagLower)) badgeVariant = "tech";
+              else if (["tailwind", "css", "scss", "styled-components"].includes(tagLower)) badgeVariant = "tool";
+              else if (["aws", "vercel", "netlify", "docker", "kubernetes"].includes(tagLower)) badgeVariant = "tool";
+
               return (
-                <Badge key={i} variant={badgeVariant}>
+                <Badge key={i} variant={badgeVariant} className="text-xs">
                   {tag}
                 </Badge>
               );
             })}
           </div>
-          <CardTitle className="text-xl">{project.title}</CardTitle>
-          <CardDescription className="line-clamp-2 text-muted-foreground">
+          <CardTitle className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">{project.title}</CardTitle>
+          <CardDescription className="line-clamp-2 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             {project.description}
           </CardDescription>
         </CardHeader>

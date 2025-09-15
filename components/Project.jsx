@@ -6,6 +6,56 @@ import ProjectCard from "@/components/ui/project-card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+// Animated Counter Component
+const AnimatedCounter = ({ from = 0, to, duration = 2, suffix = "", prefix = "" }) => {
+  const [count, setCount] = useState(from);
+  const nodeRef = useRef();
+
+  useEffect(() => {
+    const node = nodeRef.current;
+    const controls = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const startTime = Date.now();
+            const animate = () => {
+              const elapsed = Date.now() - startTime;
+              const progress = Math.min(elapsed / (duration * 1000), 1);
+              const easeInOutCubic = progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+              setCount(Math.floor(from + (to - from) * easeInOutCubic));
+
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              }
+            };
+            animate();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (node) {
+      controls.observe(node);
+    }
+
+    return () => {
+      if (node) {
+        controls.unobserve(node);
+      }
+    };
+  }, [from, to, duration]);
+
+  return (
+    <span ref={nodeRef}>
+      {prefix}{count}{suffix}
+    </span>
+  );
+};
+
 const Project = () => {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -264,114 +314,143 @@ const Project = () => {
   whileInView="visible"
   viewport={{ once: true }}
   transition={{ duration: 0.8, ease: "easeOut" }}
-  className="w-full max-w-6xl mx-auto mt-20 mb-20"
+  className="w-full max-w-7xl mx-auto mt-24 mb-24"
 >
-  <div className="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-2xl p-8 sm:p-12 shadow-xl border border-gray-200 overflow-hidden">
-    {/* Background decoration */}
-    <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-100 to-transparent rounded-full opacity-50 -translate-y-32 translate-x-32"></div>
-    <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-red-100 to-transparent rounded-full opacity-50 translate-y-24 -translate-x-24"></div>
+  <div className="relative bg-slate-50 rounded-2xl p-8 sm:p-12 border border-gray-200 overflow-hidden">
+    {/* Subtle Background Elements */}
+    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full opacity-30 -translate-y-32 translate-x-32"></div>
+    <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-50 rounded-full opacity-30 translate-y-24 -translate-x-24"></div>
     
     {/* Content */}
     <div className="relative z-10">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <motion.h3 
+      {/* Enhanced Header */}
+      <div className="text-center mb-16">
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+          className="relative"
+        >
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 tracking-tight text-gray-900">
+            Delivering{" "}
+            <span className="relative inline-block text-blue-600">
+              Measurable Results
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-blue-600 rounded-full"></div>
+            </span>
+          </h3>
+        </motion.div>
+        <motion.p
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
           }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3"
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-gray-700 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-medium"
         >
-          Delivering{" "}
-          <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
-            Measurable Results
+          <span className="text-gray-600">Real metrics from</span>{" "}
+          <span className="text-gray-800 font-semibold">real clients</span>{" "}
+          <span className="text-gray-600">who trusted us to</span>{" "}
+          <span className="text-emerald-600 font-semibold">
+            transform their business
           </span>
-        </motion.h3>
-        <motion.p 
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto"
-        >
-          Real metrics from real clients who trusted us to transform their business
         </motion.p>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-        {/* Stat 1 */}
+      {/* Enhanced Stats Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* Stat 1 - Production Applications */}
         <motion.div
           variants={{
-            hidden: { opacity: 0, scale: 0.8 },
-            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, y: 40, scale: 0.9 },
+            visible: { opacity: 1, y: 0, scale: 1 },
           }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="group text-center p-6 rounded-xl bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/50"
+          transition={{
+            delay: 0.4,
+            duration: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+          }}
+          className="group"
         >
-          <div className="relative mb-4">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+          <div className="h-32 p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 text-center flex flex-col justify-center">
+            <div className="text-4xl sm:text-5xl font-bold mb-2 text-red-600">
               15+
             </div>
-            <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full animate-pulse opacity-75"></div>
+            <h4 className="text-lg font-semibold text-gray-800 mb-2">
+              Production Applications
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Live applications driving{" "}
+              <span className="font-medium text-red-600">
+                business value
+              </span>
+            </p>
           </div>
-          <h4 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">
-            Production Applications
-          </h4>
-          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-            Live applications actively driving<br />
-            <span className="font-medium text-red-600">measurable business value</span>
-          </p>
         </motion.div>
 
-        {/* Stat 2 */}
+        {/* Stat 2 - Engagement Boost */}
         <motion.div
           variants={{
-            hidden: { opacity: 0, scale: 0.8 },
-            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, y: 40, scale: 0.9 },
+            visible: { opacity: 1, y: 0, scale: 1 },
           }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="group text-center p-6 rounded-xl bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/50"
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+          }}
+          className="group"
         >
-          <div className="relative mb-4">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+          <div className="h-32 p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 text-center flex flex-col justify-center">
+            <div className="text-4xl sm:text-5xl font-bold mb-2 text-blue-600">
               2.7X
             </div>
-            <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-500 rounded-full animate-pulse opacity-75"></div>
+            <h4 className="text-lg font-semibold text-gray-800 mb-2">
+              Engagement Boost
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Customer engagement{" "}
+              <span className="font-medium text-blue-600">
+                increase across projects
+              </span>
+            </p>
           </div>
-          <h4 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">
-            Engagement Boost
-          </h4>
-          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-            Average customer engagement<br />
-            <span className="font-medium text-blue-600">increase across projects</span>
-          </p>
         </motion.div>
 
-        {/* Stat 3 */}
+        {/* Stat 3 - Speed Advantage */}
         <motion.div
           variants={{
-            hidden: { opacity: 0, scale: 0.8 },
-            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, y: 40, scale: 0.9 },
+            visible: { opacity: 1, y: 0, scale: 1 },
           }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="group text-center p-6 rounded-xl bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/50"
+          transition={{
+            delay: 0.6,
+            duration: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+          }}
+          className="group"
         >
-          <div className="relative mb-4">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">
-              3-5X
+          <div className="h-32 p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 text-center flex flex-col justify-center">
+            <div className="text-4xl sm:text-5xl font-bold mb-2 text-emerald-600">
+              5X
             </div>
-            <div className="absolute -top-2 -right-2 w-4 h-4 bg-purple-500 rounded-full animate-pulse opacity-75"></div>
+            <h4 className="text-lg font-semibold text-gray-800 mb-2">
+              Speed Advantage
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Faster time-to-market than{" "}
+              <span className="font-medium text-emerald-600">
+                industry competitors
+              </span>
+            </p>
           </div>
-          <h4 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">
-            Speed Advantage
-          </h4>
-          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-            Faster time-to-market than<br />
-            <span className="font-medium text-purple-600">industry competitors</span>
-          </p>
         </motion.div>
       </div>
 
