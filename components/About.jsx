@@ -69,7 +69,7 @@ const About = () => {
     <section
       ref={ref}
       id="About"
-      className="w-full mx-auto md:px-4 sm:px-6 md:py-5 sm:pt-1" 
+      className="w-full mx-auto md:px-4 sm:px-6 md:py-5 pt-5" 
     >      
 
       {/* Content */}
@@ -90,8 +90,8 @@ const About = () => {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <p className="text-base sm:text-lg md:text-3xl lg:text-4xl text-black dark:text-white leading-relaxed font-normal">
-            I am a <span className="italic underline font-semibold">Software Engineer</span> <br /> with hands-on experience building
-            products across <br/> <span className="italic font-semibold underline">ML, Web, and Fullstack systems</span>.
+            I am a <span className="italic underline font-semibold font-serif-italic">Software Engineer</span> <br /> with hands-on experience building
+            products across <br/> <span className="italic font-semibold underline font-serif-italic">ML, Web, and Fullstack systems</span>.
           </p>
 
           <p className="text-sm sm:text-base md:text-lg text-black dark:text-white leading-relaxed font-light mt-3">
