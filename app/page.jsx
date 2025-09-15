@@ -11,7 +11,7 @@ import ValueProposition from "@/components/ValueProposition";
 import StructuredData from "@/components/StructuredData";
 import SectionDivider from "@/components/SectionDivider";
 import FeaturedQuote from "@/components/FeaturedQuote";
-import Skills2 from "@/components/skills2";
+import ResumeExperience from "@/components/ResumeExperience";
 
 
 export default function Home() {
@@ -20,17 +20,15 @@ export default function Home() {
       <StructuredData />
       <Nav />
       <Hero />
-      
-      <SectionDivider variant="dots" />
-      <About />
 
-      <SectionDivider variant="minimal" />
+      <ResumeExperience />
+
+      <SectionDivider variant="dots" />
+
       <Project />
-
       <SectionDivider variant="dots" />
-      <Skills2 />
 
-      <SectionDivider variant="waves" />
+
       <ValueProposition />
 
       <SectionDivider variant="minimal" />

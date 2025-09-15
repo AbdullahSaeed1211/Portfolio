@@ -34,11 +34,23 @@
   }
 
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 0 0% 0.5%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+
+    /* Gold Accent Colors for Recruiters */
+    --gold-50: 45 100% 97%;
+    --gold-100: 43 100% 94%;
+    --gold-200: 39 100% 88%;
+    --gold-300: 35 100% 78%;
+    --gold-400: 32 100% 64%;
+    --gold-500: 28 100% 50%;
+    --gold-600: 25 95% 44%;
+    --gold-700: 22 85% 38%;
+    --gold-800: 20 75% 32%;
+    --gold-900: 18 65% 26%;
+    --card: 0 0% 2.5%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 0 0% 2.5%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
@@ -50,8 +62,8 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
+    --border: 0 0% 8%;
+    --input: 0 0% 8%;
     --ring: 0 0% 83.1%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -84,37 +96,226 @@
   padding: 0;
   pointer-events: none;
   z-index: -1;
-  background-color: #fafafa;
+  background: linear-gradient(135deg,
+    hsl(0 0% 98%) 0%,
+    hsl(0 0% 96%) 25%,
+    hsl(220 14% 96%) 50%,
+    hsl(240 10% 96%) 75%,
+    hsl(0 0% 98%) 100%);
   overflow: hidden;
 }
 
 .dark .main {
-  background-color: hsl(0 0% 3.9%); /* Match dark theme background */
+  background: linear-gradient(135deg,
+    hsl(222 47% 5%) 0%,
+    hsl(222 47% 3%) 25%,
+    hsl(222 47% 1%) 50%,
+    hsl(222 47% 2%) 75%,
+    hsl(222 47% 4%) 100%);
 }
 
+/* Mesh Gradient Overlay */
+.main:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Dark mode mesh overlay */
+.dark .main:before {
+  background:
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+}
+
+/* Background Accents - Enhanced patterns */
 .main:after {
   content: "";
-  background-image: url('/assets/images/pattern-bg.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('/assets/images/gold-dots.svg');
+  background-repeat: repeat;
+  background-size: 80px 80px;
   background-position: center center;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  opacity: 0.7;
+  opacity: 0.25;
   transition: opacity 0.5s ease;
+  animation: floatUpDown 20s ease-in-out infinite;
 }
 
+/* Enhanced white accents for dark mode */
 .dark .main:after {
-  opacity: 0.4; /* Slightly more subtle in dark mode */
-  filter: brightness(0.8) hue-rotate(10deg);
+  background-image: url('/assets/images/white-accents.svg');
+  background-size: 120px 120px;
+  opacity: 0.15;
+  animation: floatUpDown 25s ease-in-out infinite reverse;
 }
+
+/* Enhanced Font Classes for Professional Appeal */
+.font-display {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+}
+
+.font-accent {
+  font-family: 'Bangers', cursive;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* Gold Accent Styles */
+.gold-gradient {
+  background: linear-gradient(135deg, hsl(var(--gold-400)), hsl(var(--gold-600)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-accent {
+  background: linear-gradient(135deg, hsl(var(--gold-300)), hsl(var(--gold-500)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-bg {
+  background: linear-gradient(135deg, hsl(var(--gold-100)), hsl(var(--gold-200)));
+}
+
+.gold-border {
+  border: 1px solid hsl(var(--gold-400));
+}
+
+.gold-shadow {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.15);
+}
+
+/* Background Animation */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* Add subtle floating animation to main container */
+.main {
+  animation: gentleFloat 12s ease-in-out infinite;
+}
+
+/* Floating Geometric Shapes */
+.floating-shape-1,
+.floating-shape-2,
+.floating-shape-3,
+.floating-shape-4,
+.floating-shape-5 {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  animation: floatUpDown ease-in-out infinite;
+}
+
+.floating-shape-1 {
+  top: 10%;
+  left: 10%;
+  width: 4px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 50%;
+  animation-duration: 15s;
+}
+
+.floating-shape-2 {
+  top: 20%;
+  right: 15%;
+  width: 6px;
+  height: 6px;
+  background: rgba(147, 51, 234, 0.3);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+
+.floating-shape-3 {
+  bottom: 30%;
+  left: 20%;
+  width: 3px;
+  height: 3px;
+  background: rgba(236, 72, 153, 0.5);
+  transform: rotate(45deg);
+  animation-duration: 22s;
+}
+
+.floating-shape-4 {
+  top: 60%;
+  right: 25%;
+  width: 5px;
+  height: 5px;
+  background: rgba(34, 197, 94, 0.3);
+  border-radius: 50%;
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+.floating-shape-5 {
+  bottom: 15%;
+  right: 10%;
+  width: 4px;
+  height: 4px;
+  background: rgba(251, 191, 36, 0.4);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation-duration: 25s;
+}
+
+/* Dark mode floating shapes */
+.dark .floating-shape-1 { background: rgba(59, 130, 246, 0.6); }
+.dark .floating-shape-2 { background: rgba(147, 51, 234, 0.5); }
+.dark .floating-shape-3 { background: rgba(236, 72, 153, 0.7); }
+.dark .floating-shape-4 { background: rgba(34, 197, 94, 0.5); }
+.dark .floating-shape-5 { background: rgba(251, 191, 36, 0.6); }
 
 @media screen and (max-width: 1024px) {
   .main:after {
     background-size: 120% auto;
+  }
+
+  /* Reduce floating shapes on smaller screens */
+  .floating-shape-3,
+  .floating-shape-4,
+  .floating-shape-5 {
+    display: none;
   }
 }
 
@@ -122,9 +323,17 @@
   .main {
     padding: 0;
   }
-  
+
   .main:after {
     background-size: 150% auto;
+  }
+
+  /* Hide most floating shapes on mobile for performance */
+  .floating-shape-2,
+  .floating-shape-3,
+  .floating-shape-4,
+  .floating-shape-5 {
+    display: none;
   }
 }
 
@@ -284,4 +493,7 @@
 #skills-container::-webkit-scrollbar-track {
   background-color: transparent; /* Color of the track */
 }
-
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}

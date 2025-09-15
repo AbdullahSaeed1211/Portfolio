@@ -2,8 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, MapPin, Code2, BrainCircuit, Cpu } from "lucide-react";
-import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
-import { BlurFade } from "@/components/magicui/blur-fade";
+import About from "./About";
+
 
 const container = {
   hidden: { opacity: 0 },
@@ -76,51 +76,13 @@ const floatingVariants = {
 };
 
 // Social icons with staggered entrance
-const socialContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.5 }
-  }
-};
 
-const socialChild = {
-  hidden: { opacity: 0, y: 20, scale: 0.8 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1,
-    transition: { 
-      type: "spring",
-      damping: 15,
-      stiffness: 200
-    }
-  }
-};
-
-const socials = [
-  {
-    href: "https://github.com/AbdullahSaeed1211",
-    label: "GitHub",
-    icon: Github,
-  },
-  {
-    href: "https://linkedin.com/in/abdullah-saeed1211",
-    label: "LinkedIn",
-    icon: Linkedin,
-  },
-  {
-    href: "mailto:abdullah.saeed1724@gmail.com",
-    label: "Email",
-    icon: Mail,
-  },
-];
 
 const Hero = () => (
-  <section className="w-full min-h-screen pt-20 pb-12 relative overflow-hidden">
-    {/* Subtle background animation */}
-    <motion.div 
-      className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-cyan-50/30"
+  <section className="w-full min-h-screen pt-20 pb-6 sm:pb-2 relative overflow-hidden">
+    {/* Subtle background animation - only for light mode */}
+    <motion.div
+      className="absolute inset-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
@@ -141,7 +103,7 @@ const Hero = () => (
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-medium mb-6 sm:mb-8 backdrop-blur-sm"
             aria-label="Location and Availability"
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               boxShadow: "0 8px 25px rgba(59, 130, 246, 0.15)",
             }}
@@ -163,21 +125,21 @@ const Hero = () => (
 
         {/* Heading with enhanced animation */}
         <motion.div variants={child}>
-          <motion.h1 
-            className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900"
+          <motion.h1
+            className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
           >
             Hey, I&apos;m Abdullah Saeed{" "}
             <motion.span
               className="inline-block"
-              animate={{ 
+              animate={{
                 rotate: [0, 20, -10, 20, 0],
                 scale: [1, 1.1, 1, 1.1, 1]
               }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity, 
+              transition={{
+                duration: 2,
+                repeat: Infinity,
                 repeatDelay: 4,
                 ease: "easeInOut"
               }}
@@ -185,8 +147,8 @@ const Hero = () => (
               👋
             </motion.span>
           </motion.h1>
-          <motion.p 
-            className="mt-2 text-gray-600 text-sm sm:text-base max-w-xl mx-auto"
+          <motion.p
+            className="mt-2 text-gray-600 dark:text-gray-400 text-sm sm:text-base max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -361,77 +323,14 @@ const Hero = () => (
           </motion.div>
         </motion.div>
 
-        {/* Action Buttons with enhanced animations */}
-        <motion.div variants={child} className="flex justify-center">
-          <BlurFade delay={0.7} direction="up" className="flex flex-col md:flex-row gap-3 sm:gap-4 mt-6">
-            <motion.div
-              whileHover={{ y: -3, scale: 1.02 }}
-              whileTap={{ y: 0, scale: 0.98 }}
-              transition={{ type: "spring", damping: 15, stiffness: 200 }}
-            >
-              <InteractiveHoverButton
-                onClick={() => document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' })} 
-                className="w-full sm:w-auto mx-auto sm:mx-0 text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent py-2.5 sm:py-2.5 text-sm font-medium transition-all duration-300"
-              >
-                See What I've Built
-              </InteractiveHoverButton>
-            </motion.div>
-          
-            <motion.a
-              href="#value"
-              className="w-full sm:w-auto mx-auto sm:mx-0 flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-full bg-background border border-border text-foreground font-medium text-sm hover:bg-accent/50 transition-all duration-300 group"
-              whileHover={{ 
-                y: -3,
-                scale: 1.02,
-                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
-              }}
-              whileTap={{ y: 0, scale: 0.98 }}
-              transition={{ type: "spring", damping: 15, stiffness: 200 }}
-            >
-              About My Journey
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </motion.a>
-          </BlurFade>
-        </motion.div>
+       
 
-        {/* Enhanced Social Links */}
-        <motion.div
-          variants={socialContainer}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-wrap justify-center gap-5 sm:gap-6 my-6 sm:my-8"
-        >
-          {socials.map(({ href, label, icon: Icon }, index) => (
-            <motion.a
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              variants={socialChild}
-              className="p-3 rounded-full bg-white border border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-300 transition shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
-              whileHover={{ 
-                scale: 1.15,
-                y: -5,
-                rotate: [0, -5, 5, 0],
-                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)"
-              }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ 
-                type: "spring", 
-                damping: 12, 
-                stiffness: 200,
-                rotate: { duration: 0.3 }
-              }}
-            >
-              <Icon className="w-5 h-5" />
-            </motion.a>
-          ))}
-        </motion.div>
-
+        
+       
 
         </motion.div>
     </div>
+    <About />
   </section>
 );
 

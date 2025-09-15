@@ -134,7 +134,13 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen bg-background font-sans antialiased overflow-x-hidden">
         <ThemeProvider>
-          <div className="main fixed inset-0"></div>
+          <div className="main fixed inset-0">
+            <div className="floating-shape-1"></div>
+            <div className="floating-shape-2"></div>
+            <div className="floating-shape-3"></div>
+            <div className="floating-shape-4"></div>
+            <div className="floating-shape-5"></div>
+          </div>
           <main className="app relative">
             {children}
           </main>

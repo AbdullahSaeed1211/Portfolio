@@ -7,6 +7,7 @@ import { navLinks } from "@app/constants";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useAnalytics } from "@/lib/hooks/use-analytics";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 // Inner component for analytics functionality
 function NavbarContent() {
@@ -51,27 +52,47 @@ function NavbarContent() {
 
   // Handle section detection for active indicator
   useEffect(() => {
-    const sections = ['home', 'About', 'Projects', 'Skills', 'contact'];
-    
+    // Map of nav sections to actual element IDs
+    const sectionMap = {
+      'home': null, // Home doesn't have an ID, we'll handle it differently
+      'About': 'About',
+      'Projects': 'Projects',
+      'Skills': 'Skills',
+      'contact': 'Contact' // Map 'contact' nav item to 'Contact' element ID
+    };
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 300;
-      
-      sections.forEach(section => {
-        const element = document.getElementById(section);
-        if (!element) return;
-        
+      const scrollPosition = window.scrollY + 200; // Reduced offset for better detection
+
+      // Check if we're at the top of the page (home section)
+      if (window.scrollY < 100) {
+        setActiveSection('home');
+        return;
+      }
+
+      // Check other sections
+      for (const [navSection, elementId] of Object.entries(sectionMap)) {
+        if (navSection === 'home') continue;
+
+        const element = document.getElementById(elementId);
+        if (!element) continue;
+
         const offsetTop = element.offsetTop;
         const offsetHeight = element.offsetHeight;
-        
+
         if (
           scrollPosition >= offsetTop &&
           scrollPosition < offsetTop + offsetHeight
         ) {
-          setActiveSection(section);
+          setActiveSection(navSection);
+          return; // Exit early once we find the active section
         }
-      });
+      }
     };
-    
+
+    // Initial check
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -104,7 +125,7 @@ function NavbarContent() {
       <motion.nav
         className={`rounded-full backdrop-blur-md bg-white/10 dark:bg-black/20 border border-blue-200/20 dark:border-blue-500/20 ${
           shadow ? "shadow-lg" : ""
-        } py-1.5 px-4 max-w-2xl mx-auto w-auto`}
+        } py-1.5 px-4 max-w-5xl mx-auto w-auto`}
       >
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-1.5">
@@ -115,14 +136,16 @@ function NavbarContent() {
               height={20}
               className="object-contain"
             />
-            <h1 className="font-bold text-xs bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <h1 className="font-bold text-xs bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent whitespace-nowrap pr-4">
               Abdullah Saeed
             </h1>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-2">
-            {navLinks.map((link, index) => {
+            {navLinks
+              .filter(link => link.text !== "Resume") // Exclude Resume from regular nav items
+              .map((link, index) => {
               const isActive = activeSection === (link.href === "/" ? "home" : link.href.replace("#", ""));
               return (
                 <Link
@@ -148,21 +171,36 @@ function NavbarContent() {
                 </Link>
               );
             })}
-            <a 
-              href="https://cal.com/abdullahsaeed/15min?user=abdullahsaeed" 
-              target="_blank" 
+            <AnimatedThemeToggler className="rounded-full p-2 hover:bg-accent transition-colors" />
+
+            {/* Resume Button */}
+            <a
+              href="https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => handleNavClick('Resume')}
+            >
+              <Button variant="outline" size="sm" className="rounded-full border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 dark:hover:text-blue-300 text-xs px-4 py-1.5 h-auto ml-2 font-medium">
+                Resume
+              </Button>
+            </a>
+
+            <a
+              href="https://cal.com/abdullahsaeed/15min?user=abdullahsaeed"
+              target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleNavClick('Book a call')}
             >
-              <Button variant="gradient" size="sm" className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-[10px] px-3 py-0.5 h-auto text-white ml-1">
-                Book a call
+              <Button variant="gradient" size="sm" className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-xs px-4 py-1.5 h-auto text-white ml-2 font-medium">
+                Let's Chat
               </Button>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <Button 
+          <div className="md:hidden flex items-center gap-1">
+            <AnimatedThemeToggler className="rounded-full p-1.5 hover:bg-accent transition-colors" />
+            <Button
               variant="ghost"
               size="icon"
               onClick={handleNav}
@@ -203,7 +241,7 @@ function NavbarContent() {
               height={20}
               className="object-contain"
             />
-            <h1 className="font-bold text-xs bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Abdullah Saeed</h1>
+            <h1 className="font-bold text-xs bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent whitespace-nowrap">Abdullah Saeed</h1>
           </Link>
           <Button
             variant="ghost"
@@ -217,7 +255,9 @@ function NavbarContent() {
         </div>
 
         <div className="flex flex-col space-y-1.5 mt-3">
-          {navLinks.map((link, index) => {
+          {navLinks
+            .filter(link => link.text !== "Resume") // Exclude Resume from regular nav items
+            .map((link, index) => {
             const isActive = activeSection === (link.href === "/" ? "home" : link.href.replace("#", ""));
             return (
               <motion.div
@@ -231,8 +271,8 @@ function NavbarContent() {
                   target={link.target}
                   onClick={() => handleNavClick(link.text)}
                   className={`flex items-center space-x-2 py-1.5 px-3 rounded-full ${
-                    isActive 
-                      ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400" 
+                    isActive
+                      ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
                       : "text-foreground hover:bg-accent/50"
                   }`}
                 >
@@ -244,14 +284,27 @@ function NavbarContent() {
         </div>
 
         <div className="mt-auto pt-4 border-t border-border">
-          <a 
-            href="https://cal.com/abdullahsaeed" 
-            target="_blank" 
+          {/* Resume Button */}
+          <a
+            href="https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => handleNavClick('Resume')}
+            className="block mb-3"
+          >
+            <Button variant="outline" className="w-full rounded-full border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 dark:hover:text-blue-300 text-sm py-2 px-6 font-medium">
+              Resume
+            </Button>
+          </a>
+
+          <a
+            href="https://cal.com/abdullahsaeed"
+            target="_blank"
             rel="noopener noreferrer"
             onClick={() => handleNavClick('Book a call')}
           >
-            <Button variant="gradient" className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-sm py-1.5">
-              Book a call
+            <Button variant="gradient" className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-sm py-2 px-6 font-medium">
+              Let's Chat
             </Button>
           </a>
           
@@ -277,7 +330,7 @@ function NavbarContent() {
 const Navbar = () => {
   return (
     <Suspense fallback={<div className="fixed top-2 left-0 right-0 z-50 flex justify-center px-4">
-      <div className="rounded-full backdrop-blur-md bg-white/10 dark:bg-black/20 border border-blue-200/20 dark:border-blue-500/20 py-1.5 px-4 max-w-2xl mx-auto w-auto">
+      <div className="rounded-full backdrop-blur-md bg-white/10 dark:bg-black/20 border border-blue-200/20 dark:border-blue-500/20 py-1.5 px-4 max-w-5xl mx-auto w-auto">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-1.5">
             <div className="w-5 h-5"></div>

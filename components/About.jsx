@@ -1,166 +1,186 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { motion, useInView, useAnimation } from "framer-motion";
-import {  BrainCircuit, Code2, Github, Cpu, Database, Zap } from "lucide-react";
+import Skills2 from "./skills2";
+import { ArrowRight,  Github, Linkedin, Mail} from "lucide-react";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 const About = () => {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  
+
+
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
+    if (isInView) controls.start("visible");
   }, [isInView, controls]);
-
-  const journey = [
-    { name: "Redstone Engineering", icon: <Cpu className="w-4 h-4" /> },
-    { name: "Web Development", icon: <Code2 className="w-4 h-4" /> },
-    { name: "System Design", icon: <BrainCircuit className="w-4 h-4" /> },
-    { name: "Machine Learning", icon: <Database className="w-4 h-4" /> },
-    { name: "Research & Papers", icon: <Github className="w-4 h-4" /> },
+  const socialContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.5 }
+    }
+  };
+  const child = {
+  hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: "blur(0px)",
+    transition: { 
+      duration: 0.7, 
+      ease: [0.25, 0.46, 0.45, 0.94] // Custom easing for smoother feel
+    } 
+  },
+};
+  const socialChild = {
+    hidden: { opacity: 0, y: 20, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { 
+        type: "spring",
+        damping: 15,
+        stiffness: 200
+      }
+    }
+  };
+  
+  const socials = [
+    {
+      href: "https://github.com/AbdullahSaeed1211",
+      label: "GitHub",
+      icon: Github,
+    },
+    {
+      href: "https://linkedin.com/in/abdullah-saeed1211",
+      label: "LinkedIn",
+      icon: Linkedin,
+    },
+    {
+      href: "mailto:abdullah.saeed1724@gmail.com",
+      label: "Email",
+      icon: Mail,
+    },
   ];
-
   return (
     <section
       ref={ref}
       id="About"
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20">
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        {/* Image Column */}
+      className="w-full mx-auto md:px-4 sm:px-6 md:py-5 sm:pt-1" 
+    >      
+
+      {/* Content */}
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="space-y-6 text-left mx-auto"
+      >
+        {/* Professional Summary */}
         <motion.div
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          initial="hidden"
-          animate={controls}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative">
-          <div className="absolute -inset-4 bg-gradient-to-tr from-red-200 to-red-100 rounded-xl opacity-60 blur-lg"></div>
-          <div className="relative w-full h-[400px] lg:h-[800px] overflow-hidden rounded-xl">
-            <Image
-              src="/assets/images/AboutMe.png"
-              alt="Abdullah Saeed"
-              fill
-              className="object-contain"
-            />
-          </div>
-          
-          {/* Stats Overlay */}
-          <div className="absolute -bottom-6 -right-6 bg-white p-3 rounded-lg shadow-xl">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-gray-900">2</div>
-              <div className="text-xs text-gray-600">IEEE Publications</div>
-            </div>
-          </div>
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          <p className="text-base sm:text-lg md:text-3xl lg:text-4xl text-black dark:text-white leading-relaxed font-normal">
+            I am a <span className="italic underline font-semibold">Software Engineer</span> <br /> with hands-on experience building
+            products across <br/> <span className="italic font-semibold underline">ML, Web, and Fullstack systems</span>.
+          </p>
+
+          <p className="text-sm sm:text-base md:text-lg text-black dark:text-white leading-relaxed font-light mt-3">
+            My work ranges from AI-powered applications to scalable SaaS platforms <br/> — always focused on creating
+            elegant, performant solutions to complex problems.
+            <br />
+            <span className="block mt-2">
+              Currently building at <span className="font-semibold">kiiro.cx</span> and pursuing{" "}
+              <span className="font-semibold">CS Grad 2025</span>.
+            </span>
+          </p>
         </motion.div>
-        
-        {/* Content Column */}
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate={controls}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="space-y-6">
-          
-          <div>
-            <h4 className="text-red-600 font-medium text-sm mb-2">FROM REDSTONE TO RESEARCH</h4>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-              <span className="red_gradient">Where It All Started</span>
-            </h2>
-            
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">
-              In the pixelated world of Minecraft, my first lines of 'code' were intricate redstone contraptions – automated sorters, complex transportation systems, and self-sustaining farms. What began as childhood play became my earliest lesson in computational thinking, where every circuit and comparator revealed the elegant logic underlying technological innovation.
-            </p>
-            
-            <p className="text-gray-700 text-sm leading-relaxed">
-              Little did I know that these virtual engineering experiments would spark a lifelong passion for understanding how systems work and how to build them better. That curiosity evolved into developing real applications, exploring AI research, and creating solutions that solve actual problems.
-            </p>
-          </div>
-          
-          {/* Journey */}
-          <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3">Evolution of Skills</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {journey.map((step, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <div className="text-red-600">
-                    {step.icon}
-                  </div>
-                  <span className="text-gray-700 text-sm">{step.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Current Focus */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ 
-              delay: 1.1, 
-              duration: 0.7,
-              type: "spring",
-              damping: 20,
-              stiffness: 100
-            }}
-            className="relative"
-          >
-            <motion.div 
-              className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 relative overflow-hidden"
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
-              }}
-              transition={{ type: "spring", damping: 20, stiffness: 300 }}
+        {/* Action Buttons with enhanced animations */}
+        <motion.div variants={child} className="flex justify-start">
+          <BlurFade delay={0.7} direction="up" className="flex flex-col md:flex-row gap-3 sm:gap-4 mt-6">
+            <motion.div
+              whileHover={{ y: -3, scale: 1.02 }}
+              whileTap={{ y: 0, scale: 0.98 }}
+              transition={{ type: "spring", damping: 15, stiffness: 200 }}
             >
-              {/* Subtle background animation */}
-              <motion.div
-                className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-red-100 to-transparent rounded-full opacity-30"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 90, 180]
-                }}
-                transition={{ 
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-              
-              <motion.h3 
-                className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", damping: 20, stiffness: 300 }}
+              <InteractiveHoverButton
+                onClick={() => document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full sm:w-auto mx-auto sm:mx-0 text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent py-2.5 sm:py-2.5 text-sm font-medium transition-all duration-300"
               >
-                <motion.div
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                >
-                  <Zap className="w-5 h-5 text-red-500" />
-                </motion.div>
-                Building & Learning
-              </motion.h3>
-              
-              <motion.p 
-                className="text-gray-700 text-sm leading-relaxed relative z-10"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.3, duration: 0.6 }}
-              >
-                Today, I'm building full-stack applications, exploring machine learning, and occasionally contributing to research when interesting problems arise. Whether it's developing a Next.js app or investigating AI applications, I approach each project with the same systematic curiosity that started with those redstone circuits – always asking how things work and how they can work better.
-              </motion.p>
+                See What I've Built
+              </InteractiveHoverButton>
             </motion.div>
-          </motion.div>
+
+            <motion.a
+              href="#value"
+              className="w-full sm:w-auto mx-auto sm:mx-0 flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-full bg-background border border-border text-foreground font-medium text-sm hover:bg-accent/50 transition-all duration-300 group"
+              whileHover={{
+                y: -3,
+                scale: 1.02,
+                boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+              }}
+              whileTap={{ y: 0, scale: 0.98 }}
+              transition={{ type: "spring", damping: 15, stiffness: 200 }}
+            >
+              About My Journey
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </motion.a>
+          </BlurFade>
         </motion.div>
-      </div>
+
+        
+      </motion.div>
+       {/* Skills Marquee below hero image */}
+       <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0, duration: 0.8 }}
+          className="mt-2"
+        >
+          <Skills2 />
+        </motion.div>
+        <motion.div
+          variants={socialContainer}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-wrap justify-center gap-5 sm:gap-6 my-6 sm:my-8"
+        >
+          {socials.map(({ href, label, icon: Icon }, index) => (
+            <motion.a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              variants={socialChild}
+              className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-300 dark:hover:border-gray-600 transition shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 dark:focus:ring-gray-600"
+              whileHover={{ 
+                scale: 1.15,
+                y: -5,
+                rotate: [0, -5, 5, 0],
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)"
+              }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ 
+                type: "spring", 
+                damping: 12, 
+                stiffness: 200,
+                rotate: { duration: 0.3 }
+              }}
+            >
+              <Icon className="w-5 h-5" />
+            </motion.a>
+          ))}
+        </motion.div>
     </section>
   );
 };

@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import { ProjectCardList } from "@app/constants";
 import { motion, useInView, useAnimation } from "framer-motion";
 import ProjectCard from "@/components/ui/project-card";
+import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -207,26 +208,33 @@ const Project = () => {
   return (
     <section ref={ref} id="Projects" className="w-full py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <motion.div
-          variants={{
-            hidden: {opacity: 0, y: -50},
-            visible: {opacity: 1, y: 0},
-          }}
-          initial="hidden"
-          animate={controls}
-          transition={{duration: 0.45, delay: 0.25}}
-          className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
-            <span className="pink_gradient">Strategic Solutions, Not Just Code</span>
-          </h2>
-          <p className="text-muted-foreground mt-3 max-w-3xl mx-auto text-sm sm:text-base">
-            I transform complex business challenges into high-performance technical solutions that deliver 
-            measurable results. Each case study below represents strategic thinking in action.
-          </p>
-        </motion.div>
+        
 
-        {/* Project Category Filters */}
-        <motion.div
+       
+
+        {/* Featured Project - Brainwise.pro */}
+        <div className="mb-12">
+          <motion.div
+            variants={{
+              hidden: {opacity: 0, y: -30},
+              visible: {opacity: 1, y: 0},
+            }}
+            initial="hidden"
+            animate={controls}
+            transition={{duration: 0.6, delay: 0.6}}
+            className="mb-8"
+          >
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black mb-6 tracking-tight text-center">
+              <span className="text-black dark:text-white">
+                🏆 Featured {` `}
+              </span>
+              <span className="italic text-yellow-500 dark:text-yellow-400">
+                Project
+              </span>
+            </h2>
+            
+          </motion.div>
+          <motion.div
           variants={{
             hidden: {opacity: 0, y: 20},
             visible: {opacity: 1, y: 0},
@@ -260,13 +268,35 @@ const Project = () => {
             );
           })}
         </motion.div>
-
-        {/* Project Cards - New Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
-          {displayedProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
+          {displayedProjects
+            .filter(project => project.title === "BrainWise.pro" || project.title === "Brain Wise")
+            .slice(0, 1)
+            .map((project, index) => (
+              <FeaturedProjectCard key={`featured-${index}`} project={project} />
+            ))}
         </div>
+
+        {/* Other Projects Grid */}
+        <motion.div
+          variants={{
+            hidden: {opacity: 0, y: 20},
+            visible: {opacity: 1, y: 0},
+          }}
+          initial="hidden"
+          animate={controls}
+          transition={{duration: 0.4, delay: 0.8}}
+        >
+          <h3 className="text-xl font-semibold text-center text-foreground mb-6">
+            Other Projects
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
+            {displayedProjects
+              .filter(project => project.title !== "BrainWise.pro" && project.title !== "Brain Wise")
+              .map((project, index) => (
+                <ProjectCard key={index} project={project} index={index} />
+              ))}
+          </div>
+        </motion.div>
 
         {/* View More Button */}
         {hasMoreProjects && (
@@ -304,128 +334,68 @@ const Project = () => {
           </motion.div>
         )}
         
-{/* Client Results Section - Enhanced with value focus */}
+{/* Engineering Excellence Section - Complete Redesign */}
 <motion.div
   variants={{
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 60 },
     visible: { opacity: 1, y: 0 },
   }}
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="w-full max-w-7xl mx-auto mt-24 mb-24"
+  transition={{ duration: 1, ease: "easeOut" }}
+  className="w-full max-w-7xl mx-auto py-10"
 >
-  <div className="relative bg-slate-50 rounded-2xl p-8 sm:p-12 border border-gray-200 overflow-hidden">
-    {/* Subtle Background Elements */}
-    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full opacity-30 -translate-y-32 translate-x-32"></div>
-    <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-50 rounded-full opacity-30 translate-y-24 -translate-x-24"></div>
-    
-    {/* Content */}
-    <div className="relative z-10">
-      {/* Enhanced Header */}
-      <div className="text-center mb-16">
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-          className="relative"
-        >
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 tracking-tight text-gray-900">
-            Delivering{" "}
-            <span className="relative inline-block text-blue-600">
-              Measurable Results
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-blue-600 rounded-full"></div>
-            </span>
-          </h3>
-        </motion.div>
+  {/* Main Hero Section */}
+  <div className="relative overflow-hidden">
+    {/* Animated Background */}
+   
+
+    <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+      {/* Header Section */}
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+        className="text-center mb-16"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-8 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50">
+          <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+          Engineering Excellence
+        </div>
+
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 tracking-tight">
+          <span className="text-black dark:text-white">
+            Building the
+          </span>
+          <br />
+          <span className="italic text-purple-500 dark:text-purple-400">
+            Future
+          </span>
+        </h2>
+
         <motion.p
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
           }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-gray-700 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-medium"
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-black dark:text-gray-300 max-w-4xl mx-auto leading-relaxed font-light"
         >
-          <span className="text-gray-600">Real metrics from</span>{" "}
-          <span className="text-gray-800 font-semibold">real clients</span>{" "}
-          <span className="text-gray-600">who trusted us to</span>{" "}
-          <span className="text-emerald-600 font-semibold">
-            transform their business
-          </span>
+          Transforming ideas into production-ready solutions with
+          <span className="font-semibold text-blue-600 dark:text-blue-400"> cutting-edge technology</span> and
+          <span className="font-semibold text-purple-600 dark:text-purple-400"> unparalleled craftsmanship</span>
         </motion.p>
-      </div>
+      </motion.div>
 
-      {/* Enhanced Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        {/* Stat 1 - Production Applications */}
+      {/* Interactive Stats Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 max-w-6xl mx-auto">
+        {/* Stat 1 - Production Scale */}
         <motion.div
           variants={{
-            hidden: { opacity: 0, y: 40, scale: 0.9 },
-            visible: { opacity: 1, y: 0, scale: 1 },
-          }}
-          transition={{
-            delay: 0.4,
-            duration: 0.8,
-            type: "spring",
-            stiffness: 100,
-            damping: 15
-          }}
-          className="group"
-        >
-          <div className="h-32 p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 text-center flex flex-col justify-center">
-            <div className="text-4xl sm:text-5xl font-bold mb-2 text-red-600">
-              15+
-            </div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-2">
-              Production Applications
-            </h4>
-            <p className="text-gray-600 text-sm">
-              Live applications driving{" "}
-              <span className="font-medium text-red-600">
-                business value
-              </span>
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Stat 2 - Engagement Boost */}
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 40, scale: 0.9 },
-            visible: { opacity: 1, y: 0, scale: 1 },
-          }}
-          transition={{
-            delay: 0.5,
-            duration: 0.8,
-            type: "spring",
-            stiffness: 100,
-            damping: 15
-          }}
-          className="group"
-        >
-          <div className="h-32 p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 text-center flex flex-col justify-center">
-            <div className="text-4xl sm:text-5xl font-bold mb-2 text-blue-600">
-              2.7X
-            </div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-2">
-              Engagement Boost
-            </h4>
-            <p className="text-gray-600 text-sm">
-              Customer engagement{" "}
-              <span className="font-medium text-blue-600">
-                increase across projects
-              </span>
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Stat 3 - Speed Advantage */}
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 40, scale: 0.9 },
+            hidden: { opacity: 0, y: 50, scale: 0.8 },
             visible: { opacity: 1, y: 0, scale: 1 },
           }}
           transition={{
@@ -435,38 +405,127 @@ const Project = () => {
             stiffness: 100,
             damping: 15
           }}
-          className="group"
+          whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+          className="group relative"
         >
-          <div className="h-32 p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 text-center flex flex-col justify-center">
-            <div className="text-4xl sm:text-5xl font-bold mb-2 text-emerald-600">
-              5X
+          <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-white/20 dark:border-gray-700/50 overflow-hidden">
+            {/* Hover Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="relative z-10 text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-6 shadow-lg">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+
+              <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
+                15+
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Production Applications
+              </h3>
+
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                Enterprise-grade solutions deployed across multiple industries, serving millions of users with
+                <span className="font-semibold text-blue-600 dark:text-blue-400"> 99.9% uptime</span>
+              </p>
             </div>
-            <h4 className="text-lg font-semibold text-gray-800 mb-2">
-              Speed Advantage
-            </h4>
-            <p className="text-gray-600 text-sm">
-              Faster time-to-market than{" "}
-              <span className="font-medium text-emerald-600">
-                industry competitors
-              </span>
-            </p>
+          </div>
+        </motion.div>
+
+        {/* Stat 2 - Performance */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 50, scale: 0.8 },
+            visible: { opacity: 1, y: 0, scale: 1 },
+          }}
+          transition={{
+            delay: 0.7,
+            duration: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+          }}
+          whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+          className="group relative"
+        >
+          <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-white/20 dark:border-gray-700/50 overflow-hidden">
+            {/* Hover Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="relative z-10 text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mb-6 shadow-lg">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+
+              <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-400 dark:to-purple-600 bg-clip-text text-transparent">
+                2.7x
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Performance Boost
+              </h3>
+
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                Optimized systems delivering
+                <span className="font-semibold text-purple-600 dark:text-purple-400"> 2.7x better performance</span>
+                than industry benchmarks, reducing latency by 60%
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Stat 3 - Speed */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 50, scale: 0.8 },
+            visible: { opacity: 1, y: 0, scale: 1 },
+          }}
+          transition={{
+            delay: 0.8,
+            duration: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+          }}
+          whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+          className="group relative"
+        >
+          <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-white/20 dark:border-gray-700/50 overflow-hidden">
+            {/* Hover Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="relative z-10 text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-6 shadow-lg">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+
+              <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-emerald-600 to-emerald-800 dark:from-emerald-400 dark:to-emerald-600 bg-clip-text text-transparent">
+                5x
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Rapid Deployment
+              </h3>
+
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <span className="font-semibold text-emerald-600 dark:text-emerald-400">5x faster</span>
+                than industry standards, from concept to production in weeks, not months
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom CTA or additional info */}
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        transition={{ delay: 0.7, duration: 0.6 }}
-        className="text-center mt-10 pt-8 border-t border-gray-200"
-      >
-        <p className="text-gray-600 text-sm">
-          <span className="font-medium">Ready to join them?</span> Let's discuss your next project.
-        </p>
-      </motion.div>
+     
+        
+       
     </div>
   </div>
 </motion.div>

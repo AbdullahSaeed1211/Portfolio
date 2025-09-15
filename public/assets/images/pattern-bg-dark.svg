@@ -1,0 +1,85 @@
+<svg width="100%" height="100%" viewBox="0 0 1440 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark Mode Gradients - Much Darker -->
+    <linearGradient id="darkGradientBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e40af" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.15" />
+    </linearGradient>
+    <linearGradient id="darkGradientPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.15" />
+    </linearGradient>
+    <linearGradient id="darkGradientCyan" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0891b2" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.15" />
+    </linearGradient>
+
+    <!-- Dark Mode Patterns -->
+    <pattern id="darkDots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#475569" opacity="0.8" />
+    </pattern>
+
+    <!-- Enhanced Blur Filter -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -5"/>
+    </filter>
+
+    <!-- Subtle Noise Filter -->
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0 0 0.1 0"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Main Background Layer -->
+  <rect width="100%" height="100%" fill="transparent" />
+
+    <!-- Dark Mode Dot Grid - Much More Prominent -->
+    <rect width="100%" height="100%" fill="url(#darkDots)" opacity="0.6" />
+
+    <!-- Dark Mode Wave Shapes - Much More Prominent -->
+    <path d="M0,280 C180,200 380,160 580,220 C780,280 980,200 1180,260 C1380,320 1440,280 1440,280 V1024 H0 V280 Z"
+          fill="url(#darkGradientBlue)" opacity="0.85" />
+
+    <path d="M0,480 C180,560 380,500 580,440 C780,380 980,430 1180,410 C1380,390 1440,430 1440,430 V1024 H0 V480 Z"
+          fill="url(#darkGradientPurple)" opacity="0.85" />
+
+    <path d="M0,680 C180,630 380,670 580,690 C780,710 980,670 1180,650 C1380,630 1440,650 1440,650 V1024 H0 V680 Z"
+          fill="url(#darkGradientCyan)" opacity="0.85" />
+
+  <!-- Dark Mode Decorative Elements - Much More Prominent -->
+  <g opacity="0.7">
+    <line x1="180" y1="120" x2="380" y2="170" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="380" y1="170" x2="580" y2="120" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="780" y1="220" x2="980" y2="270" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="980" y1="270" x2="1180" y2="220" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Node points - Much More Prominent -->
+    <circle cx="180" cy="120" r="3" fill="#60a5fa" />
+    <circle cx="380" cy="170" r="3" fill="#60a5fa" />
+    <circle cx="580" cy="120" r="3" fill="#60a5fa" />
+    <circle cx="780" cy="220" r="3.5" fill="#a78bfa" />
+    <circle cx="980" cy="270" r="3.5" fill="#a78bfa" />
+    <circle cx="1180" cy="220" r="3.5" fill="#a78bfa" />
+  </g>
+
+    <!-- Dark Mode Curved Lines - Much More Prominent -->
+    <path d="M80,880 C280,830 480,930 680,880 S880,780 1080,830 S1280,880 1380,830"
+          stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M30,930 C230,880 430,980 630,930 S830,830 1030,880 S1230,930 1330,880"
+          stroke="#a78bfa" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <!-- Dark Mode Glow Circles -->
+  <g filter="url(#softGlow)">
+    <circle cx="180" cy="180" r="80" fill="#3b82f6" opacity="0.15" />
+    <circle cx="1180" cy="380" r="120" fill="#8b5cf6" opacity="0.15" />
+    <circle cx="580" cy="780" r="100" fill="#06b6d4" opacity="0.15" />
+  </g>
+
+  <!-- Subtle Noise Overlay -->
+  <rect width="100%" height="100%" fill="url(#noise)" opacity="0.03" />
+</svg>

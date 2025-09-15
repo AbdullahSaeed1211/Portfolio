@@ -24,6 +24,22 @@ const technologies = [
     logo: "/assets/Skills/typescript.svg"
   },
   {
+    name: "Shadcn/UI",
+    logo: "/assets/Skills/shadcn.jpeg"
+  },
+  {
+    name: "Vercel",
+    logo: "/assets/Skills/vercel.png"
+  },
+  {
+    name: "AWS",
+    logo: "/assets/Skills/aws.png"
+  },
+ {
+  name: 'Figma',
+  logo: "/assets/Skills/figma.png"
+ },
+  {
     name: "Node.js",
     logo: "/assets/Skills/nodejs.svg"
   },
@@ -63,69 +79,57 @@ const technologies = [
     name: "CSS3",
     logo: "/assets/Skills/css.png"
   },
-  {
-    name: "Astro",
-    logo: "/assets/Skills/astro.png"
-  },
+  
+  
 ];
 
 
 const TechLogo = ({ tech }) => (
   <div className="mx-6 flex items-center justify-center group relative">
-    <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
-      <Image 
-        src={tech.logo} 
-        alt={tech.name} 
-        width={64} 
-        height={64} 
-        className="object-contain transition-all duration-300 group-hover:scale-110" 
+    <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+      <Image
+        src={tech.logo}
+        alt={tech.name}
+        width={48}
+        height={48}
+        className="object-contain w-full h-full transition-all duration-300 group-hover:scale-110"
       />
     </div>
-    <div className="absolute -bottom-6 whitespace-nowrap text-xs text-muted-foreground opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+    <div className="absolute -bottom-5 whitespace-nowrap text-xs text-muted-foreground opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
       {tech.name}
     </div>
   </div>
 );
 
-const skills2 = () => {
+const Skills2 = () => {
   return (
-      <section id="skills" className="py-5 bg-accent/30">
-        
-        {/* Trust Indicators with Marquee */}
-        <BlurFade 
-          direction="up"
-          delay={0.5}
-          className="mt-10"
-        >
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-              <span className="blue_gradient">Preferred Development Ecosystem</span>
-            </h2>
-            <p className="text-muted-foreground mt-3 max-w-3xl mx-auto text-sm sm:text-base">
-              Tools and frameworks I use to deliver production-ready applications
-            </p>
-          </div>
-          
-          <div className="relative py-10">
-            {/* Gradient fades on edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-accent/30 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-accent/30 to-transparent z-10"></div>
-            
-            <Marquee className="py-4" pauseOnHover={true}>
+    <div className="w-full mt-8">
+      {/* Compact Skills Marquee with inline label */}
+      <BlurFade
+        direction="up"
+        delay={0.5}
+        className="pr-4"
+      >
+        <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 mb-4">
+          <h4 className="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+            Tech Stack:
+          </h4>
+          <div className="flex-1 relative py-3">
+            {/* Minimal gradient fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r dark:from-background to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l  dark:from-background to-transparent z-10"></div>
+
+            {/* Compact Marquee */}
+            <Marquee className="py-1" pauseOnHover={true} speed={25}>
               {technologies.map((tech, index) => (
                 <TechLogo key={index} tech={tech} />
               ))}
             </Marquee>
-            
-            <Marquee className="py-4" pauseOnHover={true} reverse={true}>
-              {[...technologies].reverse().map((tech, index) => (
-                <TechLogo key={index} tech={tech} />
-              ))}
-            </Marquee>
           </div>
-        </BlurFade>
-    </section>
+        </div>
+      </BlurFade>
+    </div>
   );
 };
 
-export default skills2; 
+export default Skills2; 

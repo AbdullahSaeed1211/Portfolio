@@ -71,8 +71,14 @@ const ValueProposition = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-blue-500 text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Why Work With Me?
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black mb-6 tracking-tight">
+            <span className="text-black dark:text-white">
+              Why Work With
+            </span>
+            <br />
+            <span className="italic text-purple-500 dark:text-purple-400">
+              Me?
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
             I'm a full-stack developer focused on helping businesses achieve measurable growth through
@@ -81,7 +87,7 @@ const ValueProposition = () => {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 w-full">
           {values.map((feature, index) => (
             <Feature key={feature.title} {...feature} index={index} />
           ))}
@@ -100,7 +106,7 @@ const Feature = ({
   return (
     <motion.div
       className={cn(
-        "flex flex-col lg:border-r py-10 relative group/feature border-border",
+        "flex flex-col lg:border-r py-5 relative group/feature border-border",
         (index === 0 || index === 4) && "lg:border-l border-border",
         index < 4 && "lg:border-b border-border"
       )}
@@ -118,20 +124,20 @@ const Feature = ({
       )}
       
       {/* Icon */}
-      <div className="mb-4 relative z-10 px-10 text-muted-foreground group-hover/feature:text-blue-500 dark:group-hover/feature:text-blue-400 transition-colors duration-300">
+      <div className="mb-4 relative z-10 px-4 sm:px-6 lg:px-10 text-muted-foreground group-hover/feature:text-blue-500 dark:group-hover/feature:text-blue-400 transition-colors duration-300">
         {icon}
       </div>
-      
+
       {/* Title with animated border */}
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+      <div className="text-lg font-bold mb-2 relative z-10 px-4 sm:px-6 lg:px-10">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-border group-hover/feature:bg-blue-500 dark:group-hover/feature:bg-blue-400 transition-all duration-300 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-300 inline-block text-foreground">
           {title}
         </span>
       </div>
-      
+
       {/* Description */}
-      <p className="text-sm text-muted-foreground max-w-xs relative z-10 px-10 leading-relaxed">
+      <p className="text-sm text-muted-foreground max-w-xs relative z-10 px-4 sm:px-6 lg:px-10 leading-relaxed">
         {description}
       </p>
     </motion.div>

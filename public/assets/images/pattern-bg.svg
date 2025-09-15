@@ -1,77 +1,85 @@
 <svg width="100%" height="100%" viewBox="0 0 1440 1024" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Gradient Definitions -->
-    <linearGradient id="gradientBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.05" />
-      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.05" />
+    <!-- Light Mode Gradients -->
+    <linearGradient id="lightGradientBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.06" />
     </linearGradient>
-    <linearGradient id="gradientPurple" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.05" />
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.05" />
+    <linearGradient id="lightGradientPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.06" />
     </linearGradient>
-    <linearGradient id="gradientCyan" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.05" />
-      <stop offset="100%" stop-color="#67e8f9" stop-opacity="0.05" />
+    <linearGradient id="lightGradientCyan" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#67e8f9" stop-opacity="0.06" />
     </linearGradient>
-    
-    <!-- Pattern Definitions -->
-    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#94a3b8" opacity="0.3" />
+
+    <!-- Light Mode Patterns -->
+    <pattern id="lightDots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#94a3b8" opacity="0.4" />
     </pattern>
-    
-    <!-- Filter for Subtle Blur Effect -->
-    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="50" result="blur" />
-      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+
+    <!-- Enhanced Blur Filter -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -5"/>
+    </filter>
+
+    <!-- Subtle Noise Filter -->
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0 0 0.1 0"/>
+      </feComponentTransfer>
     </filter>
   </defs>
-  
-  <!-- Main Background - keep empty for transparency -->
+
+  <!-- Main Background Layer -->
   <rect width="100%" height="100%" fill="transparent" />
-  
-  <!-- Subtle Grid Pattern -->
-  <rect width="100%" height="100%" fill="url(#dots)" opacity="0.3" />
-  
-  <!-- Wave Shapes for Visual Interest -->
-  <path d="M0,300 C200,220 400,180 600,240 C800,300 1000,220 1200,280 C1400,340 1440,300 1440,300 V1024 H0 V300 Z" 
-        fill="url(#gradientBlue)" opacity="0.5" />
-  
-  <path d="M0,500 C200,580 400,520 600,460 C800,400 1000,450 1200,430 C1400,410 1440,450 1440,450 V1024 H0 V500 Z" 
-        fill="url(#gradientPurple)" opacity="0.5" />
-  
-  <path d="M0,700 C200,650 400,690 600,710 C800,730 1000,690 1200,670 C1400,650 1440,670 1440,670 V1024 H0 V700 Z" 
-        fill="url(#gradientCyan)" opacity="0.5" />
-  
-  <!-- Decorative Elements -->
-  <g opacity="0.2">
-    <!-- Tech-inspired connection lines -->
-    <line x1="200" y1="100" x2="400" y2="150" stroke="#3b82f6" stroke-width="1" />
-    <line x1="400" y1="150" x2="600" y2="100" stroke="#3b82f6" stroke-width="1" />
-    <line x1="800" y1="200" x2="1000" y2="250" stroke="#8b5cf6" stroke-width="1" />
-    <line x1="1000" y1="250" x2="1200" y2="200" stroke="#8b5cf6" stroke-width="1" />
-    
-    <!-- Node points at connections -->
-    <circle cx="200" cy="100" r="3" fill="#3b82f6" />
-    <circle cx="400" cy="150" r="3" fill="#3b82f6" />
-    <circle cx="600" cy="100" r="3" fill="#3b82f6" />
-    <circle cx="800" cy="200" r="4" fill="#8b5cf6" />
-    <circle cx="1000" cy="250" r="4" fill="#8b5cf6" />
-    <circle cx="1200" cy="200" r="4" fill="#8b5cf6" />
+
+  <!-- Light Mode Dot Grid -->
+  <rect width="100%" height="100%" fill="url(#lightDots)" opacity="0.25" />
+
+  <!-- Light Mode Wave Shapes -->
+  <path d="M0,280 C180,200 380,160 580,220 C780,280 980,200 1180,260 C1380,320 1440,280 1440,280 V1024 H0 V280 Z"
+        fill="url(#lightGradientBlue)" opacity="0.6" />
+
+  <path d="M0,480 C180,560 380,500 580,440 C780,380 980,430 1180,410 C1380,390 1440,430 1440,430 V1024 H0 V480 Z"
+        fill="url(#lightGradientPurple)" opacity="0.6" />
+
+  <path d="M0,680 C180,630 380,670 580,690 C780,710 980,670 1180,650 C1380,630 1440,650 1440,650 V1024 H0 V680 Z"
+        fill="url(#lightGradientCyan)" opacity="0.6" />
+
+  <!-- Light Mode Decorative Elements -->
+  <g opacity="0.25">
+    <line x1="180" y1="120" x2="380" y2="170" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="380" y1="170" x2="580" y2="120" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="780" y1="220" x2="980" y2="270" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="980" y1="270" x2="1180" y2="220" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Node points -->
+    <circle cx="180" cy="120" r="2.5" fill="#3b82f6" />
+    <circle cx="380" cy="170" r="2.5" fill="#3b82f6" />
+    <circle cx="580" cy="120" r="2.5" fill="#3b82f6" />
+    <circle cx="780" cy="220" r="3" fill="#8b5cf6" />
+    <circle cx="980" cy="270" r="3" fill="#8b5cf6" />
+    <circle cx="1180" cy="220" r="3" fill="#8b5cf6" />
   </g>
-  
-  <!-- Abstract Curved Lines -->
-  <path d="M100,900 C300,850 500,950 700,900 S900,800 1100,850 S1300,900 1400,850" 
-        stroke="#3b82f6" stroke-width="1" fill="none" opacity="0.2" />
-  <path d="M50,950 C250,900 450,1000 650,950 S850,850 1050,900 S1250,950 1350,900" 
-        stroke="#8b5cf6" stroke-width="1" fill="none" opacity="0.2" />
-  
-  <!-- Large Soft Glow Circles (filtered) -->
-  <g filter="url(#blur)">
-    <circle cx="200" cy="200" r="100" fill="#3b82f6" opacity="0.1" />
-    <circle cx="1200" cy="400" r="150" fill="#8b5cf6" opacity="0.1" />
-    <circle cx="600" cy="800" r="120" fill="#06b6d4" opacity="0.1" />
+
+  <!-- Light Mode Curved Lines -->
+  <path d="M80,880 C280,830 480,930 680,880 S880,780 1080,830 S1280,880 1380,830"
+        stroke="#3b82f6" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M30,930 C230,880 430,980 630,930 S830,830 1030,880 S1230,930 1330,880"
+        stroke="#8b5cf6" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- Light Mode Glow Circles -->
+  <g filter="url(#softGlow)">
+    <circle cx="180" cy="180" r="80" fill="#3b82f6" opacity="0.12" />
+    <circle cx="1180" cy="380" r="120" fill="#8b5cf6" opacity="0.12" />
+    <circle cx="580" cy="780" r="100" fill="#06b6d4" opacity="0.12" />
   </g>
-  
-  <!-- Subtle Dot Grid Overlay for Texture -->
-  <rect width="100%" height="100%" fill="url(#dots)" opacity="0.3" />
-</svg> 
+
+  <!-- Subtle Noise Overlay -->
+  <rect width="100%" height="100%" fill="url(#noise)" opacity="0.03" />
+</svg>
