@@ -153,7 +153,7 @@ The website was built with Next.js for optimal performance and SEO benefits, wit
 
 The platform features 3 production-grade AI models with clinical accuracy: Stroke prediction (95% accuracy), Brain tumor detection (95% accuracy with ResNet50 CNN), and Alzheimer's disease detection (94% accuracy with EfficientNet). The system implements 15+ cognitive assessment tools including memory games, reaction tests, visual attention, pattern recognition, and verbal fluency tests with comprehensive performance tracking.
 
-Advanced technical features include distributed system architecture with Hugging Face Spaces for ML model hosting, achieving 60-75% model size reduction through quantization while maintaining accuracy. The platform includes real-time medical image processing pipeline for MRI scan analysis with secure patient data management and HIPAA-compliant architecture.
+Advanced technical features include distributed system architecture with Hugging Face Spaces for ML model hosting, achieving 60-75% model size reduction through quantization while maintaining accuracy. The platform includes real-time medical image processing pipeline for MRI scan analysis with secure patient data management and scalable architecture.
 
 Research and academic validation includes integration with research paper APIs providing live academic literature feeds and evidence-based educational resources. The platform achieves clinical-grade performance with model agreement rates of 89-91% compared to radiologist assessments (vs. 94.3% inter-radiologist agreement).
 
@@ -175,7 +175,7 @@ This project exemplifies applied machine learning research, medical AI ethics, h
       },
       {
         name: "Medical Image Processing",
-        description: "Real-time MRI scan analysis with secure, HIPAA-compliant patient data management"
+        description: "Real-time MRI scan analysis with secure patient data management"
       },
       {
         name: "Research Integration",
