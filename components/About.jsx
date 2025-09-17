@@ -177,17 +177,15 @@ const About = () => {
             variants={socialChild}
             className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-300 dark:hover:border-gray-600 transition shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 dark:focus:ring-gray-600"
             whileHover={{
-              scale: 1.15,
-              y: -5,
-              rotate: [0, -5, 5, 0],
-              boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
+              scale: 1.1,
+              y: -3,
+              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.12)",
             }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.95 }}
             transition={{
               type: "spring",
-              damping: 12,
-              stiffness: 200,
-              rotate: { duration: 0.3 },
+              damping: 20,
+              stiffness: 300,
             }}
           >
             <Icon className="w-5 h-5" />
