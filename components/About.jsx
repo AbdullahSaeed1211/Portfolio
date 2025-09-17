@@ -94,7 +94,7 @@ const About = () => {
             </span>{" "}
             <br /> with hands-on experience building products across <br />{" "}
             <span className="italic font-semibold underline font-serif-italic">
-              ML, Web, and Fullstack systems
+              Web, ML, and Fullstack systems
             </span>
             .
           </p>
