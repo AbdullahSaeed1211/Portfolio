@@ -129,15 +129,15 @@ const About = () => {
                     .getElementById("Projects")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="w-full sm:w-auto mx-auto sm:mx-0 text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent py-2.5 sm:py-2.5 text-sm font-medium transition-all duration-300"
+                className="flex-1 mx-auto sm:mx-0 text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent py-2.5 sm:py-2.5 text-sm font-medium transition-all duration-300"
               >
                 See What I've Built
               </InteractiveHoverButton>
             </motion.div>
 
             <motion.a
-              href="#value"
-              className="w-full sm:w-auto mx-auto sm:mx-0 flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-full bg-background border border-border text-foreground font-medium text-sm hover:bg-accent/50 transition-all duration-300 group"
+              href="#Contact"
+              className="flex-1 mx-auto sm:mx-0 flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-full bg-background border border-border text-foreground font-medium text-sm hover:bg-accent/50 transition-all duration-300 group"
               whileHover={{
                 y: -3,
                 scale: 1.02,
@@ -146,7 +146,7 @@ const About = () => {
               whileTap={{ y: 0, scale: 0.98 }}
               transition={{ type: "spring", damping: 15, stiffness: 200 }}
             >
-              About My Journey
+              Contact
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </motion.a>
           </BlurFade>
