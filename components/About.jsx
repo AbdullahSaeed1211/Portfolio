@@ -124,11 +124,14 @@ const About = () => {
               transition={{ type: "spring", damping: 15, stiffness: 200 }}
             >
               <InteractiveHoverButton
-                onClick={() =>
-                  document
-                    .getElementById("Projects")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => {
+                  const projectsSection = document.getElementById("Projects");
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  } else {
+                    console.log("Projects section not found");
+                  }
+                }}
                 className="flex-1 mx-auto sm:mx-0 text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-lg border-transparent py-2.5 sm:py-2.5 text-sm font-medium transition-all duration-300"
               >
                 See What I've Built
