@@ -116,7 +116,7 @@ const About = () => {
           <BlurFade
             delay={0.7}
             direction="up"
-            className="flex flex-col md:flex-row gap-3 sm:gap-4 mt-6"
+            className="flex flex-row gap-3 sm:gap-4 mt-6"
           >
             <motion.div
               whileHover={{ y: -3, scale: 1.02 }}
