@@ -29,10 +29,15 @@ export default function StructuredData() {
       "Full Stack Development",
       "Web Development",
       "SaaS Development",
-      "Medical AI",
       "Educational Technology",
       "Business Automation"
     ],
+    "alternateName": ["Abdullah Sayed", "Abdallah Saeed", "Abdullah Sayeed", "Abdulla Saeed"],
+    "disambiguatingDescription": "Software Engineer and AI Specialist, not to be confused with the actor/comedian Abdullah Saeed.",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "CS Grad 2025"
+    },
     "knowsLanguage": [
       "English",
       "JavaScript",

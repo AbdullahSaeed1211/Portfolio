@@ -266,17 +266,21 @@ export const footerLinks = [
   {
     href: "https://github.com/abdullahsaeed1724",
     icon: <FaGithub />,
+    label: "GitHub Profile",
   },
   {
     href: "https://linkedin.com/in/abdullahsaeed1724",
     icon: <FaLinkedinIn />,
+    label: "LinkedIn Profile",
   },
   {
     href: "mailto:abdullah.saeed1724@gmail.com",
     icon: <AiOutlineMail />,
+    label: "Email Contact",
   },
   {
     href: "https://drive.google.com/file/d/1PHoRJidU0dbNBT2zbJSNI-PtSVWkr2vi/view",
     icon: <BsFillPersonLinesFill />,
+    label: "View Resume",
   },
 ];

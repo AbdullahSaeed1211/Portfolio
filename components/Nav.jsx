@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation, useScroll } from "framer-motion";
 import { navLinks } from "@app/constants";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -22,11 +22,11 @@ function NavbarContent() {
 
   // Track navigation item clicks
   const handleNavClick = (section) => {
-    trackEvent('navigation_click', { 
+    trackEvent('navigation_click', {
       section_name: section,
-      source: 'navbar' 
+      source: 'navbar'
     });
-    
+
     // Close mobile menu if open
     if (nav) {
       setNav(false);
@@ -122,10 +122,14 @@ function NavbarContent() {
 
   return (
     <div className="fixed top-2 left-0 right-0 z-50 flex justify-center px-4">
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 origin-[0%] z-50"
+        style={{ scaleX: useScroll().scrollYProgress }}
+      />
       <motion.nav
-        className={`rounded-full backdrop-blur-md bg-white/10 dark:bg-black/20 border border-blue-200/20 dark:border-blue-500/20 ${
-          shadow ? "shadow-lg" : ""
-        } py-1.5 px-4 max-w-5xl mx-auto w-auto`}
+        className={`rounded-full backdrop-blur-md bg-white/10 dark:bg-black/20 border border-blue-200/20 dark:border-blue-500/20 ${shadow ? "shadow-lg" : ""
+          } py-1.5 px-4 max-w-5xl mx-auto w-auto relative`}
       >
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-1.5">
@@ -146,31 +150,30 @@ function NavbarContent() {
             {navLinks
               .filter(link => link.text !== "Resume") // Exclude Resume from regular nav items
               .map((link, index) => {
-              const isActive = activeSection === (link.href === "/" ? "home" : link.href.replace("#", ""));
-              return (
-                <Link
-                  href={link.href}
-                  key={index}
-                  rel={link.rel}
-                  target={link.target}
-                  className={`relative font-medium text-xs transition-colors duration-300 px-2.5 py-1 ${
-                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                  }`}
-                  onClick={() => handleNavClick(link.text)}
-                >
-                  {link.text}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.2 }}
-                    />
-                  )}
-                </Link>
-              );
-            })}
+                const isActive = activeSection === (link.href === "/" ? "home" : link.href.replace("#", ""));
+                return (
+                  <Link
+                    href={link.href}
+                    key={index}
+                    rel={link.rel}
+                    target={link.target}
+                    className={`relative font-medium text-xs transition-colors duration-300 px-2.5 py-1 ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={() => handleNavClick(link.text)}
+                  >
+                    {link.text}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeIndicator"
+                        className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
             <AnimatedThemeToggler className="rounded-full p-2 hover:bg-accent transition-colors" />
 
             {/* Resume Button */}
@@ -204,7 +207,7 @@ function NavbarContent() {
               variant="ghost"
               size="icon"
               onClick={handleNav}
-              aria-label="Menu"
+              aria-label="Open Menu"
               className="text-foreground h-8 w-8"
             >
               <Menu className="h-4 w-4" />
@@ -215,7 +218,7 @@ function NavbarContent() {
 
       {/* Mobile Menu Overlay */}
       {nav && (
-        <motion.div 
+        <motion.div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -258,29 +261,28 @@ function NavbarContent() {
           {navLinks
             .filter(link => link.text !== "Resume") // Exclude Resume from regular nav items
             .map((link, index) => {
-            const isActive = activeSection === (link.href === "/" ? "home" : link.href.replace("#", ""));
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                transition={{ delay: 0.1 * index }}
-              >
-                <Link
-                  href={link.href}
-                  rel={link.rel}
-                  target={link.target}
-                  onClick={() => handleNavClick(link.text)}
-                  className={`flex items-center space-x-2 py-1.5 px-3 rounded-full ${
-                    isActive
+              const isActive = activeSection === (link.href === "/" ? "home" : link.href.replace("#", ""));
+              return (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  transition={{ delay: 0.1 * index }}
+                >
+                  <Link
+                    href={link.href}
+                    rel={link.rel}
+                    target={link.target}
+                    onClick={() => handleNavClick(link.text)}
+                    className={`flex items-center space-x-2 py-1.5 px-3 rounded-full ${isActive
                       ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
                       : "text-foreground hover:bg-accent/50"
-                  }`}
-                >
-                  <span className="text-xs font-medium">{link.text}</span>
-                </Link>
-              </motion.div>
-            );
-          })}
+                      }`}
+                  >
+                    <span className="text-xs font-medium">{link.text}</span>
+                  </Link>
+                </motion.div>
+              );
+            })}
         </div>
 
         <div className="mt-auto pt-4 border-t border-border">
@@ -307,7 +309,7 @@ function NavbarContent() {
               Let's Chat
             </Button>
           </a>
-          
+
           <div className="flex justify-center space-x-4 mt-4">
             <a href="https://github.com/AbdullahSaeed1211" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

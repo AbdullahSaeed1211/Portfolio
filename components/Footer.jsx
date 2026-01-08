@@ -68,7 +68,7 @@ const Footer = () => {
                 // </motion.li>
                 <li
                   key={index}
-                  
+
                   className="mb-1.5">
                   <Link href={link.href}>
                     <span className="text-xs">{link.text}</span>
@@ -131,6 +131,7 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.label}
                   className="text-xs">
                   {link.icon}
                 </a>
@@ -138,12 +139,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-border mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground mb-3 md:mb-0">
             &copy; {new Date().getFullYear()} Abdullah Saeed. All rights reserved.
           </p>
-          
+
           <div className="flex items-center space-x-3">
             {/* ... existing social links ... */}
           </div>

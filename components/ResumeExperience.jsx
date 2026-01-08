@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, FileText, Calendar, MapPin } from "lucide-react";
 
@@ -82,9 +83,11 @@ const ResumeExperience = () => {
                 <div className="flex flex-col lg:flex-row gap-6">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
-                      <img
+                      <Image
                         src="/exp/kiiro.jpeg"
                         alt="Kiiro.cx"
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -138,9 +141,11 @@ const ResumeExperience = () => {
                 <div className="flex flex-col lg:flex-row gap-6">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
-                      <img
+                      <Image
                         src="/exp/bluerocket.jpeg"
                         alt="Blue Rocket LLC"
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -194,9 +199,11 @@ const ResumeExperience = () => {
                 <div className="flex flex-col lg:flex-row gap-6">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
-                      <img
+                      <Image
                         src="/exp/headstarter.jpeg"
                         alt="Headstarter AI"
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -250,9 +257,11 @@ const ResumeExperience = () => {
                 <div className="flex flex-col lg:flex-row gap-6">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
-                      <img
+                      <Image
                         src="/exp/mirchmedia.jpeg"
                         alt="Mirch Media"
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -309,49 +318,51 @@ const ResumeExperience = () => {
             </div>
 
             <div className="space-y-6">
-          {/* Georgia Tech - Hidden for now */}
-          {/* <motion.div
-            variants={item}
-            whileHover={cardHover}
-            className="group relative p-6 rounded-2xl backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300"
-          >
-            <div className="flex flex-col lg:flex-row gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src="/exp/gtech.png"
-                    alt="Georgia Institute of Technology"
-                    className="w-full h-full object-contain bg-white p-1"
-                  />
-                </div>
-              </div>
-
-              <div className="flex-1 space-y-4">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <div>
-                    <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      Georgia Institute of Technology
-                    </h4>
-                    <p className="text-muted-foreground font-medium">Master of Science in Computer Science</p>
-                  </div>
-                  <div className="flex flex-col sm:items-end gap-1">
-                    <div className="flex items-center gap-1 text-muted-foreground">
-                      <MapPin className="w-4 h-4" />
-                      <span className="text-sm font-medium">Atlanta, GA</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm">Spring 2026 – Present</span>
+              {/* Georgia Tech */}
+              <motion.div
+                variants={item}
+                whileHover={cardHover}
+                className="group relative p-6 rounded-2xl backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300"
+              >
+                <div className="flex flex-col lg:flex-row gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
+                      <Image
+                        src="/exp/gtech.png"
+                        alt="Georgia Institute of Technology"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-contain bg-white p-1"
+                      />
                     </div>
                   </div>
-                </div>
 
-                <p className="text-foreground/80 font-medium">
-                  Machine Learning & Artificial Intelligence
-                </p>
-              </div>
-            </div>
-          </motion.div> */}
+                  <div className="flex-1 space-y-4">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                      <div>
+                        <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                          Georgia Institute of Technology
+                        </h4>
+                        <p className="text-muted-foreground font-medium">Master of Science in Computer Science</p>
+                      </div>
+                      <div className="flex flex-col sm:items-end gap-1">
+                        <div className="flex items-center gap-1 text-muted-foreground">
+                          <MapPin className="w-4 h-4" />
+                          <span className="text-sm font-medium">Atlanta, GA</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-muted-foreground">
+                          <Calendar className="w-4 h-4" />
+                          <span className="text-sm">Spring 2026 – Present</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className="text-foreground/80 font-medium">
+                      Artificial Intelligence
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
 
               {/* Amity University */}
               <motion.div
@@ -362,9 +373,11 @@ const ResumeExperience = () => {
                 <div className="flex flex-col lg:flex-row gap-6">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
-                      <img
+                      <Image
                         src="/exp/amity.png"
                         alt="Amity University"
+                        width={64}
+                        height={64}
                         className="w-full h-full object-contain bg-white p-1"
                       />
                     </div>

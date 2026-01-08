@@ -7,11 +7,15 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 export const metadata = {
   metadataBase: new URL('https://abdullahsaeed.me'),
   title: {
-    default: "Abdullah Saeed | Full-Stack Developer & AI Specialist",
+    default: "Abdullah Saeed | AI Engineer & Full-Stack Developer",
     template: "%s | Abdullah Saeed"
   },
-  description: "Experienced full-stack developer specializing in AI-enhanced web applications that solve real business problems. Expert in Next.js, React, TypeScript, and cutting-edge AI integrations.",
+  description: "Official portfolio of Abdullah Saeed. Senior AI Engineer & Full-Stack Developer specializing in Next.js and Machine Learning. Not the actor. View projects & case studies.",
   keywords: [
+    "Abdullah Saeed",
+    "Abdullah Sayed",
+    "Abdallah Saeed",
+    "Abdullah Sayeed",
     "AI developer",
     "Next.js developer",
     "React developer",
@@ -40,19 +44,19 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://abdullahsaeed.me",
-    title: "Abdullah Saeed | Full-Stack Developer & AI Specialist",
+    title: "Abdullah Saeed | Al Engineer & Full-Stack Developer",
     description: "Building intelligent digital experiences that drive business growth with Next.js, React, and cutting-edge AI integrations. Portfolio showcasing enterprise applications and innovative solutions.",
     siteName: "Abdullah Saeed Portfolio",
     images: [{
       url: "/assets/og-image.jpg",
       width: 1200,
       height: 630,
-      alt: "Abdullah Saeed - Full Stack Developer & AI Specialist"
+      alt: "Abdullah Saeed - AI Engineer & Full-Stack Developer"
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdullah Saeed | Full-Stack Developer & AI Specialist",
+    title: "Abdullah Saeed | AI Engineer & Full-Stack Developer",
     description: "Building intelligent digital experiences that drive business growth with Next.js, React, and cutting-edge AI integrations.",
     images: ["/assets/og-image.jpg"],
     creator: "@abdullahsaeed_"
@@ -87,8 +91,8 @@ export const metadata = {
   },
   manifest: "/manifest.json",
   verification: {
-    google: "google-site-verification-code", // Add your verification code when you have it
-    bing: "bing-site-verification-code", // Add your verification code when you have it
+    // google: "google-site-verification-code", 
+    // bing: "bing-site-verification-code", 
   },
   alternates: {
     canonical: "https://abdullahsaeed.me",
