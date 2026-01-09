@@ -176,30 +176,37 @@ const FeaturedProjectCard = ({ project }) => {
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button variant="outline" size="sm" asChild className="flex-1">
-                <a href={project.projectLinkGithub} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4 h-4 mr-2" />
-                  Code
-                </a>
-              </Button>
-              <Button variant="outline" size="sm" asChild className="flex-1">
-                <a href={project.projectLink} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Live Demo
-                </a>
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
+                <Button variant="outline" size="sm" asChild className="w-full">
+                  <a href={project.projectLinkGithub} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    Code
+                  </a>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
+                <Button variant="outline" size="sm" asChild className="w-full">
+                  <a href={project.projectLink} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live Demo
+                  </a>
+                </Button>
+              </motion.div>
               <TrackEvent
                 eventName="featured_project_details_click"
                 properties={{
                   project_name: project.title,
                   project_id: projectId
                 }}
+                className="flex-1"
               >
-                <Button size="sm" asChild className="flex-1">
-                  <Link href={`/projects/${projectId}`}>
-                    View Details
-                  </Link>
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="sm" asChild className="w-full">
+                    <Link href={`/projects/${projectId}`}>
+                      View Details
+                    </Link>
+                  </Button>
+                </motion.div>
               </TrackEvent>
             </div>
           </div>

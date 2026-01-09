@@ -6,10 +6,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
   CardTitle
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -69,29 +65,29 @@ const ProjectCard = ({ project, index }) => {
                 .filter(tag => tag && tag.trim() !== '') // Filter out empty tags
                 .slice(0, 3) // Limit to 3 tags max for horizontal layout
                 .map((tag, i) => {
-                // Enhanced tag categorization
-                let badgeVariant = "skill"; // Default to skill
-                const tagLower = tag.toLowerCase().trim();
+                  // Enhanced tag categorization
+                  let badgeVariant = "skill"; // Default to skill
+                  const tagLower = tag.toLowerCase().trim();
 
-                // Industry/CATEGORY tags
-                if (["saas", "platform", "software", "application"].includes(tagLower)) badgeVariant = "saas";
-                else if (["health", "medical", "healthcare", "wellness", "clinical", "ai medical"].includes(tagLower)) badgeVariant = "health";
-                else if (["finance", "fintech", "mortgage", "banking", "financial"].includes(tagLower)) badgeVariant = "finance";
-                else if (["web", "website", "landing page", "web app"].includes(tagLower)) badgeVariant = "web";
-                else if (["ai", "artificial intelligence", "machine learning", "ml", "neural network", "deep learning", "tensorflow", "pytorch"].includes(tagLower)) badgeVariant = "ai";
+                  // Industry/CATEGORY tags
+                  if (["saas", "platform", "software", "application"].includes(tagLower)) badgeVariant = "saas";
+                  else if (["health", "medical", "healthcare", "wellness", "clinical", "ai medical"].includes(tagLower)) badgeVariant = "health";
+                  else if (["finance", "fintech", "mortgage", "banking", "financial"].includes(tagLower)) badgeVariant = "finance";
+                  else if (["web", "website", "landing page", "web app"].includes(tagLower)) badgeVariant = "web";
+                  else if (["ai", "artificial intelligence", "machine learning", "ml", "neural network", "deep learning", "tensorflow", "pytorch"].includes(tagLower)) badgeVariant = "ai";
 
-                // Technology/TOOL tags
-                else if (["typescript", "javascript", "python", "node.js", "react", "next.js", "vue", "angular", "svelte"].includes(tagLower)) badgeVariant = "tech";
-                else if (["mongodb", "postgresql", "mysql", "firebase", "supabase", "prisma", "database"].includes(tagLower)) badgeVariant = "tech";
-                else if (["tailwind", "css", "scss", "styled-components", "bootstrap"].includes(tagLower)) badgeVariant = "tool";
-                else if (["aws", "vercel", "netlify", "docker", "kubernetes", "deployment", "cloud"].includes(tagLower)) badgeVariant = "tool";
+                  // Technology/TOOL tags
+                  else if (["typescript", "javascript", "python", "node.js", "react", "next.js", "vue", "angular", "svelte"].includes(tagLower)) badgeVariant = "tech";
+                  else if (["mongodb", "postgresql", "mysql", "firebase", "supabase", "prisma", "database"].includes(tagLower)) badgeVariant = "tech";
+                  else if (["tailwind", "css", "scss", "styled-components", "bootstrap"].includes(tagLower)) badgeVariant = "tool";
+                  else if (["aws", "vercel", "netlify", "docker", "kubernetes", "deployment", "cloud"].includes(tagLower)) badgeVariant = "tool";
 
-                return (
-                  <Badge key={i} variant={badgeVariant} className="text-xs">
-                    {tag}
-                  </Badge>
-                );
-              })}
+                  return (
+                    <Badge key={i} variant={badgeVariant} className="text-xs">
+                      {tag}
+                    </Badge>
+                  );
+                })}
             </div>
             <div className="flex items-center justify-between mb-3">
               <CardTitle className="text-lg font-bold text-gray-800 dark:text-gray-100 leading-tight">{project.title}</CardTitle>
@@ -103,8 +99,13 @@ const ProjectCard = ({ project, index }) => {
                     project_id: projectId
                   }}
                 >
-                  <Link href={`/projects/${projectId}`} className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                    <ArrowUpRight className="h-4 w-4" />
+                  <Link href={`/projects/${projectId}`} className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors group/link">
+                    <motion.div
+                      whileHover={{ x: 2, y: -2 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <ArrowUpRight className="h-5 w-5" />
+                    </motion.div>
                   </Link>
                 </TrackEvent>
               )}
