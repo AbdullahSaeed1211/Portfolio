@@ -179,9 +179,9 @@ const Hero = () => {
             >
               I build AI-Powered Web Solutions with Impact.
               <br />
-              <span className="text-xs text-muted-foreground mt-1 block">
+              {/* <span className="text-xs text-muted-foreground mt-1 block">
                 (Not the actor/comedian — I engineer software, not jokes)
-              </span>
+              </span> */}
             </motion.p>
           </motion.div>
 
