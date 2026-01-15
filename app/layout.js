@@ -3,6 +3,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Poppins, Inter, Bangers } from 'next/font/google';
 import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import Script from "next/script";
+
 
 export const metadata = {
   metadataBase: new URL('https://abdullahsaeed.me'),
@@ -10,7 +12,7 @@ export const metadata = {
     default: "Abdullah Saeed | AI Engineer & Full-Stack Developer",
     template: "%s | Abdullah Saeed"
   },
-  description: "Official portfolio of Abdullah Saeed. Senior AI Engineer & Full-Stack Developer specializing in Next.js and Machine Learning. Not the actor. View projects & case studies.",
+  description: "Portfolio of Abdullah Saeed. AI Engineer & Full-Stack Developer building scalable Next.js & ML systems. Published IEEE Researcher. MS CS at Georgia Tech. (Not the actor).",
   keywords: [
     "Abdullah Saeed",
     "Abdullah Sayed",
@@ -44,7 +46,7 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://abdullahsaeed.me",
-    title: "Abdullah Saeed | Al Engineer & Full-Stack Developer",
+    title: "Abdullah Saeed | AI Engineer & Full-Stack Developer",
     description: "Building intelligent digital experiences that drive business growth with Next.js, React, and cutting-edge AI integrations. Portfolio showcasing enterprise applications and innovative solutions.",
     siteName: "Abdullah Saeed Portfolio",
     images: [{
@@ -78,15 +80,8 @@ export const metadata = {
     }
   },
   icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        href: "/favicon.ico",
-      }
-    ],
-    apple: [
-      { url: "/apple-icon.png" }
-    ],
+    icon: "/favicon.ico",
+    apple: "/assets/images/favi.png",
     shortcut: "/favicon.ico"
   },
   manifest: "/manifest.json",
@@ -96,17 +91,18 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://abdullahsaeed.me",
-    types: {
-      "application/rss+xml": [
-        { title: "Abdullah Saeed Blog", url: "/rss.xml" }
-      ]
-    }
   },
   other: {
     "msapplication-TileColor": "#ffffff",
     "msapplication-config": "/browserconfig.xml",
-    "theme-color": "#ffffff",
   }
+};
+
+export const viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 const poppins = Poppins({
@@ -134,7 +130,29 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`scroll-smooth ${poppins.variable} ${inter.variable} ${bangers.variable}`} suppressHydrationWarning>
       <head>
         <GoogleAnalytics />
-        <link rel="canonical" href="https://abdullahsaeed.me" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Abdullah Saeed",
+              "url": "https://abdullahsaeed.me",
+              "image": "https://abdullahsaeed.me/assets/og-image.jpg",
+              "sameAs": [
+                "https://github.com/abdullahsaeed1724",
+                "https://linkedin.com/in/abdullahsaeed1724",
+                "https://twitter.com/abdullahsaeed_"
+              ],
+              "jobTitle": "AI Engineer & Full-Stack Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Kiiro.cx"
+              },
+              "description": "AI Research Engineer & Full-Stack Developer building scalable Next.js & ML systems."
+            })
+          }}
+        />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased overflow-x-hidden">
         <ThemeProvider>

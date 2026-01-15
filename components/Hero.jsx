@@ -140,7 +140,7 @@ const Hero = () => {
                 >
                   <MapPin className="w-4 h-4" aria-hidden="true" />
                 </motion.div>
-                Based in India
+                Available Globally
               </span>
               <span className="w-1 h-1 bg-blue-400 rounded-full" aria-hidden="true" />
               <span>Full Stack Developer</span>
@@ -216,166 +216,133 @@ const Hero = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
                 />
               </motion.div>
-
-              {/* Floating Glassmorphic Skill Cards with Magnetic Parallax */}
-              {/* Full-Stack Card - Top Left */}
-              <motion.div
-                initial={{ opacity: 0, x: -50, y: -30 }}
-                animate={{
-                  opacity: 1,
-                  x: mousePosition.x * 2, // Moves more for "closer" feel
-                  y: mousePosition.y * 2
-                }}
-                transition={{ delay: 1.2, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
-                className="absolute top-4 left-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block"
-                style={{
-                  backdropFilter: 'blur(20px) saturate(180%)',
-                  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -8,
-                  background: 'rgba(255, 255, 255, 0.25)',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
-                }}
-              >
-                <div className="flex items-start gap-3">
-                  <motion.div
-                    className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-xl border border-blue-300/30"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Code2 className="w-5 h-5 text-blue-100" />
-                  </motion.div>
-                  <div>
-                    <h3 className="font-semibold text-white text-sm drop-shadow-sm">Full-Stack Development</h3>
-                    <p className="text-xs text-white/80 mt-1 drop-shadow-sm">Next.js, React, Node.js - building complete web applications</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Machine Learning Card - Top Right */}
-              <motion.div
-                initial={{ opacity: 0, x: 50, y: -30 }}
-                animate={{
-                  opacity: 1,
-                  x: mousePosition.x * -2,
-                  y: mousePosition.y * 2
-                }}
-                transition={{ delay: 1.4, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
-                className="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block"
-                style={{
-                  backdropFilter: 'blur(20px) saturate(180%)',
-                  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -8,
-                  background: 'rgba(255, 255, 255, 0.25)',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
-                }}
-              >
-                <div className="flex items-start gap-3">
-                  <motion.div
-                    className="bg-green-500/20 backdrop-blur-sm p-2 rounded-xl border border-green-300/30"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <BrainCircuit className="w-5 h-5 text-green-100" />
-                  </motion.div>
-                  <div>
-                    <h3 className="font-semibold text-white text-sm drop-shadow-sm">Machine Learning</h3>
-                    <p className="text-xs text-white/80 mt-1 drop-shadow-sm">AI applications and research projects in healthcare</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* System Design Card - Bottom Left */}
-              <motion.div
-                initial={{ opacity: 0, x: -50, y: 30 }}
-                animate={{
-                  opacity: 1,
-                  x: mousePosition.x * 2,
-                  y: mousePosition.y * -2
-                }}
-                transition={{ delay: 1.6, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
-                className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block"
-                style={{
-                  backdropFilter: 'blur(20px) saturate(180%)',
-                  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -8,
-                  background: 'rgba(255, 255, 255, 0.25)',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
-                }}
-              >
-                <div className="flex items-start gap-3">
-                  <motion.div
-                    className="bg-purple-500/20 backdrop-blur-sm p-2 rounded-xl border border-purple-300/30"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Cpu className="w-5 h-5 text-purple-100" />
-                  </motion.div>
-                  <div>
-                    <h3 className="font-semibold text-white text-sm drop-shadow-sm">System Design</h3>
-                    <p className="text-xs text-white/80 mt-1 drop-shadow-sm">Creating scalable applications that can handle real users</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Continuous Learning Card - Bottom Right */}
-              <motion.div
-                initial={{ opacity: 0, x: 50, y: 30 }}
-                animate={{
-                  opacity: 1,
-                  x: mousePosition.x * -2,
-                  y: mousePosition.y * -2
-                }}
-                transition={{ delay: 1.8, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
-                className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block"
-                style={{
-                  backdropFilter: 'blur(20px) saturate(180%)',
-                  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -8,
-                  background: 'rgba(255, 255, 255, 0.25)',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
-                }}
-              >
-                <div className="flex items-start gap-3">
-                  <motion.div
-                    className="bg-orange-500/20 backdrop-blur-sm p-2 rounded-xl border border-orange-300/30"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Github className="w-5 h-5 text-orange-100" />
-                  </motion.div>
-                  <div>
-                    <h3 className="font-semibold text-white text-sm drop-shadow-sm">Continuous Learning</h3>
-                    <p className="text-xs text-white/80 mt-1 drop-shadow-sm">Always exploring new technologies and better ways to solve problems</p>
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
-          </motion.div>
 
+            {/* Floating Glassmorphic Skill Cards with Magnetic Parallax */}
+            {/* Full-Stack Card - Top Left */}
+            <motion.div
+              initial={{ opacity: 0, x: -50, y: -30 }}
+              animate={{
+                opacity: 1,
+                x: mousePosition.x * 1.2,
+                y: mousePosition.y * 1.2,
+                z: 20
+              }}
+              transition={{ delay: 0.2, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
+              className="absolute top-[10%] left-[2%] bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block z-30"
+              style={{
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                background: 'rgba(255, 255, 255, 0.15)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
+              }}
+              whileHover={{
+                scale: 1.05,
+                y: -8,
+                background: 'rgba(255, 255, 255, 0.25)',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
+              }}
+            >
+              <div className="flex items-start gap-3">
+                <motion.div
+                  className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-xl border border-blue-300/30"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Code2 className="w-5 h-5 text-blue-100" />
+                </motion.div>
+                <div>
+                  <h3 className="font-semibold text-white text-sm drop-shadow-sm">Full-Stack Development</h3>
+                  <p className="text-xs text-white/80 mt-1 drop-shadow-sm">Next.js, React, Node.js - building complete web applications</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Machine Learning Card - Top Right */}
+            <motion.div
+              initial={{ opacity: 0, x: 50, y: -30 }}
+              animate={{
+                opacity: 1,
+                x: mousePosition.x * -2.5,
+                y: mousePosition.y * 1.5,
+                z: 80
+              }}
+              transition={{ delay: 0.4, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
+              className="absolute top-[25%] right-[2%] bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block z-40"
+              style={{
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                background: 'rgba(255, 255, 255, 0.15)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
+              }}
+              whileHover={{
+                scale: 1.05,
+                y: -8,
+                background: 'rgba(255, 255, 255, 0.25)',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
+              }}
+            >
+              <div className="flex items-start gap-3">
+                <motion.div
+                  className="bg-green-500/20 backdrop-blur-sm p-2 rounded-xl border border-green-300/30"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <BrainCircuit className="w-5 h-5 text-green-100" />
+                </motion.div>
+                <div>
+                  <h3 className="font-semibold text-white text-sm drop-shadow-sm">Machine Learning</h3>
+                  <p className="text-xs text-white/80 mt-1 drop-shadow-sm">AI applications and research projects in healthcare</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* System Design Card - Bottom Left */}
+            <motion.div
+              initial={{ opacity: 0, x: -50, y: 30 }}
+              animate={{
+                opacity: 1,
+                x: mousePosition.x * 1.8,
+                y: mousePosition.y * -1.2,
+                z: 30
+              }}
+              transition={{ delay: 0.6, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
+              className="absolute bottom-[10%] left-[15%] bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block z-30"
+              style={{
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                background: 'rgba(255, 255, 255, 0.15)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
+              }}
+              whileHover={{
+                scale: 1.05,
+                y: -8,
+                background: 'rgba(255, 255, 255, 0.25)',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
+              }}
+            >
+              <div className="flex items-start gap-3">
+                <motion.div
+                  className="bg-purple-500/20 backdrop-blur-sm p-2 rounded-xl border border-purple-300/30"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Cpu className="w-5 h-5 text-purple-100" />
+                </motion.div>
+                <div>
+                  <h3 className="font-semibold text-white text-sm drop-shadow-sm">System Design</h3>
+                  <p className="text-xs text-white/80 mt-1 drop-shadow-sm">Creating scalable applications that can handle real users</p>
+                </div>
+              </div>
+            </motion.div>
+
+
+
+          </motion.div>
         </motion.div>
       </div>
       <About />
-    </section>
+    </section >
   );
 };
 
