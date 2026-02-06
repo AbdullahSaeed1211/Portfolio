@@ -7,7 +7,7 @@ import { minorProjects } from './minorProjects';
 const guidanceWelfareProject = minorProjects.find(p => p.id === "guidancewelfare");
 const simplyMortgageProject = minorProjects.find(p => p.id === "simply");
 const lotusProServicesProject = minorProjects.find(p => p.id === "lotusproservices");
-const brainWiseProject = minorProjects.find(p => p.id === "brainwise");
+const care4BrainProject = minorProjects.find(p => p.id === "care4brain");
 const blogSquirrelProject = minorProjects.find(p => p.id === "blogsquirrel");
 const sproutlyProject = minorProjects.find(p => p.id === "sproutly");
 const pantryPanicProject = minorProjects.find(p => p.id === "pantry-panic");
@@ -15,7 +15,7 @@ const speakspeareProject = minorProjects.find(p => p.id === "speakspeare");
 
 // Other minor projects (excluding the ones we specifically pulled out)
 const otherMinorProjects = minorProjects.filter(p => 
-  !["guidancewelfare", "simply", "lotusproservices", "brainwise", "blogsquirrel", "sproutly", "pantry-panic", "speakspeare"].includes(p.id)
+  !["guidancewelfare", "simply", "lotusproservices", "care4brain", "blogsquirrel", "sproutly", "pantry-panic", "speakspeare"].includes(p.id)
 );
 
 // Feature projects are the ones with detailed case studies
@@ -28,7 +28,7 @@ export const featureProjects = [
 // All projects combined for listing in the new requested order
 export const allProjects = [
   guidanceWelfareProject,       // 1. Guidance Welfare Foundation (Featured)
-  brainWiseProject,             // 2. BrainWise (Research Platform)
+  care4BrainProject,             // 2. Care4Brain (Research Platform)
   kiroProject,                  // 3. Kiiro
   simplyMortgageProject,        // 4. Simply Mortgages
   sproutlyProject,              // 5. Sproutly
@@ -47,7 +47,7 @@ export {
   testimonialNudgerProject,
   dubbbyProject,
   guidanceWelfareProject,
-  brainWiseProject,
+  care4BrainProject,
   simplyMortgageProject,
   sproutlyProject,
   lotusProServicesProject,

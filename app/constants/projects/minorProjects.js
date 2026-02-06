@@ -142,15 +142,15 @@ The website was built with Next.js for optimal performance and SEO benefits, wit
     }
   },
   {
-    id: "brainwise",
-    title: "BrainWise.pro",
+    id: "care4brain",
+    title: "Care4Brain",
     description: "Research-validated medical AI platform with published academic methodology achieving clinical-grade performance metrics across multiple neurological assessment domains.",
-    imgSrc: "/assets/images/projects/brainwise.webp",
+    imgSrc: "/assets/images/projects/care4brain.webp",
     tags: ["Next.js 14", "TensorFlow.js", "MongoDB", "Hugging Face", "Medical AI"],
-    projectLink: "https://brainwise.pro/",
-    projectLinkGithub: "https://github.com/AbdullahSaeed1211/brainwise",
-    detailedDescription: `BrainWise.pro is a comprehensive brain health research platform that combines cutting-edge AI technology with clinical-grade medical assessments. This research-validated platform demonstrates the practical application of machine learning in healthcare contexts, achieving performance metrics that approach clinical standards.
-
+    projectLink: "https://brain.abdullahsaeed.me/",
+    projectLinkGithub: "https://github.com/AbdullahSaeed1211/care4brain",
+    detailedDescription: `Care4Brain is a comprehensive brain health research platform that combines cutting-edge AI technology with clinical-grade medical assessments. This research-validated platform demonstrates the practical application of machine learning in healthcare contexts, achieving performance metrics that approach clinical standards.
+    
 The platform features 3 production-grade AI models with clinical accuracy: Stroke prediction (95% accuracy), Brain tumor detection (95% accuracy with ResNet50 CNN), and Alzheimer's disease detection (94% accuracy with EfficientNet). The system implements 15+ cognitive assessment tools including memory games, reaction tests, visual attention, pattern recognition, and verbal fluency tests with comprehensive performance tracking.
 
 Advanced technical features include distributed system architecture with Hugging Face Spaces for ML model hosting, achieving 60-75% model size reduction through quantization while maintaining accuracy. The platform includes real-time medical image processing pipeline for MRI scan analysis with secure patient data management and scalable architecture.

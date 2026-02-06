@@ -18,7 +18,7 @@ export async function GET() {
     url: `${baseUrl}/projects/${project.id}`,
     lastModified: new Date(project.metadata?.completionDate || '2024-12-20'),
     changeFrequency: 'monthly',
-    priority: project.id === 'guidancewelfare' || project.id === 'brainwise' || project.id === 'kiiro' ? 0.9 : 0.8,
+    priority: project.id === 'guidancewelfare' || project.id === 'care4brain' || project.id === 'kiiro' ? 0.9 : 0.8,
   }));
 
   const sitemapData = [...staticPages, ...projectPages];

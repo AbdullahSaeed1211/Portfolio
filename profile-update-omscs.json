@@ -35,8 +35,8 @@
       "academicRelevance": "Demonstrates distributed system design, database optimization, and scalable web architecture principles applicable to educational technology research."
     },
     {
-      "name": "BrainWise.pro - Medical AI Research Platform",
-      "link": "https://brainwise.pro",
+      "name": "Care4Brain - Medical AI Research Platform",
+      "link": "https://brain.abdullahsaeed.me",
       "description": "Research-validated medical AI platform with published academic methodology achieving clinical-grade performance metrics across multiple neurological assessment domains.",
       "technicalHighlight": "Developed 3 production-grade AI models with clinical accuracy: Stroke prediction (95%), brain tumor detection (95% with ResNet50 CNN), and Alzheimer's detection (94% with EfficientNet). Architected distributed system with Hugging Face Spaces, achieving 60-75% model size reduction through quantization. Implemented 15+ cognitive assessment tools with longitudinal tracking and HIPAA-compliant architecture.",
       "academicRelevance": "Exemplifies applied machine learning research, medical AI ethics, and human-computer interaction in healthcare contexts. Performance metrics approach clinical standards (89-91% vs radiologist assessments)."
