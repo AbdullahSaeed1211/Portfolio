@@ -1,0 +1,47 @@
+# Abdullah Saeed - AI Engineer & Full-Stack Developer
+
+## Who am I?
+I am an AI Research Engineer and Full-Stack Developer specializing in building scalable Next.js applications and integrating cutting-edge Machine Learning systems. I hold an MS in Computer Science from Georgia Tech and actively contribute to IEEE research.
+
+- **Role:** AI Engineer, Full-Stack Developer
+- **Education:** MS Computer Science, Georgia Institute of Technology
+- **Location:** Open to Remote & Global opportunities
+- **Website:** https://abdullahsaeed.me
+
+## Core Skills
+- **Frontend:** React, Next.js, TypeScript, Tailwind CSS, Framer Motion
+- **Backend:** Node.js, Python, PostgreSQL, MongoDB, Supabase
+- **AI/ML:** PyTorch, TensorFlow, LLMs (GPT, Claude, Llama), Computer Vision, NLP
+- **DevOps:** Docker, AWS, Vercel, CI/CD
+
+## Featured Projects
+
+### Dubbby
+**Domain:** AI Video Localization
+**Description:** An AI-powered tool that breaks language barriers in video content. It uses a custom AI pipeline for voice synthesis and lip synchronization to dub videos into 15+ languages.
+**Key Tech:** React, WebGL, Python (AI Pipeline).
+**Impact:** 215% increase in global reach for users; 30-second processing time.
+
+### Care4Brain
+**Domain:** HealthTech / AI
+**Description:** A progressive web app designed to detect specific early signs of cognitive decline. It integrates machine learning models to analyze cognitive test results, aiding healthcare providers in early intervention.
+**Key Tech:** React, TypeScript, Machine Learning.
+**Impact:** 87% accuracy in early detection; 43% reduction in assessment time.
+
+### Blog Squirrel
+**Domain:** SaaS / Content Marketing
+**Description:** An automated content creation platform that helps creators maintain consistent publishing schedules. Features rich editing capabilities and built-in SEO optimization tools.
+**Key Tech:** Next.js, SEO Tools.
+**Impact:** 40% increase in workflow efficiency; 27-point improvement in average SEO scores.
+
+### Simply Mortgage
+**Domain:** FinTech
+**Description:** A comprehensive mortgage comparison tool tailored for the UAE market. It simplifies the decision-making process for homebuyers with interactive calculators and transparent data.
+**Key Tech:** Next.js 15, Server Components.
+**Impact:** 98/100 Lighthouse score; 35% increase in consultation request conversions.
+
+## Contact & Socials
+- **Portfolio:** https://abdullahsaeed.me
+- **GitHub:** https://github.com/abdullahsaeed1724
+- **LinkedIn:** https://linkedin.com/in/abdullahsaeed1724
+- **Twitter/X:** https://twitter.com/abdullahsaeed_

@@ -35,3 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.txt
+!robots.txt
+!llms.txt
+!public/robots.txt
+!public/llms.txt
