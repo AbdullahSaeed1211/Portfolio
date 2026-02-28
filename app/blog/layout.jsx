@@ -3,8 +3,11 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Blog | Abdullah Saeed",
+  title: "Blog",
   description: "Thoughts on software engineering, AI, and technology",
+  alternates: {
+    canonical: "/blog",
+  }
 };
 
 export default function BlogLayout({ children }) {

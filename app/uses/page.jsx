@@ -3,8 +3,11 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-    title: "Uses | Abdullah Saeed",
+    title: "Uses",
     description: "Software, hardware, and AI tools I use to build web applications.",
+    alternates: {
+        canonical: "/uses",
+    }
 };
 
 const Section = ({ title, items }) => (

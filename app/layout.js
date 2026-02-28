@@ -85,12 +85,8 @@ export const metadata = {
     shortcut: "/favicon.ico"
   },
   manifest: "/manifest.json",
-  verification: {
-    // google: "google-site-verification-code", 
-    // bing: "bing-site-verification-code", 
-  },
   alternates: {
-    canonical: "https://abdullahsaeed.me",
+    canonical: "/",
   },
   other: {
     "msapplication-TileColor": "#ffffff",
