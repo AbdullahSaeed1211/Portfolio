@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Github, Linkedin, Mail, MapPin, Code2, BrainCircuit, Cpu } from "lucide-react";
+import { MapPin, Code2, BrainCircuit, Cpu } from "lucide-react";
 import About from "./About";
-
+import { useRef } from "react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -22,7 +22,7 @@ const child = {
     filter: "blur(0px)",
     transition: {
       duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94] // Custom easing for smoother feel
+      ease: [0.25, 0.46, 0.45, 0.94]
     }
   },
 };
@@ -52,56 +52,34 @@ const imageVariants = {
   },
 };
 
-// Floating animation for the badge
-const floatingVariants = {
-  hidden: { opacity: 0, y: -20, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      type: "spring",
-      damping: 15,
-      stiffness: 120
-    }
-  },
+// Badge floating animation
+const badgeFloat = {
   float: {
-    y: [0, -8, 0],
+    y: [0, -6, 0],
     transition: {
       duration: 3,
       ease: "easeInOut",
       repeat: Infinity,
+      repeatType: "reverse"
     }
   }
 };
 
-// Social icons with staggered entrance
+// Card entrance animation
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
 
 
 const Hero = () => {
-  /* Mouse Move Parallax Logic */
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-
-  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
-
-  React.useEffect(() => {
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      setMousePosition({
-        x: (clientX - centerX) / 25,
-        y: (clientY - centerY) / 25,
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
     <section className="w-full min-h-screen pt-20 pb-6 sm:pb-2 relative overflow-hidden">
       {/* Subtle background animation - only for light mode */}
@@ -121,8 +99,9 @@ const Hero = () => {
         >
           {/* Location Badge with floating animation */}
           <motion.div
-            variants={floatingVariants}
-            animate={["visible", "float"]}
+            variants={badgeFloat}
+            animate="float"
+            className="inline-block"
           >
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-medium mb-6 sm:mb-8 backdrop-blur-sm"
@@ -133,15 +112,8 @@ const Hero = () => {
               }}
               transition={{ type: "spring", damping: 15, stiffness: 200 }}
             >
-              <span className="flex items-center gap-1">
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                >
-                  <MapPin className="w-4 h-4" aria-hidden="true" />
-                </motion.div>
-                Available Globally
-              </span>
+              <MapPin className="w-4 h-4" aria-hidden="true" />
+              Available Globally
               <span className="w-1 h-1 bg-blue-400 rounded-full" aria-hidden="true" />
               <span>Full Stack Developer</span>
             </motion.div>
@@ -178,22 +150,13 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
             >
               I build AI-Powered Web Solutions with Impact.
-              <br />
-              {/* <span className="text-xs text-muted-foreground mt-1 block">
-                (Not the actor/comedian — I engineer software, not jokes)
-              </span> */}
             </motion.p>
           </motion.div>
 
-          {/* Hero Image with Floating Skill Cards & Parallax */}
+          {/* Hero Image with Floating Skill Cards */}
           <motion.div
             variants={imageVariants}
             className="max-w-7xl mx-auto mt-6 sm:mt-8 relative"
-            style={{
-              perspective: 1000,
-              x: mousePosition.x * -1, // Opposite direction for depth
-              y: mousePosition.y * -1
-            }}
           >
             <motion.div
               className="bg-white rounded-xl shadow-lg overflow-hidden relative"
@@ -218,17 +181,14 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Floating Glassmorphic Skill Cards with Magnetic Parallax */}
+            {/* Floating Glassmorphic Skill Cards */}
             {/* Full-Stack Card - Top Left */}
             <motion.div
-              initial={{ opacity: 0, x: -50, y: -30 }}
-              animate={{
-                opacity: 1,
-                x: mousePosition.x * 1.2,
-                y: mousePosition.y * 1.2,
-                z: 20
-              }}
-              transition={{ delay: 0.2, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
               className="absolute top-[10%] left-[2%] bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block z-30"
               style={{
                 backdropFilter: 'blur(20px) saturate(180%)',
@@ -238,7 +198,7 @@ const Hero = () => {
               }}
               whileHover={{
                 scale: 1.05,
-                y: -8,
+                y: -4,
                 background: 'rgba(255, 255, 255, 0.25)',
                 boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
               }}
@@ -253,21 +213,18 @@ const Hero = () => {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold text-white text-sm drop-shadow-sm">Full-Stack Development</h3>
-                  <p className="text-xs text-white/80 mt-1 drop-shadow-sm">Next.js, React, Node.js - building complete web applications</p>
+                  <p className="text-xs text-white/80 mt-1 drop-shadow-sm">Next.js, React, Node.js — building complete web applications</p>
                 </div>
               </div>
             </motion.div>
 
             {/* Machine Learning Card - Top Right */}
             <motion.div
-              initial={{ opacity: 0, x: 50, y: -30 }}
-              animate={{
-                opacity: 1,
-                x: mousePosition.x * -2.5,
-                y: mousePosition.y * 1.5,
-                z: 80
-              }}
-              transition={{ delay: 0.4, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
               className="absolute top-[25%] right-[2%] bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block z-40"
               style={{
                 backdropFilter: 'blur(20px) saturate(180%)',
@@ -277,7 +234,7 @@ const Hero = () => {
               }}
               whileHover={{
                 scale: 1.05,
-                y: -8,
+                y: -4,
                 background: 'rgba(255, 255, 255, 0.25)',
                 boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
               }}
@@ -299,14 +256,11 @@ const Hero = () => {
 
             {/* System Design Card - Bottom Left */}
             <motion.div
-              initial={{ opacity: 0, x: -50, y: 30 }}
-              animate={{
-                opacity: 1,
-                x: mousePosition.x * 1.8,
-                y: mousePosition.y * -1.2,
-                z: 30
-              }}
-              transition={{ delay: 0.6, duration: 0.8, type: "spring", damping: 15, stiffness: 100 }}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
               className="absolute bottom-[10%] left-[15%] bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/30 max-w-[280px] hidden lg:block z-30"
               style={{
                 backdropFilter: 'blur(20px) saturate(180%)',
@@ -316,7 +270,7 @@ const Hero = () => {
               }}
               whileHover={{
                 scale: 1.05,
-                y: -8,
+                y: -4,
                 background: 'rgba(255, 255, 255, 0.25)',
                 boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
               }}
@@ -335,14 +289,11 @@ const Hero = () => {
                 </div>
               </div>
             </motion.div>
-
-
-
           </motion.div>
         </motion.div>
       </div>
       <About />
-    </section >
+    </section>
   );
 };
 

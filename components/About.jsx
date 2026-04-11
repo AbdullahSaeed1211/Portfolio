@@ -106,8 +106,8 @@ const About = () => {
             <br />
             <span className="block mt-2">
               Currently building at{" "}
-              <span className="font-semibold">kiiro.cx</span> and pursuing{" "}
-              <span className="font-semibold">CS Grad 2025</span>.
+              <span className="font-semibold">kiiro.cx</span> and studying{" "}
+              <span className="font-semibold">MS CS (AI) at Georgia Tech</span>.
             </span>
           </p>
         </motion.div>

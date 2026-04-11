@@ -117,10 +117,10 @@ const FeaturedProjectCard = ({ project }) => {
             <div className="absolute bottom-4 left-4 right-4 flex gap-2">
               <Badge className="bg-green-500/90 text-white backdrop-blur-sm">
                 <Zap className="w-3 h-3 mr-1" />
-                95% Accuracy
+                Production Ready
               </Badge>
               <Badge className="bg-blue-500/90 text-white backdrop-blur-sm">
-                Clinical-Grade
+                Actively Maintained
               </Badge>
             </div>
           </div>
@@ -155,22 +155,6 @@ const FeaturedProjectCard = ({ project }) => {
                     </Badge>
                   );
                 })}
-              </div>
-
-              {/* Key Highlights */}
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Clinical-grade AI models with 95% accuracy</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Published research methodology</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Secure data management</span>
-                </div>
               </div>
             </div>
 

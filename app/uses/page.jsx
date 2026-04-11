@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
     title: "Uses",
-    description: "Software, hardware, and AI tools I use to build web applications.",
+    description: "Software, hardware, and tools I use to build web applications.",
     alternates: {
         canonical: "/uses",
     }
@@ -32,15 +32,12 @@ const Section = ({ title, items }) => (
 
 export default function UsesPage() {
     const hardware = [
-        { name: "MacBook Pro M3 Max", description: "My daily driver for development and AI model training." },
-        { name: "LG UltraFine 5K", description: "Crystal clear display for pixel-perfect UI design." },
-        { name: "Keychron K2", description: "Mechanical keyboard (Brown switches) for typing comfort." },
-        { name: "Logitech MX Master 3S", description: "The best productivity mouse, hands down." },
+        { name: "MacBook Air M4", description: "16GB/512GB — my daily driver for development." },
+        { name: "AOC Q27G4F", description: "27\" Quad HD IPS gaming monitor for crisp visuals." },
     ];
 
     const software = [
         { name: "VS Code", description: "With GitHub Copilot & Catppuccin theme." },
-        { name: "Warp Terminal", description: "Rust-based terminal for speed and AI integration." },
         { name: "Figma", description: "For UI/UX design and prototyping." },
         { name: "Notion", description: "Project management and second brain." },
     ];
@@ -75,7 +72,6 @@ export default function UsesPage() {
                 <Section title="Hardware" items={hardware} />
                 <Section title="Software & Apps" items={software} />
                 <Section title="Development Stack" items={stack} />
-                <Section title="AI Toolkit" items={aiTools} />
 
             </main>
             <Footer />

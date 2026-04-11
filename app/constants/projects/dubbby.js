@@ -4,7 +4,7 @@ export const dubbbyProject = {
   description: "A SaaS platform for AI-powered video dubbing and translation. It helps content creators, businesses, and educators reach global audiences by automatically translating and dubbing videos into multiple languages.",
   imgSrc: "/assets/images/projects/dubbby.webp",
   tags: ["Next.js", "TypeScript", "Tailwind", "SaaS", "AI", "Video Processing"],
-  projectLink: "https://dubbby.com/",
+  projectLink: "https://dubbby.abdullahsaeed.me/",
   projectLinkGithub: "https://github.com/AbdullahSaeed1211/Dubbby",
   
   // Detailed case study content
@@ -36,13 +36,7 @@ export const dubbbyProject = {
     ],
     
     results: {
-      metrics: [
-        { label: "Cost Reduction", value: "94%" },
-        { label: "Time Savings", value: "26× faster" },
-        { label: "Language Support", value: "75+ languages" },
-        { label: "User Rating", value: "4.8/5" }
-      ],
-      qualitative: "Dubbby has democratized professional-quality video dubbing, making it accessible to individual creators, small businesses, and educational institutions who previously couldn't afford localization. This has allowed content to reach new markets and audiences, significantly improving engagement metrics for users."
+      qualitative: "Dubbby enables content creators and businesses to reach global audiences through AI-powered video translation and dubbing at a fraction of traditional costs."
     },
     
     sections: [
@@ -188,9 +182,9 @@ The technology has democratized professional-quality video dubbing, making it ac
   
   // Additional metadata
   metadata: {
-    completionDate: "May 2024",
+    completionDate: "March 2025",
     category: "SaaS, AI, Video Processing",
-    duration: "5 days",
+    duration: "Actively maintained and developed",
     purpose: "To democratize video translation and dubbing, making it accessible to all content creators regardless of budget"
   }
 }; 

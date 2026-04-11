@@ -343,7 +343,7 @@ const ResumeExperience = () => {
                         <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                           Georgia Institute of Technology
                         </h4>
-                        <p className="text-muted-foreground font-medium">Master of Science in Computer Science</p>
+                        <p className="text-muted-foreground font-medium">Master of Science — Computer Science (Artificial Intelligence)</p>
                       </div>
                       <div className="flex flex-col sm:items-end gap-1">
                         <div className="flex items-center gap-1 text-muted-foreground">
@@ -356,10 +356,6 @@ const ResumeExperience = () => {
                         </div>
                       </div>
                     </div>
-
-                    <p className="text-foreground/80 font-medium">
-                      Artificial Intelligence
-                    </p>
                   </div>
                 </div>
               </motion.div>

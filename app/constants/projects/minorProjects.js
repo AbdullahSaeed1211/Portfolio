@@ -73,12 +73,12 @@ This project showcases distributed system design principles, database optimizati
       }
     ],
     metadata: {
-      completionDate: "June 2024",
+      completionDate: "April 2025",
       category: "EdTech, LMS, Enterprise Application",
-      duration: "12 months",
+      duration: "Actively maintained and developed",
       purpose: "To create a production-ready Islamic educational platform with enterprise-grade architecture and modern learning management features",
-      status: "Production Ready (95% Complete)",
-      users: "100+ active learners"
+      status: "Production Ready — 500+ active learners",
+      users: "500+ active learners"
     }
   },
   {
@@ -135,9 +135,9 @@ Key features include interactive mortgage calculators, detailed service listings
 
 The website was built with Next.js for optimal performance and SEO benefits, with Tailwind CSS providing the styling framework. It achieves excellent performance scores while delivering a user-friendly experience.`,
     metadata: {
-      completionDate: "May 2024",
+      completionDate: "January 2026",
       category: "Web App, Finance, Business Website",
-      duration: "2 weeks",
+      duration: "Actively maintained and developed",
       purpose: "To create a comprehensive mortgage consultancy website for the UAE market"
     }
   },
@@ -217,9 +217,9 @@ This project exemplifies applied machine learning research, medical AI ethics, h
       }
     ],
     metadata: {
-      completionDate: "December 2024",
+      completionDate: "June 2025",
       category: "HealthTech, Medical AI, Research Platform",
-      duration: "4 months",
+      duration: "Actively maintained and developed",
       purpose: "To create a research-validated medical AI platform with clinical-grade performance for brain health assessment and early detection",
       academicRelevance: "Exemplifies applied machine learning research, medical AI ethics, and human-computer interaction in healthcare contexts"
     }

@@ -107,6 +107,21 @@ export const skillsData = [
     alt: "Astro",
     title: "Astro",
   },
+  {
+    imgSrc: null,
+    alt: "Laravel",
+    title: "Laravel",
+  },
+  {
+    imgSrc: null,
+    alt: "Vue.js",
+    title: "Vue.js",
+  },
+  {
+    imgSrc: null,
+    alt: "PHP",
+    title: "PHP",
+  },
 ];
 
 // Projects - now imported from the projects directory

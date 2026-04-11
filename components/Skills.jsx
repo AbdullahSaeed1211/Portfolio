@@ -72,13 +72,17 @@ const SkillCard = ({ skill, index, isInView }) => {
       className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 mx-2 w-[100px] md:w-[120px] flex-shrink-0"
     >
       <div className="p-3 flex flex-col items-center justify-center">
-        <div className="w-10 h-10 md:w-12 md:h-12 relative mb-2">
-          <Image
-            src={skill.imgSrc}
-            alt={skill.alt}
-            fill
-            className="object-contain"
-          />
+        <div className="w-10 h-10 md:w-12 md:h-12 relative mb-2 flex items-center justify-center">
+          {skill.imgSrc ? (
+            <Image
+              src={skill.imgSrc}
+              alt={skill.alt}
+              fill
+              className="object-contain"
+            />
+          ) : (
+            <span className="text-lg md:text-xl font-bold text-primary">{skill.alt.charAt(0)}</span>
+          )}
         </div>
         <h3 className="text-xs md:text-sm font-medium text-center">{skill.title}</h3>
       </div>

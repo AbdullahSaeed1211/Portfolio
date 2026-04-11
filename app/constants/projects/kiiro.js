@@ -36,14 +36,7 @@ export const kiroProject = {
     ],
     
     results: {
-      metrics: [
-        { label: "Conversion Rate", value: "+78%" },
-        { label: "Session Duration", value: "+52%" },
-        { label: "Qualified Leads", value: "3.2×" },
-        { label: "Bounce Rate", value: "-40%" },
-        { label: "PageSpeed Score", value: "95+" }
-      ],
-      qualitative: "Beyond the quantitative metrics, Kiiro reported significant qualitative improvements in their business operations including higher quality leads requiring less nurturing before conversion, increased average project value as the new brand positioning attracted higher-budget clients, enhanced team morale, improved recruitment capabilities, and stronger negotiating position with potential clients due to enhanced perceived value."
+      qualitative: "The redesign delivered a modern brand identity and conversion-optimized experience that better reflects Kiiro's premium positioning in the web design market."
     },
     
     sections: [
@@ -171,9 +164,9 @@ Beyond the quantitative metrics, Kiiro reported significant qualitative improvem
   
   // Additional metadata
   metadata: {
-    completionDate: "May 2024",
+    completionDate: "April 2025",
     category: "Web App, Agency Design, Brand Evolution",
-    duration: "5 days",
-    purpose: "Strategic web redesign & identity refresh that amplified conversions and strengthened market position for a premium web design agency."
+    duration: "Actively maintained and developed",
+    purpose: "Strategic web redesign & identity refresh for a premium web design agency."
   }
 }; 
