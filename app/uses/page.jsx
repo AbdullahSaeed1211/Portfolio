@@ -6,7 +6,7 @@ export const metadata = {
     title: "Uses",
     description: "Software, hardware, and tools I use to build web applications.",
     alternates: {
-        canonical: "/uses",
+        canonical: "https://abdullahsaeed.me/uses",
     }
 };
 
@@ -72,6 +72,7 @@ export default function UsesPage() {
                 <Section title="Hardware" items={hardware} />
                 <Section title="Software & Apps" items={software} />
                 <Section title="Development Stack" items={stack} />
+                <Section title="AI & Productivity" items={aiTools} />
 
             </main>
             <Footer />

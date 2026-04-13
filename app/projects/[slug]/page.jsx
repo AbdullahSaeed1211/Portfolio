@@ -1,7 +1,14 @@
-import { getProjectById } from "@/app/constants/projects";
+import { getProjectById, allProjects } from "@/app/constants/projects";
 import { notFound } from "next/navigation";
 import ProjectStructuredData from "@/components/ProjectStructuredData";
 import ProjectDetailContent from "./ProjectDetailContent.jsx";
+
+// Generate static params for all projects
+export async function generateStaticParams() {
+  return allProjects.map((project) => ({
+    slug: project.id,
+  }));
+}
 
 // Generate metadata for the page
 export async function generateMetadata({ params }) {

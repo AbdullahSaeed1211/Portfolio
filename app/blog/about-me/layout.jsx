@@ -14,6 +14,10 @@ export const metadata = {
     title: "Where It All Started | Abdullah Saeed",
     description: "My journey from Minecraft redstone to machine learning research.",
     images: ["/assets/images/AboutMe.png"],
+    creator: "@abdullahsaeed_"
+  },
+  alternates: {
+    canonical: "https://abdullahsaeed.me/blog/about-me",
   }
 };
 

@@ -86,7 +86,7 @@ export const metadata = {
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "/",
+    canonical: "https://abdullahsaeed.me",
   },
   other: {
     "msapplication-TileColor": "#ffffff",

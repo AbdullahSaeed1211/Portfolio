@@ -114,7 +114,8 @@ export default function AboutMeBlogPage() {
             </div>
 
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Today, I approach every project with the same curiosity that drove me to build complex redstone contraptions as a child. Whether it's optimizing a machine learning model or architecting a scalable web application, I believe the best solutions come from understanding the problem deeply and approaching it with systematic creativity.
+              Today, I approach every project with the same curiosity that drove me to build complex redstone contraptions as a child. Whether it's optimizing a machine learning model or architecting a scalable web application, I believe the best solutions come from understanding the problem deeply and approaching it with systematic creativity. 
+              You can explore some of these solutions in my <Link href="/#Projects" className="text-red-600 dark:text-red-400 font-medium hover:underline">projects section</Link> or see the <Link href="/uses" className="text-red-600 dark:text-red-400 font-medium hover:underline">tools and tech stack</Link> I use to build them.
             </p>
           </motion.div>
 

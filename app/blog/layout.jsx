@@ -6,7 +6,7 @@ export const metadata = {
   title: "Blog",
   description: "Thoughts on software engineering, AI, and technology",
   alternates: {
-    canonical: "/blog",
+    canonical: "https://abdullahsaeed.me/blog",
   }
 };
 
