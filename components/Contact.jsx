@@ -131,7 +131,7 @@ function ContactContent() {
 
               <div className="space-y-4">
                 <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  Computer Science student at Amity University (graduating June 2025) with hands-on experience in AI-powered web applications, scalable architectures, and innovative problem-solving. Based in India, open to remote opportunities worldwide.
+                  Computer Science student at Amity University (graduating June 2025) with hands-on experience in AI-powered web applications, scalable architectures, and innovative problem-solving. Open to remote opportunities worldwide.
                 </p>
 
                 <div className="h-px bg-blue-200 dark:bg-blue-700"></div>
@@ -139,7 +139,7 @@ function ContactContent() {
                 <div className="grid grid-cols-1 gap-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Location:</span>
-                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">India (Remote)</span>
+                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Remote</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600 dark:text-gray-400">Start Date:</span>

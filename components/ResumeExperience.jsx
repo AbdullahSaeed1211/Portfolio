@@ -161,10 +161,6 @@ const ResumeExperience = () => {
                       </div>
                       <div className="flex flex-col sm:items-end gap-1">
                         <div className="flex items-center gap-1 text-muted-foreground">
-                          <MapPin className="w-4 h-4" />
-                          <span className="text-sm font-medium">Delhi, India</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-muted-foreground">
                           <Calendar className="w-4 h-4" />
                           <span className="text-sm">Mar 2025</span>
                         </div>
@@ -388,10 +384,6 @@ const ResumeExperience = () => {
                         <p className="text-muted-foreground font-medium">B.Tech in Computer Science & Engineering</p>
                       </div>
                       <div className="flex flex-col sm:items-end gap-1">
-                        <div className="flex items-center gap-1 text-muted-foreground">
-                          <MapPin className="w-4 h-4" />
-                          <span className="text-sm font-medium">Uttar Pradesh, India</span>
-                        </div>
                         <div className="flex items-center gap-1 text-muted-foreground">
                           <Calendar className="w-4 h-4" />
                           <span className="text-sm">2021 – June 2025</span>
